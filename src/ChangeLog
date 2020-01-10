@@ -1,0 +1,3390 @@
+2007-07-19 20:17  wlach
+
+	* trunk, trunk/retchmail/wvpopclient.cc,
+	  trunk/retchmail/wvpopclient.h, trunk/retchmail/wvsendmail.cc,
+	  trunk/retchmail/wvsendmail.h, trunk/wvdial/wvdial.cc,
+	  trunk/wvdial/wvdialer.cc, trunk/wvdial/wvdialer.h,
+	  trunk/wvstreams/crypto/wvsslstream.cc,
+	  trunk/wvstreams/include/iwvstream.h,
+	  trunk/wvstreams/include/uniclientconn.h,
+	  trunk/wvstreams/include/wvbufstream.h,
+	  trunk/wvstreams/include/wvdailyevent.h,
+	  trunk/wvstreams/include/wvdsp.h,
+	  trunk/wvstreams/include/wvencoderstream.h,
+	  trunk/wvstreams/include/wvfdstream.h,
+	  trunk/wvstreams/include/wvfile.h,
+	  trunk/wvstreams/include/wvhttppool.h,
+	  trunk/wvstreams/include/wvistreamlist.h,
+	  trunk/wvstreams/include/wvlog.h,
+	  trunk/wvstreams/include/wvmagicloopback.h,
+	  trunk/wvstreams/include/wvresolver.h,
+	  trunk/wvstreams/include/wvsslstream.h,
+	  trunk/wvstreams/include/wvstream.h,
+	  trunk/wvstreams/include/wvstreamclone.h,
+	  trunk/wvstreams/include/wvsyncstream.h,
+	  trunk/wvstreams/include/wvtcp.h,
+	  trunk/wvstreams/include/wvtimestream.h,
+	  trunk/wvstreams/include/wvunixdgsocket.h,
+	  trunk/wvstreams/include/wvwatcher.h,
+	  trunk/wvstreams/ipstreams/tests/ip2test.cc,
+	  trunk/wvstreams/ipstreams/tests/iptest.cc,
+	  trunk/wvstreams/ipstreams/tests/tcptest.cc,
+	  trunk/wvstreams/ipstreams/tests/udglistentest.cc,
+	  trunk/wvstreams/ipstreams/tests/udp2test.cc,
+	  trunk/wvstreams/ipstreams/tests/udptest.cc,
+	  trunk/wvstreams/ipstreams/tests/unixdgtest.cc,
+	  trunk/wvstreams/ipstreams/tests/unixtest.cc,
+	  trunk/wvstreams/ipstreams/tests/wsd.cc,
+	  trunk/wvstreams/ipstreams/wvresolver.cc,
+	  trunk/wvstreams/ipstreams/wvtcp.cc,
+	  trunk/wvstreams/ipstreams/wvunixdgsocket.cc,
+	  trunk/wvstreams/linuxstreams/wvdsp.cc,
+	  trunk/wvstreams/qt/wvqtstreamclone.cc,
+	  trunk/wvstreams/streams/t/wvstream.t.cc,
+	  trunk/wvstreams/streams/tests/watchtest.cc,
+	  trunk/wvstreams/streams/wvbufstream.cc,
+	  trunk/wvstreams/streams/wvdailyevent.cc,
+	  trunk/wvstreams/streams/wvencoderstream.cc,
+	  trunk/wvstreams/streams/wvfdstream.cc,
+	  trunk/wvstreams/streams/wvfile.cc,
+	  trunk/wvstreams/streams/wvistreamlist.cc,
+	  trunk/wvstreams/streams/wvlog.cc,
+	  trunk/wvstreams/streams/wvmagicloopback.cc,
+	  trunk/wvstreams/streams/wvstream.cc,
+	  trunk/wvstreams/streams/wvstreamclone.cc,
+	  trunk/wvstreams/streams/wvsyncstream.cc,
+	  trunk/wvstreams/streams/wvtimestream.cc,
+	  trunk/wvstreams/streams/wvwatcher.cc,
+	  trunk/wvstreams/uniconf/uniclientconn.cc,
+	  trunk/wvstreams/urlget/wvftpstream.cc,
+	  trunk/wvstreams/urlget/wvhttppool.cc,
+	  trunk/wvstreams/urlget/wvhttpstream.cc: Merge in inversion changes
+	  from 'wvstreams_inversion_2': pre_select now returns void.
+
+2007-07-18 18:29  wlach
+
+	* trunk/wvdial/README, trunk/wvdial/TODO, trunk/wvdial/wvdial.cc:
+	  Documentation updates for wvdial.
+
+2007-03-19 09:41  pphaneuf
+
+	* trunk/wvdial/Makefile: Remove the support for building from NITI's
+	  tree, fix building from Subversion in the alumnit tree.
+
+2007-02-27 12:55  pphaneuf
+
+	* releases/freesw, trunk: Moving the former /releases/freesw (which
+	  was the effective trunk) to /trunk proper.
+
+2006-12-13 03:54  wlach
+
+	* releases/freesw, releases/freesw/funfs/.cvsignore,
+	  releases/freesw/funfs/kernel/.cvsignore,
+	  releases/freesw/funfs/tests/.cvsignore,
+	  releases/freesw/funfs/util/.cvsignore,
+	  releases/freesw/gracefultavi/INSTALL.txt,
+	  releases/freesw/gracefultavi/action/captcha.php,
+	  releases/freesw/gracefultavi/action/conflict.php,
+	  releases/freesw/gracefultavi/action/content.php,
+	  releases/freesw/gracefultavi/action/edit.php,
+	  releases/freesw/gracefultavi/action/history.php,
+	  releases/freesw/gracefultavi/action/lock.php,
+	  releases/freesw/gracefultavi/action/prefs.php,
+	  releases/freesw/gracefultavi/action/preview.php,
+	  releases/freesw/gracefultavi/action/revert.php,
+	  releases/freesw/gracefultavi/action/save.php,
+	  releases/freesw/gracefultavi/action/style.php,
+	  releases/freesw/gracefultavi/action/tablecsv.php,
+	  releases/freesw/gracefultavi/action/view.php,
+	  releases/freesw/gracefultavi/attachments,
+	  releases/freesw/gracefultavi/images/csv.png,
+	  releases/freesw/gracefultavi/install/configure.pl,
+	  releases/freesw/gracefultavi/install/create-db.pl,
+	  releases/freesw/gracefultavi/install/crosswiki.sh,
+	  releases/freesw/gracefultavi/install/dbupgrade/upgrade1.php,
+	  releases/freesw/gracefultavi/install/dbupgrade/upgrade3.php,
+	  releases/freesw/gracefultavi/install/maint.pl,
+	  releases/freesw/gracefultavi/install/settings.cnf,
+	  releases/freesw/gracefultavi/js/common.js,
+	  releases/freesw/gracefultavi/lib/.htaccess,
+	  releases/freesw/gracefultavi/lib/captcha.php,
+	  releases/freesw/gracefultavi/lib/defaults.php,
+	  releases/freesw/gracefultavi/lib/difflib.php,
+	  releases/freesw/gracefultavi/lib/init.php,
+	  releases/freesw/gracefultavi/lib/main.php,
+	  releases/freesw/gracefultavi/lib/messages.php,
+	  releases/freesw/gracefultavi/lib/page.php,
+	  releases/freesw/gracefultavi/lib/pagestore.php,
+	  releases/freesw/gracefultavi/lib/url.php,
+	  releases/freesw/gracefultavi/macros/Attach.php,
+	  releases/freesw/gracefultavi/macros/BugReport.php,
+	  releases/freesw/gracefultavi/macros/ChecklistMaster.php,
+	  releases/freesw/gracefultavi/macros/CsvTable.php,
+	  releases/freesw/gracefultavi/macros/FogBugz.php,
+	  releases/freesw/gracefultavi/macros/Sched.php,
+	  releases/freesw/gracefultavi/macros/Toc.php,
+	  releases/freesw/gracefultavi/parse/html.php,
+	  releases/freesw/gracefultavi/parse/transforms.php,
+	  releases/freesw/gracefultavi/template/backlinks.php,
+	  releases/freesw/gracefultavi/template/common.php,
+	  releases/freesw/gracefultavi/template/conflict.php,
+	  releases/freesw/gracefultavi/template/edit.php,
+	  releases/freesw/gracefultavi/template/history.php,
+	  releases/freesw/gracefultavi/template/prefs.php,
+	  releases/freesw/gracefultavi/template/preview.php,
+	  releases/freesw/gracefultavi/template/rss.php,
+	  releases/freesw/gracefultavi/template/spamconfirm.php,
+	  releases/freesw/gracefultavi/template/subscriptions.php,
+	  releases/freesw/gracefultavi/template/wiki.css,
+	  releases/freesw/gracefultavi/template/wikiprint.css,
+	  releases/freesw/nss/.cvsignore,
+	  releases/freesw/photoreider/.cvsignore,
+	  releases/freesw/planit/rss_fetch.inc, releases/freesw/replytolist,
+	  releases/freesw/schedulator,
+	  releases/freesw/schedulator/schedules,
+	  releases/freesw/twc/src/.cvsignore,
+	  releases/freesw/twc/src/Dijkstra/.cvsignore,
+	  releases/freesw/unity/.cvsignore,
+	  releases/freesw/unity/dbus/.cvsignore,
+	  releases/freesw/unity/elektra/.cvsignore,
+	  releases/freesw/unity/gconf/.cvsignore,
+	  releases/freesw/unity/kconfig/.cvsignore,
+	  releases/freesw/unity/kconfig/kconfig.cpp,
+	  releases/freesw/unity/kconfig/kconfigunibackend.cpp,
+	  releases/freesw/unity/maildir/.cvsignore,
+	  releases/freesw/unity/vlan/.cvsignore,
+	  releases/freesw/wvdial/wvdialer.cc,
+	  releases/freesw/wvdial/wvdialer.h,
+	  releases/freesw/wvports/3w-9xxx, releases/freesw/wvports/adp94xx,
+	  releases/freesw/wvports/busybox/patches/busybox/79_Add_rdate_to_Config.h.diff,
+	  releases/freesw/wvports/cups/.cvsignore,
+	  releases/freesw/wvports/dosfstools/patches/dosfstools/03_automode-nosalvaging.diff,
+	  releases/freesw/wvports/etherboot/patches/etherboot/40_glibc_io_hackery.diff,
+	  releases/freesw/wvports/gettext,
+	  releases/freesw/wvports/horde/patches/horde/50_debian_security.patch,
+	  releases/freesw/wvports/horde/patches/imp/24_html_mail.patch,
+	  releases/freesw/wvports/howl/.cvsignore,
+	  releases/freesw/wvports/hpt3xx/patches/hpt3xx/11_dma-throttling.patch,
+	  releases/freesw/wvports/kernel/patches/linux/61_md-keep-disks-after-errors.diff,
+	  releases/freesw/wvports/kernel/patches/linux/65_promise-sata300-support.patch,
+	  releases/freesw/wvports/kernel/patches/linux/66_hotswap_memleak.diff,
+	  releases/freesw/wvports/kernel/patches/linux/67-libata-deadlock.patch,
+	  releases/freesw/wvports/kernel/patches/linux/68-SIAG-apic-hack.diff,
+	  releases/freesw/wvports/kqemu,
+	  releases/freesw/wvports/netatalk/Makefile,
+	  releases/freesw/wvports/nfs-server/patches/nfs-server/91_realpath_exploit.diff,
+	  releases/freesw/wvports/phpmyadmin/Makefile,
+	  releases/freesw/wvports/phpmyadmin/patches/phpmyadmin/20-auth-cookie.diff,
+	  releases/freesw/wvports/phpmyadmin/patches/phpmyadmin/20-cookie-absolute.diff,
+	  releases/freesw/wvports/phpmyadmin/patches/phpmyadmin/30-linked-tables-warning.diff,
+	  releases/freesw/wvports/phpmyadmin/patches/phpmyadmin/41-disable-create-db.diff,
+	  releases/freesw/wvports/phpmyadmin/sources/phpMyAdmin-2.7.0-pl2.tar.bz2,
+	  releases/freesw/wvports/readline,
+	  releases/freesw/wvports/samba/patches/samba/78_must_have_share_access.patch,
+	  releases/freesw/wvports/samba/patches/samba/79_dos_filemode_for_acls.patch,
+	  releases/freesw/wvports/sk98lin,
+	  releases/freesw/wvports/smartmon/patches,
+	  releases/freesw/wvports/sqlite/.cvsignore,
+	  releases/freesw/wvports/subdir.mk,
+	  releases/freesw/wvports/valgrind,
+	  releases/freesw/wvprint/Makefile, releases/freesw/wvprint/job.cc,
+	  releases/freesw/wvprint/job.h, releases/freesw/wvprint/queue.cc,
+	  releases/freesw/wvprint/t/.cvsignore,
+	  releases/freesw/wvprint/wvprint.cc,
+	  releases/freesw/wvprint/wvprintconfwatcher.cc,
+	  releases/freesw/wvprint/wvprintconfwatcher.h,
+	  releases/freesw/wvprint/wvprintcupsunigen.cc,
+	  releases/freesw/wvprint/wvprintd.cc,
+	  releases/freesw/wvstreams/Makefile,
+	  releases/freesw/wvstreams/Win32WvStreams/.cvsignore,
+	  releases/freesw/wvstreams/Win32WvStreams/libuniconf/t/.cvsignore,
+	  releases/freesw/wvstreams/Win32WvStreams/libwvstreams/wvwinstreamclone.cc,
+	  releases/freesw/wvstreams/Win32WvStreams/libwvtest/.cvsignore,
+	  releases/freesw/wvstreams/Win32WvStreams/uni/.cvsignore,
+	  releases/freesw/wvstreams/Win32WvStreams/uniconfd/.cvsignore,
+	  releases/freesw/wvstreams/Win32WvStreams/wvtest/.cvsignore,
+	  releases/freesw/wvstreams/config.mk.in,
+	  releases/freesw/wvstreams/configure.ac,
+	  releases/freesw/wvstreams/crypto/t/wvsslstream.t.cc,
+	  releases/freesw/wvstreams/crypto/tests/ssltest.cc,
+	  releases/freesw/wvstreams/crypto/wvsslstream.cc,
+	  releases/freesw/wvstreams/crypto/wvx509.cc,
+	  releases/freesw/wvstreams/examples/wvgrep/.cvsignore,
+	  releases/freesw/wvstreams/include/iwvstream.h,
+	  releases/freesw/wvstreams/include/uniclientgen.h,
+	  releases/freesw/wvstreams/include/uniconfkey.h,
+	  releases/freesw/wvstreams/include/unidefgen.h,
+	  releases/freesw/wvstreams/include/unifiltergen.h,
+	  releases/freesw/wvstreams/include/uniinigen.h,
+	  releases/freesw/wvstreams/include/unisubtreegen.h,
+	  releases/freesw/wvstreams/include/wvatomicfile.h,
+	  releases/freesw/wvstreams/include/wvbellpull.h,
+	  releases/freesw/wvstreams/include/wvcallback.h,
+	  releases/freesw/wvstreams/include/wvcolorlogconsole.h,
+	  releases/freesw/wvstreams/include/wvcont.h,
+	  releases/freesw/wvstreams/include/wvcrash.h,
+	  releases/freesw/wvstreams/include/wvcrashlog.h,
+	  releases/freesw/wvstreams/include/wvdaemon.h,
+	  releases/freesw/wvstreams/include/wvdailyevent.h,
+	  releases/freesw/wvstreams/include/wvdsp.h,
+	  releases/freesw/wvstreams/include/wvencoderstream.h,
+	  releases/freesw/wvstreams/include/wvfdstream.h,
+	  releases/freesw/wvstreams/include/wvfile.h,
+	  releases/freesw/wvstreams/include/wvgzip.h,
+	  releases/freesw/wvstreams/include/wvgzipstream.h,
+	  releases/freesw/wvstreams/include/wvhttp.h,
+	  releases/freesw/wvstreams/include/wvhttppool.h,
+	  releases/freesw/wvstreams/include/wvipraw.h,
+	  releases/freesw/wvstreams/include/wvistreamlist.h,
+	  releases/freesw/wvstreams/include/wvlink.h,
+	  releases/freesw/wvstreams/include/wvlinklist.h,
+	  releases/freesw/wvstreams/include/wvlog.h,
+	  releases/freesw/wvstreams/include/wvlogbuffer.h,
+	  releases/freesw/wvstreams/include/wvlogfile.h,
+	  releases/freesw/wvstreams/include/wvlogrcv.h,
+	  releases/freesw/wvstreams/include/wvloopback.h,
+	  releases/freesw/wvstreams/include/wvmagiccircle.h,
+	  releases/freesw/wvstreams/include/wvmagicloopback.h,
+	  releases/freesw/wvstreams/include/wvmodem.h,
+	  releases/freesw/wvstreams/include/wvpipe.h,
+	  releases/freesw/wvstreams/include/wvprotostream.h,
+	  releases/freesw/wvstreams/include/wvpty.h,
+	  releases/freesw/wvstreams/include/wvqtstreamclone.h,
+	  releases/freesw/wvstreams/include/wvsslstream.h,
+	  releases/freesw/wvstreams/include/wvstream.h,
+	  releases/freesw/wvstreams/include/wvstreamclone.h,
+	  releases/freesw/wvstreams/include/wvstreamsdaemon.h,
+	  releases/freesw/wvstreams/include/wvstreamsdebugger.h,
+	  releases/freesw/wvstreams/include/wvstreamsdebuggerserver.h,
+	  releases/freesw/wvstreams/include/wvstring.h,
+	  releases/freesw/wvstreams/include/wvstringmask.h,
+	  releases/freesw/wvstreams/include/wvstrutils.h,
+	  releases/freesw/wvstreams/include/wvsubprocqueuestream.h,
+	  releases/freesw/wvstreams/include/wvsyncstream.h,
+	  releases/freesw/wvstreams/include/wvtask.h,
+	  releases/freesw/wvstreams/include/wvtcp.h,
+	  releases/freesw/wvstreams/include/wvtest.h,
+	  releases/freesw/wvstreams/include/wvtimeoutstream.h,
+	  releases/freesw/wvstreams/include/wvtimestream.h,
+	  releases/freesw/wvstreams/include/wvtimeutils.h,
+	  releases/freesw/wvstreams/include/wvtundev.h,
+	  releases/freesw/wvstreams/include/wvudp.h,
+	  releases/freesw/wvstreams/include/wvunixdgsocket.h,
+	  releases/freesw/wvstreams/include/wvunixsocket.h,
+	  releases/freesw/wvstreams/include/wvwatcher.h,
+	  releases/freesw/wvstreams/include/wvwinstreamclone.h,
+	  releases/freesw/wvstreams/include/wvxor.h,
+	  releases/freesw/wvstreams/ipstreams/tests/vars.mk,
+	  releases/freesw/wvstreams/ipstreams/tests/wsd.cc,
+	  releases/freesw/wvstreams/ipstreams/wvstreamsdebuggerserver.cc,
+	  releases/freesw/wvstreams/ipstreams/wvunixdgsocket.cc,
+	  releases/freesw/wvstreams/linuxstreams/wvinterface.cc,
+	  releases/freesw/wvstreams/qt/wvqtstreamclone.cc,
+	  releases/freesw/wvstreams/streams/t/wvlog.t.cc,
+	  releases/freesw/wvstreams/streams/t/wvstreamclone.t.cc,
+	  releases/freesw/wvstreams/streams/wvcolorlogconsole.cc,
+	  releases/freesw/wvstreams/streams/wvconstream.cc,
+	  releases/freesw/wvstreams/streams/wvcrashlog.cc,
+	  releases/freesw/wvstreams/streams/wvdaemon.cc,
+	  releases/freesw/wvstreams/streams/wvdailyevent.cc,
+	  releases/freesw/wvstreams/streams/wvistreamlist.cc,
+	  releases/freesw/wvstreams/streams/wvlog.cc,
+	  releases/freesw/wvstreams/streams/wvlogbuffer.cc,
+	  releases/freesw/wvstreams/streams/wvlogfile.cc,
+	  releases/freesw/wvstreams/streams/wvmodem.cc,
+	  releases/freesw/wvstreams/streams/wvstream.cc,
+	  releases/freesw/wvstreams/streams/wvstreamclone.cc,
+	  releases/freesw/wvstreams/streams/wvstreamsdaemon.cc,
+	  releases/freesw/wvstreams/streams/wvtimestream.cc,
+	  releases/freesw/wvstreams/suppressions.wv,
+	  releases/freesw/wvstreams/uniconf/daemon/rules.mk,
+	  releases/freesw/wvstreams/uniconf/daemon/uniconfd.cc,
+	  releases/freesw/wvstreams/uniconf/t/uniclientgen.t.cc,
+	  releases/freesw/wvstreams/uniconf/t/unisubtreegen.t.cc,
+	  releases/freesw/wvstreams/uniconf/uniclientgen.cc,
+	  releases/freesw/wvstreams/uniconf/unidefgen.cc,
+	  releases/freesw/wvstreams/uniconf/unifastregetgen.cc,
+	  releases/freesw/wvstreams/uniconf/unifiltergen.cc,
+	  releases/freesw/wvstreams/uniconf/unifstreegen.cc,
+	  releases/freesw/wvstreams/uniconf/uniinigen.cc,
+	  releases/freesw/wvstreams/uniconf/unisubtreegen.cc,
+	  releases/freesw/wvstreams/utils/strutils.cc,
+	  releases/freesw/wvstreams/utils/t/strutils.t.cc,
+	  releases/freesw/wvstreams/utils/t/wvgzip.t.cc,
+	  releases/freesw/wvstreams/utils/t/wvondiskhash.t.cc,
+	  releases/freesw/wvstreams/utils/t/wvstreamsdebugger.t.cc,
+	  releases/freesw/wvstreams/utils/t/wvstring.t.cc,
+	  releases/freesw/wvstreams/utils/t/wvstringmask.t.cc,
+	  releases/freesw/wvstreams/utils/t/wvtask.t.cc,
+	  releases/freesw/wvstreams/utils/t/wvtimeutils.t.cc,
+	  releases/freesw/wvstreams/utils/wvcont.cc,
+	  releases/freesw/wvstreams/utils/wvcrash.cc,
+	  releases/freesw/wvstreams/utils/wvcrashbase.cc,
+	  releases/freesw/wvstreams/utils/wvgzip.cc,
+	  releases/freesw/wvstreams/utils/wvlinklist.cc,
+	  releases/freesw/wvstreams/utils/wvstreamsdebugger.cc,
+	  releases/freesw/wvstreams/utils/wvstring.cc,
+	  releases/freesw/wvstreams/utils/wvstringmask.cc,
+	  releases/freesw/wvstreams/utils/wvsubproc.cc,
+	  releases/freesw/wvstreams/utils/wvtask.cc,
+	  releases/freesw/wvstreams/utils/wvtest.cc,
+	  releases/freesw/wvstreams/utils/wvtimeutils.cc,
+	  releases/freesw/wvstreams/vars.mk,
+	  releases/freesw/wvstreams/wvtesthelper,
+	  releases/freesw/xplcidl/.cvsignore,
+	  releases/freesw/xplcidl/auto/.cvsignore,
+	  releases/freesw/xplcidl/stringbench/.cvsignore,
+	  releases/freesw/zen/.cvsignore, releases/freesw/zen/configure.in,
+	  releases/freesw/zen/debian/.cvsignore,
+	  releases/freesw/zen/po/.cvsignore,
+	  releases/freesw/zen/src/.cvsignore,
+	  releases/freesw/zen/src/find_in_files_cmd.c,
+	  releases/freesw/zen/src/make.c, releases/freesw/zen/src/make.h,
+	  releases/freesw/zen/src/make_cmd.c,
+	  releases/freesw/zen/src/man_cmd.c, releases/freesw/zen/src/zen.h:
+	  Merged revisions 10677-11457 via svnmerge from /trunk
+
+2006-05-25 13:54  sfllaw
+
+	* releases/freesw/wvdial/debian/wvdial.postinst: Postinst should
+	  make the log world-readable.
+
+2006-05-25 12:49  sfllaw
+
+	* releases/freesw/wvdial/debian/config: Don't let the Debian
+	  configuration silently abort, just because something isn't in
+	  /etc/wvdial.conf.
+
+2006-05-25 12:46  sfllaw
+
+	* releases/freesw/wvdial/debian/wvdial.postinst: Make wvdialconf log
+	  things to /var/log/wvdialconf.log, instead of writing to console
+	  in the Debian postinst.
+
+2006-05-25 12:43  sfllaw
+
+	* releases/freesw/wvdial/wvdialconf.cc: We don't actually need to
+	  include WvConfEmu headers any more.
+
+2006-03-04 00:49  sfllaw
+
+	* releases/freesw/wvdial/debian/changelog,
+	  releases/freesw/wvdial/debian/config,
+	  releases/freesw/wvdial/debian/wvdial.postinst: WvDial changes for
+	  1.56.
+
+2006-02-22 18:06  sfllaw
+
+	* releases/freesw/wvdial/wvdialconf.cc: WvDialConf should actually
+	  write out its configuration file. I've also rewritten it so it no
+	  longer uses WvConfEmu.
+
+2006-01-05 21:02  sfllaw
+
+	* releases/freesw, releases/freesw/wvdial/debian/changelog,
+	  releases/freesw/wvdial/debian/config,
+	  releases/freesw/wvdial/debian/control,
+	  releases/freesw/wvdial/debian/po,
+	  releases/freesw/wvdial/debian/rules,
+	  releases/freesw/wvdial/debian/wvdial.dirs,
+	  releases/freesw/wvdial/debian/wvdial.docs,
+	  releases/freesw/wvdial/debian/wvdial.postinst,
+	  releases/freesw/wvdial/debian/wvdial.postrm,
+	  releases/freesw/wvdial/debian/wvdial.templates,
+	  releases/freesw/wvdial/wvdial.1: Merged revisions 10837-10911 via
+	  svnmerge from /branches/wvstreams_4_2
+
+2005-12-06 22:14  sfllaw
+
+	* releases/freesw, releases/freesw/retchmail,
+	  releases/freesw/retchmail/Makefile,
+	  releases/freesw/retchmail/debian/changelog,
+	  releases/freesw/retchmail/debian/control,
+	  releases/freesw/retchmail/debian/rules,
+	  releases/freesw/retchmail/retchmail.cc,
+	  releases/freesw/wvdial/Makefile,
+	  releases/freesw/wvdial/debian/changelog,
+	  releases/freesw/wvdial/debian/conffiles,
+	  releases/freesw/wvdial/debian/control,
+	  releases/freesw/wvdial/debian/dirs,
+	  releases/freesw/wvdial/debian/docs,
+	  releases/freesw/wvdial/debian/postinst,
+	  releases/freesw/wvdial/debian/postrm,
+	  releases/freesw/wvdial/debian/purge,
+	  releases/freesw/wvdial/debian/rules,
+	  releases/freesw/wvdial/debian/wvdial.manpages,
+	  releases/freesw/wvdial/pon.wvdial.1,
+	  releases/freesw/wvdial/wvdial.1, releases/freesw/wvdial/wvdial.cc,
+	  releases/freesw/wvdial/wvdial.conf.5,
+	  releases/freesw/wvdial/wvdialconf.1,
+	  releases/freesw/wvdial/wvdialconf.cc,
+	  releases/freesw/wvdial/wvdialer.cc,
+	  releases/freesw/wvdial/wvdialtext.cc,
+	  releases/freesw/wvstreams/utils/wvargs.cc: Merged revisions
+	  10758-10831 via svnmerge from /branches/wvstreams_4_2
+
+2005-11-17 19:57  sfllaw
+
+	* freesw, releases/freesw: Moving /freesw to /releases/freesw to
+	  appease pmccurdy.
+
+2005-11-16 22:10  sfllaw
+
+	* freesw: Setting up freesw.
+
+2005-10-12 19:27  sfllaw
+
+	* branches/wvstreams_4_1, branches/wvstreams_4_2: Reversion
+	  WvStreams 4.1 to 4.2.
+
+2005-10-12 18:24  sfllaw
+
+	* branches/wvstreams_4_1, branches/wvstreams_5_0: Reversioning
+	  WvStreams 5.0 to WvStreams 4.1.
+
+2005-09-28 17:01  sfllaw
+
+	* branches/wvstreams_5_0: Branching WvStreams 5.0. BUGZID: 15341
+
+2005-07-05 21:02  pphaneuf
+
+	* trunk, trunk/evolution/.cvsignore,
+	  trunk/evolution/camel/.cvsignore,
+	  trunk/evolution/debian/.cvsignore, trunk/evolution/t/.cvsignore,
+	  trunk/nss-uniconf/.cvsignore, trunk/nss-uniconf/debian/.cvsignore,
+	  trunk/retchmail/.cvsignore, trunk/unikonf/.cvsignore,
+	  trunk/wvdial/.cvsignore, trunk/wvipsec/.cvsignore,
+	  trunk/wvmapi/.cvsignore, trunk/wvmapi/t/.cvsignore,
+	  trunk/wvmapi/utils/.cvsignore, trunk/wvports/.cvsignore,
+	  trunk/wvports/acl/.cvsignore,
+	  trunk/wvports/alsa-driver/.cvsignore,
+	  trunk/wvports/apache/.cvsignore, trunk/wvports/apcupsd/.cvsignore,
+	  trunk/wvports/attr/.cvsignore, trunk/wvports/bcm5700/.cvsignore,
+	  trunk/wvports/biostools/.cvsignore,
+	  trunk/wvports/bootsplash/.cvsignore,
+	  trunk/wvports/busybox/.cvsignore, trunk/wvports/cdstat/.cvsignore,
+	  trunk/wvports/chrony/.cvsignore,
+	  trunk/wvports/courier-imap/.cvsignore,
+	  trunk/wvports/cramfs/.cvsignore, trunk/wvports/dazuko/.cvsignore,
+	  trunk/wvports/dhcp/.cvsignore, trunk/wvports/djbdns/.cvsignore,
+	  trunk/wvports/dosfstools/.cvsignore,
+	  trunk/wvports/e1000/.cvsignore, trunk/wvports/e3/.cvsignore,
+	  trunk/wvports/etherboot/.cvsignore,
+	  trunk/wvports/ezmlm/.cvsignore,
+	  trunk/wvports/findutils/.cvsignore, trunk/wvports/ftp/.cvsignore,
+	  trunk/wvports/fuse/.cvsignore, trunk/wvports/genromfs/.cvsignore,
+	  trunk/wvports/getline/.cvsignore,
+	  trunk/wvports/gigaraid/.cvsignore, trunk/wvports/horde/.cvsignore,
+	  trunk/wvports/hpt374/.cvsignore, trunk/wvports/hpt3xx/.cvsignore,
+	  trunk/wvports/iproute2/.cvsignore,
+	  trunk/wvports/ipsec_tunnel/.cvsignore,
+	  trunk/wvports/iptables/.cvsignore,
+	  trunk/wvports/isakmpd/.cvsignore, trunk/wvports/jabber/.cvsignore,
+	  trunk/wvports/kav/.cvsignore, trunk/wvports/kernel/.cvsignore,
+	  trunk/wvports/libdb1/.cvsignore, trunk/wvports/libdb42/.cvsignore,
+	  trunk/wvports/lilo/.cvsignore, trunk/wvports/lvm/.cvsignore,
+	  trunk/wvports/mdadm/.cvsignore, trunk/wvports/megaide/.cvsignore,
+	  trunk/wvports/memtest86/.cvsignore, trunk/wvports/mm/.cvsignore,
+	  trunk/wvports/mysql/.cvsignore, trunk/wvports/netatalk/.cvsignore,
+	  trunk/wvports/netboot/.cvsignore, trunk/wvports/nforce/.cvsignore,
+	  trunk/wvports/nfs-server/.cvsignore, trunk/wvports/nis/.cvsignore,
+	  trunk/wvports/openldap/.cvsignore,
+	  trunk/wvports/openslp/.cvsignore,
+	  trunk/wvports/openssl/.cvsignore, trunk/wvports/pam/.cvsignore,
+	  trunk/wvports/pdc-ultra/.cvsignore,
+	  trunk/wvports/perl-modules/.cvsignore,
+	  trunk/wvports/perl5/.cvsignore,
+	  trunk/wvports/permenforce/.cvsignore,
+	  trunk/wvports/php/.cvsignore, trunk/wvports/phpmyadmin/.cvsignore,
+	  trunk/wvports/popt/.cvsignore, trunk/wvports/portmap/.cvsignore,
+	  trunk/wvports/pppd/.cvsignore, trunk/wvports/pptp/.cvsignore,
+	  trunk/wvports/pptpd/.cvsignore, trunk/wvports/proftpd/.cvsignore,
+	  trunk/wvports/pwdump2/.cvsignore, trunk/wvports/qdbm/.cvsignore,
+	  trunk/wvports/qmail/.cvsignore,
+	  trunk/wvports/quota-tools/.cvsignore,
+	  trunk/wvports/r8169/.cvsignore,
+	  trunk/wvports/reiserfsprogs/.cvsignore,
+	  trunk/wvports/rlpr/.cvsignore, trunk/wvports/rp-pppoe/.cvsignore,
+	  trunk/wvports/rsync/.cvsignore, trunk/wvports/samba/.cvsignore,
+	  trunk/wvports/sk98lin/.cvsignore,
+	  trunk/wvports/smartmon/.cvsignore,
+	  trunk/wvports/sslwrap/.cvsignore, trunk/wvports/strace/.cvsignore,
+	  trunk/wvports/swig/.cvsignore, trunk/wvports/syslinux/.cvsignore,
+	  trunk/wvports/tcpdump/.cvsignore, trunk/wvports/telnet/.cvsignore,
+	  trunk/wvports/traceroute/.cvsignore,
+	  trunk/wvports/tzdata/.cvsignore,
+	  trunk/wvports/ucspi-tcp/.cvsignore,
+	  trunk/wvports/util-linux/.cvsignore,
+	  trunk/wvports/uw-imap/.cvsignore,
+	  trunk/wvports/vacation/.cvsignore,
+	  trunk/wvports/vpb-driver/.cvsignore,
+	  trunk/wvports/vserver/.cvsignore,
+	  trunk/wvports/vt8237-driver/.cvsignore,
+	  trunk/wvports/wanpipe/.cvsignore, trunk/wvports/xplc/.cvsignore,
+	  trunk/wvports/zaptel/.cvsignore, trunk/wvprint/.cvsignore,
+	  trunk/wvstreams, trunk/wvstreams/.cvsignore,
+	  trunk/wvstreams/Docs/.cvsignore,
+	  trunk/wvstreams/Docs/sgmlmanual/.cvsignore,
+	  trunk/wvstreams/Docs/sgmlmanual/egfiles/.cvsignore,
+	  trunk/wvstreams/Win32WvStreams/libuniconf/.cvsignore,
+	  trunk/wvstreams/Win32WvStreams/libwvstreams/.cvsignore,
+	  trunk/wvstreams/Win32WvStreams/libwvutils/.cvsignore,
+	  trunk/wvstreams/bindings/.cvsignore,
+	  trunk/wvstreams/bindings/php/.cvsignore,
+	  trunk/wvstreams/bindings/python/.cvsignore,
+	  trunk/wvstreams/bindings/tcl/.cvsignore,
+	  trunk/wvstreams/configfile/.cvsignore,
+	  trunk/wvstreams/configfile/t/.cvsignore,
+	  trunk/wvstreams/configfile/tests/.cvsignore,
+	  trunk/wvstreams/crypto/.cvsignore,
+	  trunk/wvstreams/crypto/t/.cvsignore,
+	  trunk/wvstreams/crypto/tests/.cvsignore,
+	  trunk/wvstreams/gtk/.cvsignore,
+	  trunk/wvstreams/include/.cvsignore,
+	  trunk/wvstreams/ipstreams/.cvsignore,
+	  trunk/wvstreams/ipstreams/t/.cvsignore,
+	  trunk/wvstreams/ipstreams/tests/.cvsignore,
+	  trunk/wvstreams/linuxstreams/.cvsignore,
+	  trunk/wvstreams/linuxstreams/t/.cvsignore,
+	  trunk/wvstreams/linuxstreams/tests/.cvsignore,
+	  trunk/wvstreams/pkgconfig/.cvsignore,
+	  trunk/wvstreams/qt/.cvsignore,
+	  trunk/wvstreams/qt/tests/.cvsignore,
+	  trunk/wvstreams/streams/.cvsignore,
+	  trunk/wvstreams/streams/t/.cvsignore,
+	  trunk/wvstreams/streams/tests/.cvsignore,
+	  trunk/wvstreams/telephony/.cvsignore,
+	  trunk/wvstreams/uniconf/.cvsignore,
+	  trunk/wvstreams/uniconf/daemon/.cvsignore,
+	  trunk/wvstreams/uniconf/gremlin/.cvsignore,
+	  trunk/wvstreams/uniconf/t/.cvsignore,
+	  trunk/wvstreams/uniconf/tests/.cvsignore,
+	  trunk/wvstreams/urlget/.cvsignore,
+	  trunk/wvstreams/urlget/t/.cvsignore,
+	  trunk/wvstreams/urlget/tests/.cvsignore,
+	  trunk/wvstreams/utils/.cvsignore,
+	  trunk/wvstreams/utils/t/.cvsignore, trunk/wvsync/.cvsignore,
+	  trunk/wvsync/tests/.cvsignore, trunk/wvtftp/.cvsignore: Merged
+	  revisions 10143-10145 via svnmerge from /branches/carambola
+	  BUGZID:13451
+
+2005-07-05 05:47  apenwarr
+
+	* trunk, trunk/nss-uniconf, trunk/wvdial,
+	  trunk/wvports/permenforce/Makefile,
+	  trunk/wvports/permenforce/sources/permenforce-0.3.tar.gz,
+	  trunk/wvports/permenforce/sources/permenforce-0.31.tar.gz,
+	  trunk/wvports/telnet/patches/telnet/50-no-telnetd-dns-lookups.patch,
+	  trunk/wvprint, trunk/wvstreams, trunk/wvstreams/svn2cl.xsl,
+	  trunk/wvstreams/wvrules.mk, trunk/wvtftp: Merged revisions
+	  10129-10142 via svnmerge from /branches/carambola
+
+2005-07-05 02:49  pphaneuf
+
+	* trunk, trunk/retchmail/retchmail.cc,
+	  trunk/retchmail/wvpopclient.cc, trunk/retchmail/wvpopclient.h,
+	  trunk/wvdial/wvdial.cc, trunk/wvports/Makefile,
+	  trunk/wvports/etherboot,
+	  trunk/wvports/horde/patches/imp/28_remove_home_filters.patch,
+	  trunk/wvports/libdb42, trunk/wvports/netatalk/Makefile,
+	  trunk/wvports/netatalk/copyright,
+	  trunk/wvports/netatalk/patches/netatalk/00_slp_configure.diff,
+	  trunk/wvports/netatalk/patches/netatalk/01_am_maintainer_mode.patch,
+	  trunk/wvports/netatalk/patches/netatalk/20_pam_winbind_auth.patch,
+	  trunk/wvports/netatalk/patches/netatalk/30_ngroups.patch,
+	  trunk/wvports/netatalk/patches/netatalk/33_permenforce_link.patch,
+	  trunk/wvports/netatalk/patches/netatalk/40_permissions.diff,
+	  trunk/wvports/netatalk/patches/netatalk/41_acls.patch,
+	  trunk/wvports/netatalk/patches/netatalk/50_keep_cppflags.diff,
+	  trunk/wvports/netatalk/patches/netatalk/50_reset_sigchld.patch,
+	  trunk/wvports/netatalk/sources/netatalk-1.6.4.tar.bz2,
+	  trunk/wvports/netatalk/sources/netatalk-2.0.3.tar.bz2,
+	  trunk/wvports/php/Makefile,
+	  trunk/wvports/php/sources/php-4.3.10.tar.bz2,
+	  trunk/wvports/php/sources/php-4.3.11.tar.bz2,
+	  trunk/wvports/pwdump2, trunk/wvprint/wvprint.cc,
+	  trunk/wvstreams/crypto/wvsslstream.cc,
+	  trunk/wvstreams/include/unibachelorgen.h,
+	  trunk/wvstreams/include/unitransaction.h,
+	  trunk/wvstreams/include/unitransactiongen.h,
+	  trunk/wvstreams/include/wvlog.h,
+	  trunk/wvstreams/include/wvlogrcv.h,
+	  trunk/wvstreams/streams/t/wvlog.t.cc,
+	  trunk/wvstreams/streams/t/wvlogbuffer.t.cc,
+	  trunk/wvstreams/streams/wvfdstream.cc,
+	  trunk/wvstreams/streams/wvlog.cc,
+	  trunk/wvstreams/streams/wvlogbuffer.cc,
+	  trunk/wvstreams/streams/wvlogfile.cc,
+	  trunk/wvstreams/streams/wvstream.cc,
+	  trunk/wvstreams/uniconf/t/unitransactiongen.t.cc,
+	  trunk/wvstreams/uniconf/unibachelorgen.cc,
+	  trunk/wvstreams/uniconf/uniclientgen.cc,
+	  trunk/wvstreams/uniconf/unitransactiongen.cc,
+	  trunk/wvstreams/utils/tests,
+	  trunk/wvstreams/utils/tests/.cvsignore,
+	  trunk/wvstreams/utils/tests/crashtest-nofd.cc,
+	  trunk/wvstreams/utils/wvcrash.cc: Merged revisions 9923-10128 via
+	  svnmerge from /branches/carambola
+
+2005-06-25 06:25  pmccurdy
+
+	* trunk/retchmail/Makefile, trunk/wvdial/Makefile,
+	  trunk/wvprint/Makefile, trunk/wvtftp/Makefile: head: Finish
+	  merging the Subversion-related Makefile changes. Any other
+	  branches will just have to fix them in Subversion. This is
+	  probably the last CVS commit ever; so long, CVS repository, it's
+	  been fun. BUGZID:5749
+
+2005-05-11 19:59  sfllaw
+
+	* trunk/wvdial/Makefile: HEAD: Update WvDial's build system to work
+	  with pkg-config. BUGZID: 7558
+
+2005-05-11 19:59  sfllaw
+
+	* trunk/wvdial/debian/changelog, trunk/wvdial/debian/compat,
+	  trunk/wvdial/debian/control, trunk/wvdial/debian/rules: HEAD:
+	  Update WvDial's Debian packages to match the ones in Debian right
+	  now. With some minor alterations. BUGZID: 7559
+
+2004-09-01 17:40  pphaneuf
+
+	* trunk/retchmail/retchmail.cc, trunk/retchmail/wvpopclient.cc,
+	  trunk/wvdial/pppmon.cc, trunk/wvdial/wvdialconf.cc,
+	  trunk/wvdial/wvdialer.cc, trunk/wvdial/wvpapchap.cc,
+	  trunk/wvprint/lpd.cc, trunk/wvprint/lpdqueue.cc,
+	  trunk/wvprint/wvprint.cc, trunk/wvstreams/configfile/wvconf.cc,
+	  trunk/wvstreams/include/wvstream.h,
+	  trunk/wvstreams/ipstreams/tests/contseltest.cc,
+	  trunk/wvstreams/ipstreams/tests/listentest.cc,
+	  trunk/wvstreams/ipstreams/tests/ulistentest.cc,
+	  trunk/wvstreams/ipstreams/wvhttp.cc,
+	  trunk/wvstreams/ipstreams/wvresolver.cc,
+	  trunk/wvstreams/linuxstreams/wvinterface.cc,
+	  trunk/wvstreams/linuxstreams/wviproute.cc,
+	  trunk/wvstreams/streams/t/wvencoderstream.t.cc,
+	  trunk/wvstreams/streams/t/wvfdstream.t.cc,
+	  trunk/wvstreams/streams/t/wvloopback.t.cc,
+	  trunk/wvstreams/streams/t/wvstream.t.cc,
+	  trunk/wvstreams/streams/tests/clonetest.cc,
+	  trunk/wvstreams/streams/wvlockdev.cc,
+	  trunk/wvstreams/streams/wvlockfile.cc,
+	  trunk/wvstreams/streams/wvprotostream.cc,
+	  trunk/wvstreams/streams/wvstream.cc,
+	  trunk/wvstreams/uniconf/uniclientconn.cc,
+	  trunk/wvstreams/uniconf/uniinigen.cc,
+	  trunk/wvstreams/urlget/tests/http2test.cc,
+	  trunk/wvstreams/urlget/wvftpstream.cc,
+	  trunk/wvstreams/urlget/wvhttpstream.cc: Using getline() with a
+	  non-zero timeout is fundamentally evil, but when you need it, you
+	  do need it. What to do? Enter Guilt-Oriented Orthodontic
+	  Programming (also known as GOOP). Renamed getline() to
+	  blocking_getline(), and put a short inline getline() that does not
+	  have the timeout parameter at all and calls blocking_getline()
+	  with a zero timeout. This way, you can still specify a non-zero
+	  timeout if you need to, but you'll be guilt-ridden by the
+	  obviously evil function you'll be using. Also, it's more easily
+	  greppable, so we can find offenders quicker and fix them.
+
+2004-08-26 17:21  apm
+
+	* trunk/evolution/contactsadaptor.cc, trunk/wvdial/wvdialer.cc,
+	  trunk/wvprint/job.cc, trunk/wvprint/localqueue.cc,
+	  trunk/wvprint/lpd.cc, trunk/wvprint/lpdqueue.cc,
+	  trunk/wvprint/queue.cc, trunk/wvprint/wvprint.cc,
+	  trunk/wvprint/wvprintd.cc, trunk/wvstreams/linuxstreams/wvdsp.cc,
+	  trunk/wvstreams/streams/tests/modemtest.cc,
+	  trunk/wvsync/wvsyncprotocol.cc, trunk/wvtftp/wvtftpbase.cc,
+	  trunk/wvtftp/wvtftpserver.cc: head: standardize log messages so
+	  that they start with uppercase letter. (tedious!) BUGZID:7004
+
+2004-08-17 00:53  pphaneuf
+
+	* trunk/wvdial/wvdial.cc, trunk/wvdial/wvdialer.cc,
+	  trunk/wvdial/wvmodemscan.cc, trunk/wvprint/localqueue.cc,
+	  trunk/wvprint/lpd.cc, trunk/wvprint/lpdqueue.cc,
+	  trunk/wvprint/queue.cc, trunk/wvprint/wvprint.cc,
+	  trunk/wvprint/wvprintd.cc,
+	  trunk/wvstreams/crypto/tests/cryptotest.cc,
+	  trunk/wvstreams/include/unireplicategen.h,
+	  trunk/wvstreams/include/wvxplc.h,
+	  trunk/wvstreams/ipstreams/tests/simpleconntest.cc,
+	  trunk/wvstreams/ipstreams/tests/xplctest.cc,
+	  trunk/wvstreams/ipstreams/wvresolver.cc,
+	  trunk/wvstreams/linuxstreams/wvfam.cc,
+	  trunk/wvstreams/oggvorbis/tests/oggvorbistest.cc,
+	  trunk/wvstreams/streams/t/wvloopback.t.cc,
+	  trunk/wvstreams/streams/tests/logtest.cc,
+	  trunk/wvstreams/streams/wvprotostream.cc,
+	  trunk/wvstreams/streams/wvstreamclone.cc,
+	  trunk/wvstreams/uniconf/daemon/uniconfdaemon.cc,
+	  trunk/wvstreams/uniconf/t/uniconfgen.t.cc,
+	  trunk/wvstreams/uniconf/unicachegen.cc,
+	  trunk/wvstreams/uniconf/uniclientgen.cc,
+	  trunk/wvstreams/uniconf/unifiltergen.cc,
+	  trunk/wvstreams/uniconf/uniinigen.cc,
+	  trunk/wvstreams/uniconf/uniretrygen.cc,
+	  trunk/wvstreams/urlget/wvftpstream.cc,
+	  trunk/wvstreams/utils/t/wvbackslash.t.cc,
+	  trunk/wvstreams/utils/t/wvwordwrap.t.cc,
+	  trunk/wvstreams/utils/tests/backslashtest.cc,
+	  trunk/wvstreams/utils/tests/base64test.cc,
+	  trunk/wvstreams/utils/tests/hextest.cc,
+	  trunk/wvstreams/utils/tests/monikertest.cc,
+	  trunk/wvstreams/utils/tests/wordwraptest.cc,
+	  trunk/wvstreams/utils/wvmoniker.cc: Changed RELEASE to WVRELEASE
+	  and DELETE to WVDELETE. Why? Because Avery said so, that's why!
+	  BUGZID:6603
+
+2004-08-16 21:27  pphaneuf
+
+	* trunk/wvdial/wvdialconf.cc: Removed the mixing of WvConfEmu and
+	  WvConf in WvDial.
+
+2004-08-05 18:45  pphaneuf
+
+	* trunk/retchmail/wvpopclient.cc, trunk/retchmail/wvpopclient.h,
+	  trunk/wvdial/wvdialer.cc, trunk/wvdial/wvdialer.h,
+	  trunk/wvprint/wvprint.cc, trunk/wvprint/wvprint.h,
+	  trunk/wvstreams/streams/wvstream.cc: Backing out my previous
+	  changes, they have too many subleties and cornercases. BUGZID:6101
+
+2004-08-02 22:02  pphaneuf
+
+	* trunk/retchmail/wvpopclient.cc, trunk/retchmail/wvpopclient.h,
+	  trunk/wvdial/wvdialer.cc, trunk/wvdial/wvdialer.h,
+	  trunk/wvprint/wvprint.cc, trunk/wvprint/wvprint.h,
+	  trunk/wvstreams/ipstreams/tests/contseltest.cc: Removed usage of
+	  uses_continue_select and replaced them with explicit uses of
+	  WvCont. BUGZID:6101
+
+2004-07-29 17:24  ppatters
+
+	* trunk/wvdial/debian/postrm: HEAD: Ssoya now depends on OpenSLP
+	  actually being built first.
+
+2004-07-27 21:39  sfllaw
+
+	* trunk/retchmail, trunk/retchmail/.cvsignore, trunk/wvdial,
+	  trunk/wvdial/.cvsignore, trunk/wvprint, trunk/wvprint/.cvsignore,
+	  trunk/wvstreams, trunk/wvstreams/.cvsignore, trunk/wvtftp,
+	  trunk/wvtftp/.cvsignore: HEAD: Update .cvsignore files for files
+	  generated by snapshot.sh
+
+2004-06-12 00:08  pphaneuf
+
+	* trunk/wvdial/wvdialer.cc, trunk/wvdial/wvmodemscan.cc,
+	  trunk/wvports/dazuko/Makefile, trunk/wvprint/localqueue.cc,
+	  trunk/wvprint/lpd.cc, trunk/wvprint/lpdqueue.cc,
+	  trunk/wvprint/queue.cc, trunk/wvprint/wvprint.cc,
+	  trunk/wvprint/wvprintd.cc,
+	  trunk/wvstreams/crypto/tests/cryptotest.cc,
+	  trunk/wvstreams/include/unimountgen.h,
+	  trunk/wvstreams/include/wvtypetraits.h,
+	  trunk/wvstreams/include/wvxplc.h,
+	  trunk/wvstreams/ipstreams/tests/simpleconntest.cc,
+	  trunk/wvstreams/ipstreams/tests/xplctest.cc,
+	  trunk/wvstreams/ipstreams/wvresolver.cc,
+	  trunk/wvstreams/linuxstreams/wvfam.cc,
+	  trunk/wvstreams/oggvorbis/tests/oggvorbistest.cc,
+	  trunk/wvstreams/streams/tests/logtest.cc,
+	  trunk/wvstreams/streams/wvprotostream.cc,
+	  trunk/wvstreams/streams/wvstreamclone.cc,
+	  trunk/wvstreams/uniconf/daemon/uniconfd.cc,
+	  trunk/wvstreams/uniconf/daemon/uniconfdaemon.cc,
+	  trunk/wvstreams/uniconf/t/uniconfgen.t.cc,
+	  trunk/wvstreams/uniconf/unicachegen.cc,
+	  trunk/wvstreams/uniconf/uniclientgen.cc,
+	  trunk/wvstreams/uniconf/unifiltergen.cc,
+	  trunk/wvstreams/uniconf/uniinigen.cc,
+	  trunk/wvstreams/urlget/wvftpstream.cc,
+	  trunk/wvstreams/utils/t/wvbackslash.t.cc,
+	  trunk/wvstreams/utils/t/wvwordwrap.t.cc,
+	  trunk/wvstreams/utils/tests/backslashtest.cc,
+	  trunk/wvstreams/utils/tests/base64test.cc,
+	  trunk/wvstreams/utils/tests/hextest.cc,
+	  trunk/wvstreams/utils/tests/monikertest.cc,
+	  trunk/wvstreams/utils/tests/wordwraptest.cc,
+	  trunk/wvstreams/utils/wvmoniker.cc: Fixed a bunch of
+	  foo->release() into the safer RELEASE(foo);
+
+2004-06-10 23:19  pmccurdy
+
+	* trunk/wvdial/wvdialer.cc: head: compile fix to wvdial, the ?:
+	  operator didn't like dealing with a WvString and a char*. Probably
+	  a gcc2.95 issue.
+
+2004-06-10 21:34  ppatters
+
+	* trunk/evolution/calendaradaptor.cc,
+	  trunk/evolution/contactsadaptor.cc,
+	  trunk/evolution/exchangeitadaptor.cc,
+	  trunk/evolution/exchangeitadaptor.h,
+	  trunk/evolution/exchangeitstorage.h, trunk/evolution/main.cc,
+	  trunk/evolution/setacl.cc, trunk/evolution/syncfolders.cc,
+	  trunk/evolution/update.cc, trunk/evolution/wvexcconn.cc,
+	  trunk/wvdial/wvdial.cc, trunk/wvmapi/wvmapipart.h,
+	  trunk/wvmapi/wvtnef.h: HEAD: Make WvMapi/WvTnef and the Evolution
+	  Connector compile again after Pierre's futzing.
+
+2004-06-10 20:45  ppatters
+
+	* trunk/nss/Makefile, trunk/wvdial/debian/copyright,
+	  trunk/wvdial/debian/postrm, trunk/wvdial/wvdial.cc,
+	  trunk/wvdial/wvdialer.cc: HEAD: Fix up a few places where
+	  pphaneuf's changes wrt xplc_ptr hadn't propagated (HINT: type make
+	  in src/weaver :).
+
+2004-06-09 21:16  pphaneuf
+
+	* trunk/retchmail/wvpopclient.cc, trunk/wvdial/wvdialer.cc,
+	  trunk/wvdial/wvmodemscan.cc,
+	  trunk/wvports/xplc/patches/xplc/50-safe_delete.diff,
+	  trunk/wvprint/localqueue.cc, trunk/wvprint/lpd.cc,
+	  trunk/wvprint/lpdqueue.cc, trunk/wvprint/queue.cc,
+	  trunk/wvprint/wvprint.cc, trunk/wvprint/wvprintd.cc,
+	  trunk/wvstreams/crypto/tests/cryptotest.cc,
+	  trunk/wvstreams/crypto/wvblowfish.cc,
+	  trunk/wvstreams/crypto/wvcountermode.cc,
+	  trunk/wvstreams/crypto/wvdigest.cc,
+	  trunk/wvstreams/crypto/wvx509.cc, trunk/wvstreams/crypto/wvxor.cc,
+	  trunk/wvstreams/include/unimountgen.h,
+	  trunk/wvstreams/include/wvhashtable.h,
+	  trunk/wvstreams/include/wvscatterhash.h,
+	  trunk/wvstreams/include/wvsorter.h,
+	  trunk/wvstreams/include/wvtask.h,
+	  trunk/wvstreams/include/wvvector.h,
+	  trunk/wvstreams/include/wvxplc.h,
+	  trunk/wvstreams/ipstreams/tests/simpleconntest.cc,
+	  trunk/wvstreams/ipstreams/wvresolver.cc,
+	  trunk/wvstreams/streams/t/wvdailyevent.t.cc,
+	  trunk/wvstreams/streams/t/wvfdstream.t.cc,
+	  trunk/wvstreams/streams/tests/logtest.cc,
+	  trunk/wvstreams/streams/wvprotostream.cc,
+	  trunk/wvstreams/streams/wvstream.cc,
+	  trunk/wvstreams/streams/wvstreamclone.cc,
+	  trunk/wvstreams/uniconf/daemon/uniconfd.cc,
+	  trunk/wvstreams/uniconf/daemon/uniconfdaemon.cc,
+	  trunk/wvstreams/uniconf/t/uniconfgen.t.cc,
+	  trunk/wvstreams/uniconf/unicachegen.cc,
+	  trunk/wvstreams/uniconf/uniclientgen.cc,
+	  trunk/wvstreams/uniconf/unifiltergen.cc,
+	  trunk/wvstreams/uniconf/uniinigen.cc,
+	  trunk/wvstreams/uniconf/wvtestfiletree.cc,
+	  trunk/wvstreams/urlget/wvftpstream.cc,
+	  trunk/wvstreams/utils/strutils.cc,
+	  trunk/wvstreams/utils/t/strutils.t.cc,
+	  trunk/wvstreams/utils/t/wvbackslash.t.cc,
+	  trunk/wvstreams/utils/t/wvwordwrap.t.cc,
+	  trunk/wvstreams/utils/tests/backslashtest.cc,
+	  trunk/wvstreams/utils/tests/base64test.cc,
+	  trunk/wvstreams/utils/tests/hextest.cc,
+	  trunk/wvstreams/utils/tests/monikertest.cc,
+	  trunk/wvstreams/utils/tests/wordwraptest.cc,
+	  trunk/wvstreams/utils/wvbufferstore.cc,
+	  trunk/wvstreams/utils/wvscatterhash.cc,
+	  trunk/wvstreams/utils/wvsubproc.cc,
+	  trunk/wvstreams/utils/wvvector.cc,
+	  trunk/wvstreams/utils/wvwordwrap.cc, trunk/wvtftp/wvtftpbase.cc:
+	  Converted our codebase to use release() instead of delete. Left
+	  the "XPLC delete detector" enabled.
+
+2004-04-19 18:01  pphaneuf
+
+	* trunk/evolution/Makefile, trunk/evolution/calendaradaptor.cc,
+	  trunk/evolution/calendaradaptor.h,
+	  trunk/evolution/contactsadaptor.cc,
+	  trunk/evolution/contactsadaptor.h,
+	  trunk/evolution/createfolder.cc, trunk/evolution/debian,
+	  trunk/evolution/debian/changelog, trunk/evolution/debian/control,
+	  trunk/evolution/debian/copyright, trunk/evolution/debian/dirs,
+	  trunk/evolution/debian/rules, trunk/evolution/delete.cc,
+	  trunk/evolution/delete.h, trunk/evolution/deletefolder.cc,
+	  trunk/evolution/evolution-exchangeit.sh,
+	  trunk/evolution/evoutils.cc, trunk/evolution/evoutils.h,
+	  trunk/evolution/exchangeitaccount.cc,
+	  trunk/evolution/exchangeitaccount.h,
+	  trunk/evolution/exchangeitaccountcontrol.cc,
+	  trunk/evolution/exchangeitadaptor.cc,
+	  trunk/evolution/exchangeitstorage.cc,
+	  trunk/evolution/exchangeitstorage.h, trunk/evolution/getacl.cc,
+	  trunk/evolution/getacl.h, trunk/evolution/listfolders.cc,
+	  trunk/evolution/listfolders.h, trunk/evolution/listusers.cc,
+	  trunk/evolution/listusers.h, trunk/evolution/main.cc,
+	  trunk/evolution/protocol.cc, trunk/evolution/protocol.h,
+	  trunk/evolution/setacl.cc, trunk/evolution/setacl.h,
+	  trunk/evolution/synccommand.h, trunk/evolution/syncfolders.cc,
+	  trunk/evolution/syncfolders.h, trunk/evolution/update.cc,
+	  trunk/evolution/update.h, trunk/evolution/wvexcconn.cc,
+	  trunk/evolution/wvexcconn.h, trunk/retchmail/Makefile,
+	  trunk/wvdial/Makefile, trunk/wvmapi, trunk/wvmapi/.cvsignore,
+	  trunk/wvmapi/t/wvtnef.t.cc, trunk/wvmapi/t/wvtnefconv.t.cc,
+	  trunk/wvmapi/wvmapipart.h, trunk/wvmapi/wvtnef.cc,
+	  trunk/wvmapi/wvtnef.h, trunk/wvmapi/wvtnefconv.cc,
+	  trunk/wvmapi/wvtnefconv.h, trunk/wvmapi/wvtnefconv_private.h,
+	  trunk/wvmapi/wvtnefdefs.h,
+	  trunk/wvports/courier-imap/patches/courier-imap/allow_inbox_folder.patch,
+	  trunk/wvports/courier-imap/patches/courier-imap/delete-shared-folder.patch,
+	  trunk/wvports/horde/patches/imp/19_use_masterserver.patch,
+	  trunk/wvports/openssl/patches/openssl/50-niti_soname.diff,
+	  trunk/wvports/openssl/patches/openssl/50-no_omit-frame-pointer.diff,
+	  trunk/wvports/spamassassin/patches/spamassassin/30_logmsg_not_to_console.diff,
+	  trunk/wvprint/Makefile, trunk/wvprint/localqueue.cc,
+	  trunk/wvprint/queue.cc, trunk/wvprint/wvprint.cc,
+	  trunk/wvprint/wvprint.h, trunk/wvtftp/wvtftpbase.cc,
+	  trunk/wvtftp/wvtftpserver.cc, trunk/wvtftp/wvtftpserver.h: Merged
+	  from r3_80.
+
+2004-03-01 21:28  ppatters
+
+	* trunk/wvdial/wvmodemscan.cc, trunk/wvdial/wvmodemscan.h: HEAD:
+	  More UPS Scanner cleanups...
+
+2004-02-16 21:43  ppatters
+
+	* trunk/wvdial/wvmodemscan.cc, trunk/wvdial/wvmodemscan.h: HEAD: UPS
+	  Detection now sort of works... more testing is required, but this
+	  at least helps BUGZID:1398
+
+2004-01-19 23:22  apenwarr
+
+	* trunk/wvdial/Makefile, trunk/wvprint/Makefile,
+	  trunk/wvstreams/Makefile,
+	  trunk/wvstreams/Win32WvStreams/uniconf/unipstoregen.cc,
+	  trunk/wvstreams/Win32WvStreams/uniconf/uniregistrygen.cc,
+	  trunk/wvstreams/Win32WvStreams/utils/wvwin32task.cpp,
+	  trunk/wvstreams/crypto/wvsslhacks.c,
+	  trunk/wvstreams/crypto/wvx509.cc,
+	  trunk/wvstreams/include/strutils.h,
+	  trunk/wvstreams/include/unicachegen.h,
+	  trunk/wvstreams/include/uniconf.h,
+	  trunk/wvstreams/include/uniconfgen.h,
+	  trunk/wvstreams/include/uniconfpamconn.h,
+	  trunk/wvstreams/include/unidefgen.h,
+	  trunk/wvstreams/include/unifiltergen.h,
+	  trunk/wvstreams/include/unimountgen.h,
+	  trunk/wvstreams/include/unimounttreegen.h,
+	  trunk/wvstreams/include/unireadonlygen.h,
+	  trunk/wvstreams/include/wvbufstore.h,
+	  trunk/wvstreams/include/wvfdstream.h,
+	  trunk/wvstreams/include/wvmoniker.h,
+	  trunk/wvstreams/include/wvmonikerregistry.h,
+	  trunk/wvstreams/include/wvsorter.h,
+	  trunk/wvstreams/include/wvstream.h,
+	  trunk/wvstreams/include/wvstringlist.h,
+	  trunk/wvstreams/include/wvtclstring.h,
+	  trunk/wvstreams/include/wvwin32task.h,
+	  trunk/wvstreams/include/wvxplc.h,
+	  trunk/wvstreams/ipstreams/tests/resolvertest.cc,
+	  trunk/wvstreams/ipstreams/tests/vars.mk,
+	  trunk/wvstreams/ipstreams/tests/wvstreams.cc,
+	  trunk/wvstreams/ipstreams/tests/xplctest.cc,
+	  trunk/wvstreams/ipstreams/wvaddr.cc,
+	  trunk/wvstreams/ipstreams/wvunixsocket.cc,
+	  trunk/wvstreams/streams/t/wvfdstream.t.cc,
+	  trunk/wvstreams/streams/t/wvfile.t.cc,
+	  trunk/wvstreams/streams/t/wvloopback.t.cc,
+	  trunk/wvstreams/streams/t/wvstream.t.cc,
+	  trunk/wvstreams/streams/t/wvstreamclone.t.cc,
+	  trunk/wvstreams/streams/tests/contseltest.cc,
+	  trunk/wvstreams/streams/wvconstream.cc,
+	  trunk/wvstreams/streams/wvfdstream.cc,
+	  trunk/wvstreams/streams/wvfile.cc,
+	  trunk/wvstreams/streams/wvistreamlist.cc,
+	  trunk/wvstreams/streams/wvstream.cc,
+	  trunk/wvstreams/streams/wvstreamclone.cc,
+	  trunk/wvstreams/streams/wvstreamlist.cc,
+	  trunk/wvstreams/uniconf/unicachegen.cc,
+	  trunk/wvstreams/uniconf/uniclientgen.cc,
+	  trunk/wvstreams/uniconf/uniconf.cc,
+	  trunk/wvstreams/uniconf/uniconfgen.cc,
+	  trunk/wvstreams/uniconf/unidefgen.cc,
+	  trunk/wvstreams/uniconf/unifiltergen.cc,
+	  trunk/wvstreams/uniconf/uniinigen.cc,
+	  trunk/wvstreams/uniconf/uniinitreegen.cc,
+	  trunk/wvstreams/uniconf/unilistgen.cc,
+	  trunk/wvstreams/uniconf/unimountgen.cc,
+	  trunk/wvstreams/uniconf/unimounttreegen.cc,
+	  trunk/wvstreams/uniconf/uninullgen.cc,
+	  trunk/wvstreams/uniconf/unipermgen.cc,
+	  trunk/wvstreams/uniconf/unireadonlygen.cc,
+	  trunk/wvstreams/uniconf/unisecuregen.cc,
+	  trunk/wvstreams/uniconf/unitempgen.cc,
+	  trunk/wvstreams/uniconf/uniwvconfgen.cc,
+	  trunk/wvstreams/utils/strutils.cc,
+	  trunk/wvstreams/utils/t/strutils.t.cc,
+	  trunk/wvstreams/utils/t/verstring.t.cc,
+	  trunk/wvstreams/utils/t/wvbackslash.t.cc,
+	  trunk/wvstreams/utils/t/wvbase64.t.cc,
+	  trunk/wvstreams/utils/t/wvbuffer.t.cc,
+	  trunk/wvstreams/utils/t/wvcallback.t.cc,
+	  trunk/wvstreams/utils/t/wvcont.t.cc,
+	  trunk/wvstreams/utils/t/wvhashtable.t.cc,
+	  trunk/wvstreams/utils/t/wvhex.t.cc,
+	  trunk/wvstreams/utils/t/wvlinklist.t.cc,
+	  trunk/wvstreams/utils/t/wvmatrix.t.cc,
+	  trunk/wvstreams/utils/t/wvsorter.t.cc,
+	  trunk/wvstreams/utils/t/wvstringlist.t.cc,
+	  trunk/wvstreams/utils/t/wvtask.t.cc,
+	  trunk/wvstreams/utils/t/wvtclstring.t.cc,
+	  trunk/wvstreams/utils/t/wvvector.t.cc,
+	  trunk/wvstreams/utils/t/wvwordwrap.t.cc,
+	  trunk/wvstreams/utils/tests/maptest.cc,
+	  trunk/wvstreams/utils/tests/proctest.cc,
+	  trunk/wvstreams/utils/tests/taskmaxtest.cc,
+	  trunk/wvstreams/utils/tests/testtest.cc,
+	  trunk/wvstreams/utils/wvmoniker.cc,
+	  trunk/wvstreams/utils/wvstringlist.cc,
+	  trunk/wvstreams/utils/wvtask.cc,
+	  trunk/wvstreams/utils/wvtclstring.cc, trunk/wvstreams/vars.mk,
+	  trunk/wvstreams/wvrules.mk, trunk/wvtftp/Makefile: HEAD: merged
+	  everything from wvstreams_unittest. If you were working in
+	  wvstreams_unittest, please switch to HEAD from now on!
+
+2003-11-20 02:09  apenwarr
+
+	* trunk/retchmail/debian/changelog, trunk/retchmail/debian/control,
+	  trunk/retchmail/retchmail.cc, trunk/wvdial/debian/changelog,
+	  trunk/wvdial/debian/control, trunk/wvdial/wvdial.cc,
+	  trunk/wvdial/wvdialer.cc, trunk/wvports/pam,
+	  trunk/wvports/pam/.cvsignore, trunk/wvports/pam/Makefile,
+	  trunk/wvports/pam/patches, trunk/wvports/pam/patches/pam,
+	  trunk/wvports/pam/patches/pam/000_libs_main,
+	  trunk/wvports/pam/patches/pam/001_modules_pam_filter,
+	  trunk/wvports/pam/patches/pam/002_install_conf,
+	  trunk/wvports/pam/patches/pam/003_doc,
+	  trunk/wvports/pam/patches/pam/004_modules_makefiles,
+	  trunk/wvports/pam/patches/pam/005_modules_pam_securetty,
+	  trunk/wvports/pam/patches/pam/006_compile_warnings,
+	  trunk/wvports/pam/patches/pam/007_modules_pam_unix,
+	  trunk/wvports/pam/patches/pam/008_modules_pam_limits,
+	  trunk/wvports/pam/patches/pam/009_modules_pam_wheel,
+	  trunk/wvports/pam/patches/pam/010_modules_pam_limits_chroot,
+	  trunk/wvports/pam/patches/pam/011_modules_pam_rhosts,
+	  trunk/wvports/pam/patches/pam/012_modules_pam_listfile,
+	  trunk/wvports/pam/patches/pam/013_source_cleanup,
+	  trunk/wvports/pam/patches/pam/014_modules_pam_rhosts,
+	  trunk/wvports/pam/patches/pam/015_cplusplus,
+	  trunk/wvports/pam/patches/pam/016_modules_pam_access,
+	  trunk/wvports/pam/patches/pam/017_modules_pam_group,
+	  trunk/wvports/pam/patches/pam/018_modules_pam_time,
+	  trunk/wvports/pam/patches/pam/019_modules_pam_userdb,
+	  trunk/wvports/pam/patches/pam/020_hurd,
+	  trunk/wvports/pam/patches/pam/021_gcc_linker,
+	  trunk/wvports/pam/patches/pam/022_modules_pam_mkhomedir,
+	  trunk/wvports/pam/patches/pam/023_gethostname,
+	  trunk/wvports/pam/patches/pam/024_pam_env_fix,
+	  trunk/wvports/pam/patches/pam/025_pam_issue_time,
+	  trunk/wvports/pam/patches/pam/026_pam_limits_cap.diff,
+	  trunk/wvports/pam/patches/pam/027_unix_chkpwd_null,
+	  trunk/wvports/pam/patches/pam/028_man_whatis_fix,
+	  trunk/wvports/pam/patches/pam/029_listfile_arg_fix,
+	  trunk/wvports/pam/patches/pam/030_securetty_log.diff,
+	  trunk/wvports/pam/patches/pam/031_pam_limits_group_fix.diff,
+	  trunk/wvports/pam/patches/pam/032_pam_listfile_quiet.diff,
+	  trunk/wvports/pam/patches/pam/033_man_move.diff,
+	  trunk/wvports/pam/patches/pam/034_pam_include.diff,
+	  trunk/wvports/pam/patches/pam/035_pam_userdb_db3.diff,
+	  trunk/wvports/pam/patches/pam/036_unix_nis_locking,
+	  trunk/wvports/pam/patches/pam/037_sigCHLD_blocking,
+	  trunk/wvports/pam/patches/pam/038_time_and_unknown_users,
+	  trunk/wvports/pam/patches/pam/039_clean_64bit_md5,
+	  trunk/wvports/pam/patches/pam/040_hurd_limits,
+	  trunk/wvports/pam/patches/pam/041_group_reinit_support,
+	  trunk/wvports/pam/patches/pam/042_mail_directory,
+	  trunk/wvports/pam/patches/pam/043_limint_and_env_fixes,
+	  trunk/wvports/pam/patches/pam/044_hackish_like_auth_fix,
+	  trunk/wvports/pam/patches/pam/100_os_detect.patch,
+	  trunk/wvports/pam/patches/pam/101_modules_built.patch,
+	  trunk/wvports/pam/sources,
+	  trunk/wvports/pam/sources/Linux-PAM-0.72.tar.bz2,
+	  trunk/wvports/pptp, trunk/wvports/pptp/.cvsignore,
+	  trunk/wvports/pptp/Makefile, trunk/wvports/pptp/patches,
+	  trunk/wvports/pptp/patches/pptp,
+	  trunk/wvports/pptp/patches/pptp/nohang.patch,
+	  trunk/wvports/pptp/sources,
+	  trunk/wvports/pptp/sources/pptp-linux-1.1.0.tar.gz,
+	  trunk/wvstreams/Docs/sgmlmanual/egfiles/Makefile,
+	  trunk/wvstreams/configfile/wvconf.cc,
+	  trunk/wvstreams/debian/changelog, trunk/wvstreams/debian/control,
+	  trunk/wvstreams/debian/rules, trunk/wvstreams/include/strutils.h,
+	  trunk/wvstreams/include/wvconf.h,
+	  trunk/wvstreams/include/wvconfemu.h,
+	  trunk/wvstreams/include/wvsubproc.h,
+	  trunk/wvstreams/ipstreams/wvaddr.cc,
+	  trunk/wvstreams/uniconf/wvconfemu.cc,
+	  trunk/wvstreams/utils/strutils.cc,
+	  trunk/wvstreams/utils/tests/bdbsillytest.cc,
+	  trunk/wvstreams/utils/tests/sizetoatest.cc,
+	  trunk/wvstreams/utils/wvbdbhash.cc: HEAD: merged *all* recent
+	  changes from r3_75.
+
+2003-11-12 22:31  pphaneuf
+
+	* trunk/wvdial/Makefile, trunk/wvdial/wvdial.cc,
+	  trunk/wvstreams/include/wvconf.h,
+	  trunk/wvstreams/include/wvconfemu.h,
+	  trunk/wvstreams/uniconf/tests/emutest.cc,
+	  trunk/wvstreams/uniconf/uniwvconfgen.cc,
+	  trunk/wvstreams/uniconf/wvconfemu.cc, trunk/wvstreams/wvrules.mk:
+	  Removed all USE_WVCONFEMU references, along with a double-delete
+	  of "freeswan" in weaver.cc.
+
+2003-11-06 00:52  ppatters
+
+	* trunk/wvdial/wvdial.cc, trunk/wvports/apcupsd,
+	  trunk/wvports/apcupsd/.cvsignore, trunk/wvports/apcupsd/Makefile,
+	  trunk/wvports/apcupsd/sources,
+	  trunk/wvports/apcupsd/sources/apcupsd_3.8.5.orig.tar.gz: HEAD:
+	  Added apcupsd (UPS Daemon to shut the Net Integrator down nicely
+	  on a power failure) support. Starts work on fixing BUGZID: 1398.
+	  While I was there, made the code to handle template files for
+	  wvffilter the same across most services. Also cleaned up some
+	  random spacing in a variety of places.
+
+2003-10-22 22:23  pphaneuf
+
+	* trunk/wvdial/wvdial.cc: Screw WvConfEmu::isclean. I hate it and
+	  it's stupid, so I removed it from the two places that used it (not
+	  in weaver code anyway).
+
+2003-10-15 06:12  apenwarr
+
+	* trunk/retchmail/Makefile, trunk/wvdial/debian/wvdial.links,
+	  trunk/wvdial/pon.wvdial.1, trunk/wvports/libdb1/Makefile,
+	  trunk/wvstreams/crypto/wvsslstream.cc,
+	  trunk/wvstreams/debian/changelog,
+	  trunk/wvstreams/include/wvserialize.h,
+	  trunk/wvstreams/utils/tests/bdbtest2.cc, trunk/wvstreams/vars.mk,
+	  trunk/wvstreams/wvrules.mk, trunk/wvtftp/wvtftpserver.cc: HEAD:
+	  merged netguide_reversion branch, and therefore all recent r3_74
+	  changes. It seems unstable when I tried it, but I think it was
+	  also unstable before I started. And maybe 3.74 is unstable too.
+	  Hmm. Anyway, now that it's merged, we can begin to think about
+	  testing and fixing stuff.
+
+2003-10-10 23:24  pphaneuf
+
+	* trunk/wvdial/wvdial.cc, trunk/wvdial/wvdialer.h,
+	  trunk/wvdial/wvpapchap.h, trunk/wvstreams/include/wvconf.h,
+	  trunk/wvstreams/include/wvconfemu.h,
+	  trunk/wvstreams/uniconf/tests/emutest.cc,
+	  trunk/wvstreams/uniconf/uniwvconfgen.cc,
+	  trunk/wvstreams/uniconf/wvconfemu.cc: More WvConfEmu hacking...
+	  Did I run this without the USE_WVCONFEMU flag? Of course not!
+
+2003-10-08 01:05  pphaneuf
+
+	* trunk/wvdial/Makefile, trunk/wvdial/wvdial.cc,
+	  trunk/wvdial/wvpapchap.cc, trunk/wvstreams/include/wvconfemu.h,
+	  trunk/wvstreams/uniconf/uniwvconfgen.cc,
+	  trunk/wvstreams/uniconf/wvconfemu.cc, trunk/wvstreams/wvrules.mk:
+	  Yet some more WvConfEmu hacking...
+
+2003-10-01 20:26  pphaneuf
+
+	* trunk/wvdial/wvdialer.h, trunk/wvdial/wvpapchap.h,
+	  trunk/wvstreams/include/wvconfemu.h,
+	  trunk/wvstreams/uniconf/wvconfemu.cc: Began converting weaver to
+	  WvConfEmu. This is turned on by compiling with a USE_WVCONFEMU
+	  preprocessor symbol, so don't worry, I'm not actually breaking
+	  everything... :-)
+
+2003-09-10 03:42  apenwarr
+
+	* trunk/unikonf/Makefile, trunk/wvdial, trunk/wvdial/.cvsignore,
+	  trunk/wvprint, trunk/wvprint/.cvsignore, trunk/wvstreams,
+	  trunk/wvstreams/.cvsignore, trunk/wvstreams/Makefile,
+	  trunk/wvstreams/config.mk.in, trunk/wvstreams/configure.ac,
+	  trunk/wvstreams/rules.mk, trunk/wvstreams/vars.mk,
+	  trunk/wvstreams/wvrules.mk, trunk/wvtftp, trunk/wvtftp/.cvsignore:
+	  The great Makefile re-merger: now wvstreams and the rest of niti
+	  use the same wvrules.mk. The wvstreams one is still unnecessarily
+	  messy, but I'm too lazy to fix it right now. Big new bonus
+	  feature: you can now do things like "make t/whatever.t" and it'll
+	  work, because the compile rule no longer assumes you're compiling
+	  something in the current directory. Other big bonus feature:
+	  there's only one way to enable/disable optimizations now. Darn it.
+
+2003-08-27 14:36  pphaneuf
+
+	* trunk/wvdial/wvdialer.cc, trunk/wvdial/wvmodemscan.cc,
+	  trunk/wvprint/wvprint.cc: Merging fastforward, polly, wvdial and
+	  wvprint from r3_74.
+
+2003-04-25 18:05  jim
+
+	* trunk/wvdial/debian/rules: HEAD: src/wvdial: * debian/rules:
+	  install pon and poff
+
+2003-04-23 13:58  jim
+
+	* trunk/wvdial/Makefile, trunk/wvdial/debian/rules: HEAD:
+	  src/wvdial: * Makefile: rework the install targets, i.e. make
+	  install now installs everything that is wanted.
+
+2003-04-14 19:53  pphaneuf
+
+	* trunk/wvdial/Makefile: Fixed massive breakage in jim's Makefile
+	  mangling.
+
+2003-04-14 15:55  jim
+
+	* trunk/wvdial/Makefile, trunk/wvdial/debian/changelog,
+	  trunk/wvdial/debian/docs, trunk/wvdial/debian/rules,
+	  trunk/wvdial/debian/wvdial.manpages: HEAD: niti/src/wvdial Fix
+	  some debian packaging issues. I will upload a new wvdial on the
+	  weekend on hppa so we any PIC issues.
+
+2003-04-10 17:45  jim
+
+	* trunk/wvdial/Makefile, trunk/wvdial/debian/control: HEAD: Remove
+	  extra whitespace in Makefile and add myself to the uploaders list.
+
+2003-04-08 23:03  drheld
+
+	* trunk/retchmail/retchmail.cc, trunk/unikonf/unikonf.cc,
+	  trunk/unikonf/unikonfmw.cc, trunk/wvdial/wvdialer.cc,
+	  trunk/wvprint/localqueue.cc, trunk/wvprint/lpd.cc,
+	  trunk/wvprint/lpdqueue.cc, trunk/wvprint/queue.cc,
+	  trunk/wvprint/queue.h, trunk/wvprint/wvprint.cc,
+	  trunk/wvprint/wvprint.h, trunk/wvstreams/crypto/wvsslstream.cc,
+	  trunk/wvstreams/include/uniconf.h,
+	  trunk/wvstreams/include/uniconfgen.h,
+	  trunk/wvstreams/include/uniconfroot.h,
+	  trunk/wvstreams/include/uniconftree.h,
+	  trunk/wvstreams/include/unihashtree.h,
+	  trunk/wvstreams/include/wvcallback.h,
+	  trunk/wvstreams/include/wvconduit.h,
+	  trunk/wvstreams/include/wvconf.h, trunk/wvstreams/include/wvfam.h,
+	  trunk/wvstreams/include/wvfork.h,
+	  trunk/wvstreams/include/wvqthook.h,
+	  trunk/wvstreams/include/wvstream.h,
+	  trunk/wvstreams/ipstreams/wvtcp.cc,
+	  trunk/wvstreams/ipstreams/wvunixsocket.cc,
+	  trunk/wvstreams/linuxstreams/wvfam.cc,
+	  trunk/wvstreams/streams/tests/contseltest.cc,
+	  trunk/wvstreams/streams/wvconduit.cc,
+	  trunk/wvstreams/streams/wvstream.cc,
+	  trunk/wvstreams/uniconf/daemon/uniconfdaemon.cc,
+	  trunk/wvstreams/uniconf/daemon/uniconfdaemonconn.cc,
+	  trunk/wvstreams/uniconf/daemon/uniconfpamconn.cc,
+	  trunk/wvstreams/uniconf/unicachegen.cc,
+	  trunk/wvstreams/uniconf/uniclientgen.cc,
+	  trunk/wvstreams/uniconf/uniconfgen.cc,
+	  trunk/wvstreams/uniconf/uniconfroot.cc,
+	  trunk/wvstreams/uniconf/unifiltergen.cc,
+	  trunk/wvstreams/uniconf/uniinigen.cc,
+	  trunk/wvstreams/uniconf/unimountgen.cc,
+	  trunk/wvstreams/uniconf/unimounttreegen.cc,
+	  trunk/wvstreams/utils/tests/taskmaxtest.cc,
+	  trunk/wvstreams/vars.mk: HEAD: *MERGE* r3_73=>HEAD. Should maybe
+	  possibly even work. ;)
+
+2003-03-14 17:27  ppatters
+
+	* trunk/wvdial/debian/conffiles, trunk/wvdial/debian/docs,
+	  trunk/wvstreams/debian/control, trunk/wvstreams/debian/docs,
+	  trunk/wvstreams/debian/postinst, trunk/wvstreams/debian/rules:
+	  HEAD: Debian Packaging "Fixes" to fix some lintian buglets, and
+	  start wvstreams into it's mega packaging split (since we now have
+	  hooks into a TON of stuff :)
+
+2003-03-03 08:57  ilguiz
+
+	* trunk/wvdial/Makefile, trunk/wvstreams/config.mk.in,
+	  trunk/wvstreams/configure.ac, trunk/wvstreams/rules.mk: HEAD:
+	  change compiler to the one that fits Qt library when configuring
+	  --with-qt
+
+2003-02-12 04:45  ppatters
+
+	* trunk/nss/Makefile, trunk/retchmail/Makefile,
+	  trunk/retchmail/README, trunk/retchmail/debian/copyright,
+	  trunk/retchmail/retchmail.cc, trunk/unikonf/Makefile,
+	  trunk/wvdial/Makefile, trunk/wvdial/debian/copyright,
+	  trunk/wvdial/papchaptest.cc, trunk/wvdial/wvdial.cc,
+	  trunk/wvdial/wvdialbrain.cc, trunk/wvdial/wvdialbrain.h,
+	  trunk/wvdial/wvdialconf.cc, trunk/wvdial/wvdialer.cc,
+	  trunk/wvdial/wvdialer.h, trunk/wvdial/wvdialtext.cc,
+	  trunk/wvdial/wvmodemscan.cc, trunk/wvdial/wvmodemscan.h,
+	  trunk/wvdial/wvpapchap.cc, trunk/wvdial/wvpapchap.h,
+	  trunk/wvprint/debian/copyright, trunk/wvprint/email.cc,
+	  trunk/wvprint/job.cc, trunk/wvprint/job.h,
+	  trunk/wvprint/jobinfo.h, trunk/wvprint/localqueue.cc,
+	  trunk/wvprint/localqueue.h, trunk/wvprint/lpd.cc,
+	  trunk/wvprint/lpd.h, trunk/wvprint/lpdqueue.cc,
+	  trunk/wvprint/lpdqueue.h, trunk/wvprint/queue.cc,
+	  trunk/wvprint/queue.h, trunk/wvprint/wvprint.cc,
+	  trunk/wvprint/wvprintd.cc, trunk/wvstreams/debian/copyright,
+	  trunk/wvtftp/Makefile, trunk/wvtftp/debian/copyright,
+	  trunk/wvtftp/wvtftpbase.cc, trunk/wvtftp/wvtftpbase.h,
+	  trunk/wvtftp/wvtftpd.cc, trunk/wvtftp/wvtftpserver.cc,
+	  trunk/wvtftp/wvtftpserver.h: HEAD: Huge number of files touched
+	  while updating the copyright notice on all of the open source
+	  files. Also, while I was there, cleaned up the option entry on the
+	  polly binary, fixed some random spacing in Retchmail, and made the
+	  Makefiles for unithingy not suck so much.
+
+2003-02-01 10:15  apenwarr
+
+	* trunk/nss/libnss_uniconf.cc, trunk/retchmail/retchmail.cc,
+	  trunk/wvdial/wvdialmon.h, trunk/wvstreams/crypto/tests/md5test.cc,
+	  trunk/wvstreams/crypto/wvblowfish.cc,
+	  trunk/wvstreams/crypto/wvcountermode.cc,
+	  trunk/wvstreams/crypto/wvdigest.cc,
+	  trunk/wvstreams/crypto/wvrsa.cc, trunk/wvstreams/crypto/wvx509.cc,
+	  trunk/wvstreams/crypto/wvxor.cc,
+	  trunk/wvstreams/include/unicache.h,
+	  trunk/wvstreams/include/uniclientconn.h,
+	  trunk/wvstreams/include/uniclientgen.h,
+	  trunk/wvstreams/include/uniconfcache.h,
+	  trunk/wvstreams/include/uniconfclient.h,
+	  trunk/wvstreams/include/uniconfconn.h,
+	  trunk/wvstreams/include/uniconfdefgen.h,
+	  trunk/wvstreams/include/uniconfgen.h,
+	  trunk/wvstreams/include/uniconfini.h,
+	  trunk/wvstreams/include/uniconflistgen.h,
+	  trunk/wvstreams/include/uniconfmounttree.h,
+	  trunk/wvstreams/include/uniconfnull.h,
+	  trunk/wvstreams/include/uniconfreadonly.h,
+	  trunk/wvstreams/include/uniconfroot.h,
+	  trunk/wvstreams/include/uniconftemp.h,
+	  trunk/wvstreams/include/uniconfwvgen.h,
+	  trunk/wvstreams/include/unidefgen.h,
+	  trunk/wvstreams/include/uniinigen.h,
+	  trunk/wvstreams/include/unilistgen.h,
+	  trunk/wvstreams/include/unimounttreegen.h,
+	  trunk/wvstreams/include/uninullgen.h,
+	  trunk/wvstreams/include/unireadonlygen.h,
+	  trunk/wvstreams/include/unitempgen.h,
+	  trunk/wvstreams/include/uniwvconfgen.h,
+	  trunk/wvstreams/include/wvautoconf.h,
+	  trunk/wvstreams/include/wvbackslash.h,
+	  trunk/wvstreams/include/wvbase64.h,
+	  trunk/wvstreams/include/wvblowfish.h,
+	  trunk/wvstreams/include/wvbuf.h,
+	  trunk/wvstreams/include/wvbufbase.h,
+	  trunk/wvstreams/include/wvbuffer.h,
+	  trunk/wvstreams/include/wvbufferbase.h,
+	  trunk/wvstreams/include/wvbufferstore.h,
+	  trunk/wvstreams/include/wvbufstore.h,
+	  trunk/wvstreams/include/wvcountermode.h,
+	  trunk/wvstreams/include/wvdigest.h,
+	  trunk/wvstreams/include/wvencoder.h,
+	  trunk/wvstreams/include/wvencoderstream.h,
+	  trunk/wvstreams/include/wvfft.h,
+	  trunk/wvstreams/include/wvfunctorencoder.h,
+	  trunk/wvstreams/include/wvgzip.h, trunk/wvstreams/include/wvhex.h,
+	  trunk/wvstreams/include/wvlogbuffer.h,
+	  trunk/wvstreams/include/wvoggspeex.h,
+	  trunk/wvstreams/include/wvprotostream.h,
+	  trunk/wvstreams/include/wvrsa.h,
+	  trunk/wvstreams/include/wvsslstream.h,
+	  trunk/wvstreams/include/wvstream.h,
+	  trunk/wvstreams/include/wvsyslog.h,
+	  trunk/wvstreams/include/wvtclstring.h,
+	  trunk/wvstreams/include/wvtypedencoder.h,
+	  trunk/wvstreams/include/wvwordwrap.h,
+	  trunk/wvstreams/include/wvxor.h,
+	  trunk/wvstreams/ipstreams/tests/udp2test.cc,
+	  trunk/wvstreams/linuxstreams/tests/dspechotest.cc,
+	  trunk/wvstreams/oggspeex/wvoggspeex.cc,
+	  trunk/wvstreams/streams/wvstream.cc,
+	  trunk/wvstreams/uniconf/daemon/daemonmain.cc,
+	  trunk/wvstreams/uniconf/daemon/uniconfdaemonconn.cc,
+	  trunk/wvstreams/uniconf/daemon/uniconfdaemonconn.h,
+	  trunk/wvstreams/uniconf/tests/inttest.cc,
+	  trunk/wvstreams/uniconf/tests/itertest.cc,
+	  trunk/wvstreams/uniconf/tests/uniconfclientitertest.cc,
+	  trunk/wvstreams/uniconf/tests/uniconfclienttest.cc,
+	  trunk/wvstreams/uniconf/tests/uniconfwvgentest.cc,
+	  trunk/wvstreams/uniconf/uniconfcache.cc,
+	  trunk/wvstreams/uniconf/uniconfclient.cc,
+	  trunk/wvstreams/uniconf/uniconfconn.cc,
+	  trunk/wvstreams/uniconf/uniconfdefgen.cc,
+	  trunk/wvstreams/uniconf/uniconfgen.cc,
+	  trunk/wvstreams/uniconf/uniconfini.cc,
+	  trunk/wvstreams/uniconf/uniconflistgen.cc,
+	  trunk/wvstreams/uniconf/uniconfmounttree.cc,
+	  trunk/wvstreams/uniconf/uniconfnull.cc,
+	  trunk/wvstreams/uniconf/uniconfreadonly.cc,
+	  trunk/wvstreams/uniconf/uniconftemp.cc,
+	  trunk/wvstreams/uniconf/uniconfwvgen.cc,
+	  trunk/wvstreams/uniconf/wvconfemu.cc,
+	  trunk/wvstreams/urlget/wvhttppool.cc,
+	  trunk/wvstreams/utils/strutils.cc,
+	  trunk/wvstreams/utils/tests/buffertest.cc,
+	  trunk/wvstreams/utils/tests/encodertest.cc,
+	  trunk/wvstreams/utils/wvbackslash.cc,
+	  trunk/wvstreams/utils/wvbase64.cc,
+	  trunk/wvstreams/utils/wvbuffer.cc,
+	  trunk/wvstreams/utils/wvbufferstore.cc,
+	  trunk/wvstreams/utils/wvencoder.cc,
+	  trunk/wvstreams/utils/wvgzip.cc, trunk/wvstreams/utils/wvhex.cc,
+	  trunk/wvstreams/utils/wvtclstring.cc,
+	  trunk/wvstreams/utils/wvwordwrap.cc: The Great Class Renaming.
+	  "UniConf*" mostly becomes "Uni*Gen", "Wv*Buffer*" usually becomes
+	  "Wv*Buf*", and a few nonstandard renamings are thrown in for good
+	  measure.
+
+2003-02-01 06:05  apenwarr
+
+	* trunk/wvdial/wvdialbrain.h,
+	  trunk/wvstreams/Docs/sgmlmanual/egfiles/wvbase64ex.cc,
+	  trunk/wvstreams/Docs/sgmlmanual/egfiles/wvcallbackex.cc,
+	  trunk/wvstreams/Docs/sgmlmanual/egfiles/wvfileex.cc,
+	  trunk/wvstreams/Docs/sgmlmanual/egfiles/wvhttpex.cc,
+	  trunk/wvstreams/Docs/sgmlmanual/egfiles/wvlistex.cc,
+	  trunk/wvstreams/Docs/sgmlmanual/egfiles/wvlogbufex.cc,
+	  trunk/wvstreams/Docs/sgmlmanual/egfiles/wvlogex.cc,
+	  trunk/wvstreams/Docs/sgmlmanual/egfiles/wvlogfileex.cc,
+	  trunk/wvstreams/Docs/sgmlmanual/egfiles/wvpipeex.cc,
+	  trunk/wvstreams/Docs/sgmlmanual/egfiles/wvpipelogex.cc,
+	  trunk/wvstreams/Docs/sgmlmanual/egfiles/wvresolverex.cc,
+	  trunk/wvstreams/Docs/sgmlmanual/egfiles/wvstreamex.cc,
+	  trunk/wvstreams/Docs/sgmlmanual/egfiles/wvstreamex2.cc,
+	  trunk/wvstreams/Docs/sgmlmanual/egfiles/wvstreamex3.cc,
+	  trunk/wvstreams/Docs/sgmlmanual/egfiles/wvstreamex4.cc,
+	  trunk/wvstreams/Docs/sgmlmanual/egfiles/wvstreamex5.cc,
+	  trunk/wvstreams/Docs/sgmlmanual/egfiles/wvstreamex6.cc,
+	  trunk/wvstreams/Docs/sgmlmanual/egfiles/wvstreamex7.cc,
+	  trunk/wvstreams/Docs/sgmlmanual/egfiles/wvstreamfunex.cc,
+	  trunk/wvstreams/Docs/sgmlmanual/egfiles/wvstreamlistex.cc,
+	  trunk/wvstreams/Docs/sgmlmanual/egfiles/wvstreamlistex2.cc,
+	  trunk/wvstreams/Docs/sgmlmanual/egfiles/wvstringex.cc,
+	  trunk/wvstreams/Docs/sgmlmanual/egfiles/wvtcpex.cc,
+	  trunk/wvstreams/Docs/sgmlmanual/egfiles/wvtimeex.cc,
+	  trunk/wvstreams/Docs/sgmlmanual/egfiles/wvtimeoutex.cc,
+	  trunk/wvstreams/Docs/sgmlmanual/egfiles/wvudpex.cc,
+	  trunk/wvstreams/include/strutils.h,
+	  trunk/wvstreams/include/uniconf.h,
+	  trunk/wvstreams/include/uniconfclient.h,
+	  trunk/wvstreams/include/uniconfconn.h,
+	  trunk/wvstreams/include/uniconfgen.h,
+	  trunk/wvstreams/include/uniconfkey.h,
+	  trunk/wvstreams/include/uniconfnull.h,
+	  trunk/wvstreams/include/uniconfpair.h,
+	  trunk/wvstreams/include/uniconftemp.h,
+	  trunk/wvstreams/include/uniconfwatch.h,
+	  trunk/wvstreams/include/verstring.h,
+	  trunk/wvstreams/include/wvaddr.h,
+	  trunk/wvstreams/include/wvaudioencoder.h,
+	  trunk/wvstreams/include/wvbackslash.h,
+	  trunk/wvstreams/include/wvbase64.h,
+	  trunk/wvstreams/include/wvblowfish.h,
+	  trunk/wvstreams/include/wvbuffer.h,
+	  trunk/wvstreams/include/wvbufferbase.h,
+	  trunk/wvstreams/include/wvbufferstore.h,
+	  trunk/wvstreams/include/wvbufstream.h,
+	  trunk/wvstreams/include/wvcallback.h,
+	  trunk/wvstreams/include/wvconduit.h,
+	  trunk/wvstreams/include/wvconf.h,
+	  trunk/wvstreams/include/wvconfemu.h,
+	  trunk/wvstreams/include/wvcountermode.h,
+	  trunk/wvstreams/include/wvcrash.h,
+	  trunk/wvstreams/include/wvcrypto.h,
+	  trunk/wvstreams/include/wvdailyevent.h,
+	  trunk/wvstreams/include/wvdigest.h,
+	  trunk/wvstreams/include/wvdiriter.h,
+	  trunk/wvstreams/include/wvdsp.h,
+	  trunk/wvstreams/include/wvencoder.h,
+	  trunk/wvstreams/include/wvencoderstream.h,
+	  trunk/wvstreams/include/wverror.h,
+	  trunk/wvstreams/include/wvfdstream.h,
+	  trunk/wvstreams/include/wvfft.h, trunk/wvstreams/include/wvfile.h,
+	  trunk/wvstreams/include/wvfork.h,
+	  trunk/wvstreams/include/wvfunctorencoder.h,
+	  trunk/wvstreams/include/wvgzip.h,
+	  trunk/wvstreams/include/wvgzipstream.h,
+	  trunk/wvstreams/include/wvhashtable.h,
+	  trunk/wvstreams/include/wvhex.h, trunk/wvstreams/include/wvhttp.h,
+	  trunk/wvstreams/include/wvhttppool.h,
+	  trunk/wvstreams/include/wvinterface.h,
+	  trunk/wvstreams/include/wvipaddrtable.h,
+	  trunk/wvstreams/include/wvipaliaser.h,
+	  trunk/wvstreams/include/wvipfirewall.h,
+	  trunk/wvstreams/include/wvipnetlist.h,
+	  trunk/wvstreams/include/wviproute.h,
+	  trunk/wvstreams/include/wvlink.h,
+	  trunk/wvstreams/include/wvlinklist.h,
+	  trunk/wvstreams/include/wvlockdev.h,
+	  trunk/wvstreams/include/wvlockfile.h,
+	  trunk/wvstreams/include/wvlog.h,
+	  trunk/wvstreams/include/wvlogbuffer.h,
+	  trunk/wvstreams/include/wvlogfile.h,
+	  trunk/wvstreams/include/wvlogrcv.h,
+	  trunk/wvstreams/include/wvloopback.h,
+	  trunk/wvstreams/include/wvmagiccircle.h,
+	  trunk/wvstreams/include/wvmodem.h,
+	  trunk/wvstreams/include/wvoggspeex.h,
+	  trunk/wvstreams/include/wvoggvorbis.h,
+	  trunk/wvstreams/include/wvpcmutils.h,
+	  trunk/wvstreams/include/wvpipe.h,
+	  trunk/wvstreams/include/wvprotostream.h,
+	  trunk/wvstreams/include/wvqthook.h,
+	  trunk/wvstreams/include/wvqtstreamclone.h,
+	  trunk/wvstreams/include/wvresolver.h,
+	  trunk/wvstreams/include/wvrsa.h,
+	  trunk/wvstreams/include/wvshmzone.h,
+	  trunk/wvstreams/include/wvsorter.h,
+	  trunk/wvstreams/include/wvspeex.h,
+	  trunk/wvstreams/include/wvsslhacks.h,
+	  trunk/wvstreams/include/wvsslstream.h,
+	  trunk/wvstreams/include/wvstring.h,
+	  trunk/wvstreams/include/wvstringlist.h,
+	  trunk/wvstreams/include/wvstringtable.h,
+	  trunk/wvstreams/include/wvsubproc.h,
+	  trunk/wvstreams/include/wvsyncstream.h,
+	  trunk/wvstreams/include/wvsyslog.h,
+	  trunk/wvstreams/include/wvtask.h,
+	  trunk/wvstreams/include/wvtclstring.h,
+	  trunk/wvstreams/include/wvtcp.h, trunk/wvstreams/include/wvtest.h,
+	  trunk/wvstreams/include/wvtimeoutstream.h,
+	  trunk/wvstreams/include/wvtimestream.h,
+	  trunk/wvstreams/include/wvtimeutils.h,
+	  trunk/wvstreams/include/wvtundev.h,
+	  trunk/wvstreams/include/wvtypedencoder.h,
+	  trunk/wvstreams/include/wvudp.h,
+	  trunk/wvstreams/include/wvunixsocket.h,
+	  trunk/wvstreams/include/wvurl.h,
+	  trunk/wvstreams/include/wvwatcher.h,
+	  trunk/wvstreams/include/wvwordwrap.h,
+	  trunk/wvstreams/include/wvx509.h, trunk/wvstreams/include/wvxor.h,
+	  trunk/wvstreams/ipstreams/tests/urltest.cc,
+	  trunk/wvstreams/oggspeex/wvoggspeex.cc,
+	  trunk/wvstreams/oggspeex/wvspeex.cc,
+	  trunk/wvstreams/uniconf/daemon/uniconfdaemon.h,
+	  trunk/wvstreams/uniconf/daemon/uniconfdaemonconn.cc,
+	  trunk/wvstreams/uniconf/daemon/uniconfdaemonconn.h,
+	  trunk/wvstreams/uniconf/uniconfconn.cc,
+	  trunk/wvstreams/uniconf/uniconfdefs.cc,
+	  trunk/wvstreams/uniconf/uniconfiter.cc,
+	  trunk/wvstreams/uniconf/uniconfpair.cc,
+	  trunk/wvstreams/uniconf/uniconfwatch.cc,
+	  trunk/wvstreams/utils/wvaudioencoder.cc: Removed silly /file and
+	  \file tags from the tops of files. Removed silly html tags from
+	  comments. Removed spurious "inline" keywords where inline is
+	  implicit. All praise sed!
+
+2003-01-29 22:26  mag
+
+	* trunk/wvdial/wvmodemscan.h, trunk/wvstreams/include/uniconf.h,
+	  trunk/wvstreams/include/wvencoder.h,
+	  trunk/wvstreams/include/wviproute.h,
+	  trunk/wvstreams/include/wvistreamlist.h,
+	  trunk/wvstreams/include/wvlinklist.h,
+	  trunk/wvstreams/include/wvprotostream.h,
+	  trunk/wvstreams/include/wvstreamlist.h,
+	  trunk/wvstreams/include/wvstringlist.h: Some random tweaks to
+	  WvLinkList. DeclareWvList# macros are now just a typedef, like in
+	  Table/Dict.
+
+2003-01-13 08:22  apenwarr
+
+	* trunk/nss/libnss_uniconf.cc, trunk/unikonf/unikonf.cc,
+	  trunk/unikonf/unikonfmw.cc, trunk/wvdial/wvdialer.cc,
+	  trunk/wvdial/wvdialer.h, trunk/wvstreams/crypto/wvsslstream.cc,
+	  trunk/wvstreams/include/uniconf.h,
+	  trunk/wvstreams/include/uniconfclient.h,
+	  trunk/wvstreams/include/uniconfconn.h,
+	  trunk/wvstreams/include/uniconfdefs.h,
+	  trunk/wvstreams/include/uniconfgen.h,
+	  trunk/wvstreams/include/uniconfini.h,
+	  trunk/wvstreams/include/uniconfiter.h,
+	  trunk/wvstreams/include/uniconfkey.h,
+	  trunk/wvstreams/include/uniconflocation.h,
+	  trunk/wvstreams/include/uniconfnull.h,
+	  trunk/wvstreams/include/uniconfreadonly.h,
+	  trunk/wvstreams/include/uniconfroot.h,
+	  trunk/wvstreams/include/uniconftemp.h,
+	  trunk/wvstreams/include/uniconftree.h,
+	  trunk/wvstreams/include/wvhttp.h,
+	  trunk/wvstreams/include/wvhttppool.h,
+	  trunk/wvstreams/include/wvistreamlist.h,
+	  trunk/wvstreams/include/wvmoniker.h,
+	  trunk/wvstreams/include/wvmonikerregistry.h,
+	  trunk/wvstreams/include/wvsslstream.h,
+	  trunk/wvstreams/include/wvstream.h,
+	  trunk/wvstreams/include/wvstreamclone.h,
+	  trunk/wvstreams/include/wvstreamlist.h,
+	  trunk/wvstreams/include/wvurl.h,
+	  trunk/wvstreams/include/wvvector.h,
+	  trunk/wvstreams/include/wvxplc.h,
+	  trunk/wvstreams/ipstreams/tests/component2test.cc,
+	  trunk/wvstreams/ipstreams/tests/componenttest.cc,
+	  trunk/wvstreams/ipstreams/tests/vars.mk,
+	  trunk/wvstreams/ipstreams/wvhttp.cc,
+	  trunk/wvstreams/ipstreams/wvresolver.cc,
+	  trunk/wvstreams/ipstreams/wvtcp.cc,
+	  trunk/wvstreams/qt/wvqtstreamclone.cc, trunk/wvstreams/rules.mk,
+	  trunk/wvstreams/streams/wvencoderstream.cc,
+	  trunk/wvstreams/streams/wvfdstream.cc,
+	  trunk/wvstreams/streams/wvistreamlist.cc,
+	  trunk/wvstreams/streams/wvstream.cc,
+	  trunk/wvstreams/streams/wvstreamclone.cc,
+	  trunk/wvstreams/streams/wvstreamlist.cc,
+	  trunk/wvstreams/streams/wvsyncstream.cc,
+	  trunk/wvstreams/uniconf/daemon/daemonmain.cc,
+	  trunk/wvstreams/uniconf/daemon/uniconf.ini,
+	  trunk/wvstreams/uniconf/daemon/uniconfdaemon.cc,
+	  trunk/wvstreams/uniconf/daemon/uniconfdaemon.h,
+	  trunk/wvstreams/uniconf/tests/conftest.cc,
+	  trunk/wvstreams/uniconf/tests/itertest.cc,
+	  trunk/wvstreams/uniconf/tests/uniconfclientitertest.cc,
+	  trunk/wvstreams/uniconf/tests/uniconfclienttest.cc,
+	  trunk/wvstreams/uniconf/uniconf.cc,
+	  trunk/wvstreams/uniconf/uniconfclient.cc,
+	  trunk/wvstreams/uniconf/uniconfconn.cc,
+	  trunk/wvstreams/uniconf/uniconfgen.cc,
+	  trunk/wvstreams/uniconf/uniconfini.cc,
+	  trunk/wvstreams/uniconf/uniconfkey.cc,
+	  trunk/wvstreams/uniconf/uniconflocation.cc,
+	  trunk/wvstreams/uniconf/uniconfnull.cc,
+	  trunk/wvstreams/uniconf/uniconfreadonly.cc,
+	  trunk/wvstreams/uniconf/uniconfroot.cc,
+	  trunk/wvstreams/uniconf/uniconftemp.cc,
+	  trunk/wvstreams/uniconf/uniconftree.cc,
+	  trunk/wvstreams/urlget/wvhttpcomponent.cc,
+	  trunk/wvstreams/utils/tests/monikertest.cc,
+	  trunk/wvstreams/utils/tests/vectortest.cc,
+	  trunk/wvstreams/utils/wvcrash.cc,
+	  trunk/wvstreams/utils/wvmoniker.cc,
+	  trunk/wvstreams/utils/wvvector.cc, trunk/wvstreams/vars.mk:
+	  Merging unifix into the main branch. And now the REAL fun
+	  begins...
+
+2002-11-01 02:12  jbrown
+
+	* trunk/wvdial/pppmon.cc, trunk/wvdial/wvdialer.cc,
+	  trunk/wvdial/wvdialer.h, trunk/wvprint/queue.cc,
+	  trunk/wvprint/queue.h, trunk/wvstreams/crypto/tests/cryptotest.cc,
+	  trunk/wvstreams/crypto/wvsslstream.cc,
+	  trunk/wvstreams/include/wvfdstream.h,
+	  trunk/wvstreams/include/wvfile.h,
+	  trunk/wvstreams/include/wvlogrcv.h,
+	  trunk/wvstreams/include/wvloopback.h,
+	  trunk/wvstreams/include/wvpipe.h,
+	  trunk/wvstreams/include/wvsplitstream.h,
+	  trunk/wvstreams/include/wvsslstream.h,
+	  trunk/wvstreams/include/wvstream.h,
+	  trunk/wvstreams/include/wvstreamclone.h,
+	  trunk/wvstreams/include/wvtcp.h,
+	  trunk/wvstreams/include/wvtimeutils.h,
+	  trunk/wvstreams/include/wvudp.h,
+	  trunk/wvstreams/include/wvunixsocket.h,
+	  trunk/wvstreams/ipstreams/tests/listentest.cc,
+	  trunk/wvstreams/ipstreams/tests/ulistentest.cc,
+	  trunk/wvstreams/ipstreams/wvtcp.cc,
+	  trunk/wvstreams/ipstreams/wvudp.cc,
+	  trunk/wvstreams/ipstreams/wvunixsocket.cc,
+	  trunk/wvstreams/linuxstreams/wviproute.cc,
+	  trunk/wvstreams/linuxstreams/wvtundev.cc,
+	  trunk/wvstreams/oggvorbis/tests/testoggvorbis.cc,
+	  trunk/wvstreams/oggvorbis/tests/vars.mk,
+	  trunk/wvstreams/streams/wvfdstream.cc,
+	  trunk/wvstreams/streams/wvfile.cc,
+	  trunk/wvstreams/streams/wvlog.cc,
+	  trunk/wvstreams/streams/wvpipe.cc,
+	  trunk/wvstreams/streams/wvsplitstream.cc,
+	  trunk/wvstreams/streams/wvstream.cc,
+	  trunk/wvstreams/streams/wvstreamclone.cc,
+	  trunk/wvstreams/utils/tests/backslashtest.cc,
+	  trunk/wvstreams/utils/tests/base64test.cc,
+	  trunk/wvstreams/utils/tests/hextest.cc,
+	  trunk/wvstreams/utils/tests/wordwraptest.cc: Split WvStream
+	  file-descriptor related code off into WvFDStream subclass. Removed
+	  obsolete WvSplitStream. Added wvin, wvout, wverr console streams.
+	  Fixed up all users of any of the above features and fixed any
+	  obvious existing bugs that were uncovered by the refactoring. This
+	  all seems to work fine (Weaver runs okay)...
+
+2002-10-07 22:18  ppatters
+
+	* trunk/retchmail/Makefile, trunk/wvdial/Makefile,
+	  trunk/wvprint/Makefile, trunk/wvtftp/Makefile: Fix the Makefiles
+	  so that the "tar straight out of the tree and distribute" stuff
+	  works...
+
+2002-09-30 18:04  ppatters
+
+	* trunk/wvdial/CHANGES, trunk/wvdial/COPYING.LIB,
+	  trunk/wvdial/README, trunk/wvdial/debian,
+	  trunk/wvdial/debian/changelog, trunk/wvdial/debian/conffiles,
+	  trunk/wvdial/debian/control, trunk/wvdial/debian/copyright,
+	  trunk/wvdial/debian/dirs, trunk/wvdial/debian/docs,
+	  trunk/wvdial/debian/poff.wvdial, trunk/wvdial/debian/pon.wvdial,
+	  trunk/wvdial/debian/postinst, trunk/wvdial/debian/postrm,
+	  trunk/wvdial/debian/purge, trunk/wvdial/debian/rules,
+	  trunk/wvdial/ppp.provider, trunk/wvdial/ppp.provider-pipe,
+	  trunk/wvdial/wvdial.1, trunk/wvdial/wvdial.conf.5,
+	  trunk/wvdial/wvdialconf.1: Continue moving distribution files into
+	  the main tree... this was wvdial
+
+2002-08-02 21:31  ppatters
+
+	* trunk/wvdial/wvdialconf.cc: Fix a bug in wvdialconf that tried
+	  setting the mode to 660 decimal, instead of octal. How the HELL
+	  did this EVER work???
+
+2002-07-31 23:08  pphaneuf
+
+	* trunk/retchmail/retchmail.cc, trunk/wvdial/wvdialer.cc,
+	  trunk/wvdial/wvdialer.h, trunk/wvprint/lpd.cc,
+	  trunk/wvprint/lpd.h, trunk/wvstreams/crypto/wvcrypto.cc,
+	  trunk/wvstreams/crypto/wvcrypto.h,
+	  trunk/wvstreams/crypto/wvsslstream.cc,
+	  trunk/wvstreams/crypto/wvsslstream.h,
+	  trunk/wvstreams/ipstreams/wvhttp.cc,
+	  trunk/wvstreams/ipstreams/wvhttp.h,
+	  trunk/wvstreams/streams/wvprotostream.cc,
+	  trunk/wvstreams/streams/wvprotostream.h,
+	  trunk/wvstreams/streams/wvstreamclone.cc,
+	  trunk/wvstreams/streams/wvstreamclone.h,
+	  trunk/wvstreams/urlget/wvhttppool.cc,
+	  trunk/wvstreams/urlget/wvhttppool.h: WARNING: big WvStreamClone
+	  change in here (and fixing of all things it broke). WvStreamClone
+	  changed to take a WvStream* instead of a WvStream**, so you can
+	  just give it a NULL instead of pointing to a WvStream* of yours,
+	  then set WvStreamClone::cloned. WvStreamClone changed from not
+	  owning the cloned stream to owning it (it WILL delete it in its
+	  destructor!). If you don't want it to delete the cloned stream,
+	  set WvStreamClone::cloned to NULL before deleting the
+	  WvStreamClone. So in summary, you don't have to keep a redundant
+	  WvStream* anymore, you don't have to (and SHOULDN'T!) delete the
+	  cloned stream, so you can just go and do crazy things like
+	  WvStream* mystream = new WvCompressStream(new
+	  WvSSLStream(listener->accept())); and then just delete mystream
+	  without any remorse (it's just like shell pipes!).
+
+2002-07-29 21:34  ppatters
+
+	* trunk/wvdial/wvmodemscan.cc: Add SmartLink modem support to
+	  WvModemScan
+
+2002-06-14 20:20  apenwarr
+
+	* trunk/wvdial/wvmodemscan.cc, trunk/wvstreams/utils/wvsubproc.cc,
+	  trunk/wvstreams/utils/wvsubproc.h: Merged changes from 3.70 into
+	  the main branch. Again. It really needed it!
+
+2002-05-16 21:32  apenwarr
+
+	* trunk/retchmail/retchmail.cc, trunk/wvdial/wvdial.cc,
+	  trunk/wvdial/wvdialer.cc, trunk/wvstreams/configfile/wvconf.cc,
+	  trunk/wvstreams/configfile/wvconf.h,
+	  trunk/wvstreams/crypto/wvsslstream.cc,
+	  trunk/wvstreams/crypto/wvx509.cc, trunk/wvstreams/crypto/wvx509.h,
+	  trunk/wvstreams/ipstreams/wvipfirewall.cc,
+	  trunk/wvstreams/ipstreams/wvipfirewall.h,
+	  trunk/wvstreams/utils/strutils.cc,
+	  trunk/wvstreams/utils/strutils.h: Merged changes from r3_70 into
+	  the main branch. Whew, we've been busy. Look Mom, no conflicts!
+
+2002-04-25 15:08  dcoombs
+
+	* trunk/retchmail/retchmail.cc, trunk/wvdial/wvdialer.cc,
+	  trunk/wvdial/wvdialmon.h, trunk/wvdial/wvmodemscan.cc,
+	  trunk/wvdial/wvpapchap.cc, trunk/wvprint/job.cc,
+	  trunk/wvprint/job.h, trunk/wvprint/localqueue.cc,
+	  trunk/wvprint/localqueue.h, trunk/wvprint/lpd.cc,
+	  trunk/wvprint/wvprint.cc, trunk/wvstreams/configfile/cfgentry.cc,
+	  trunk/wvstreams/configfile/cfgsection.cc,
+	  trunk/wvstreams/configfile/wvconf.cc,
+	  trunk/wvstreams/configfile/wvconf.h,
+	  trunk/wvstreams/crypto/wvx509.cc,
+	  trunk/wvstreams/hconf/hconftest.cc,
+	  trunk/wvstreams/hconf/wvhconf.cc,
+	  trunk/wvstreams/ipstreams/wvaddr.cc,
+	  trunk/wvstreams/ipstreams/wvhttp.cc,
+	  trunk/wvstreams/ipstreams/wvhttp.h,
+	  trunk/wvstreams/ipstreams/wvinterface.cc,
+	  trunk/wvstreams/ipstreams/wviproute.cc,
+	  trunk/wvstreams/ipstreams/wvresolver.cc,
+	  trunk/wvstreams/streams/wvlog.cc,
+	  trunk/wvstreams/streams/wvlogbuffer.cc,
+	  trunk/wvstreams/utils/strcrypt.cc,
+	  trunk/wvstreams/utils/strutils.cc,
+	  trunk/wvstreams/utils/wvdiriter.cc,
+	  trunk/wvstreams/utils/wvstringlist.cc,
+	  trunk/wvstreams/utils/wvstringtable.cc,
+	  trunk/wvstreams/utils/wvtask.cc, trunk/wvtftp/wvtftpserver.cc: In
+	  a desperate effort to break as much stuff as humanly possible,
+	  I've WvStringParm-ified the rest of weaver (there were a few files
+	  apenwarr missed) and removed every extraneous call to
+	  WvString::unique(). It all still compiles, and weaver seems to run
+	  on peanut. I haven't tried anything more complicated than that,
+	  though. Let the fireworks begin. :)
+
+2002-04-25 05:06  apenwarr
+
+	* trunk/wvdial/wvdialconf.cc, trunk/wvdial/wvdialer.cc,
+	  trunk/wvdial/wvmodemscan.cc, trunk/wvdial/wvpapchap.cc,
+	  trunk/wvstreams/configfile/cfgsection.cc,
+	  trunk/wvstreams/configfile/wvconf.cc,
+	  trunk/wvstreams/ipstreams/simpleconn.cc,
+	  trunk/wvstreams/ipstreams/udp2test.cc,
+	  trunk/wvstreams/ipstreams/wvinterface.cc,
+	  trunk/wvstreams/ipstreams/wvipaliaser.cc,
+	  trunk/wvstreams/streams/wvlog.cc,
+	  trunk/wvstreams/streams/wvlogbuffer.cc,
+	  trunk/wvstreams/streams/wvprotostream.cc,
+	  trunk/wvstreams/streams/wvstreamlist.cc,
+	  trunk/wvstreams/utils/wvbuffer.cc, trunk/wvstreams/utils/wvlink.h:
+	  Removed the ancient iterator auto-typecast operator from wvlink.h
+	  (and thus WvList, WvHashTable, and WvDirIter) because I think I
+	  only added it in the first place to be confusing. One day I'll get
+	  rid of operator()() too... see how you like that.
+
+2002-04-25 04:49  apenwarr
+
+	* trunk/retchmail/retchmail.cc, trunk/wvdial/wvmodemscan.cc,
+	  trunk/wvdial/wvmodemscan.h, trunk/wvprint/lpd.cc,
+	  trunk/wvprint/lpd.h, trunk/wvprint/lpdqueue.cc,
+	  trunk/wvprint/lpdqueue.h, trunk/wvprint/queue.cc,
+	  trunk/wvprint/queue.h, trunk/wvprint/wvprint.cc,
+	  trunk/wvprint/wvprint.h, trunk/wvstreams/configfile/cfgentry.cc,
+	  trunk/wvstreams/configfile/cfgsection.cc,
+	  trunk/wvstreams/configfile/wvconf.cc,
+	  trunk/wvstreams/configfile/wvconf.h,
+	  trunk/wvstreams/crypto/wvcrypto.cc,
+	  trunk/wvstreams/crypto/wvcrypto.h,
+	  trunk/wvstreams/crypto/wvx509.h,
+	  trunk/wvstreams/hconf/hconftest.cc,
+	  trunk/wvstreams/hconf/wvhconf.cc, trunk/wvstreams/hconf/wvhconf.h,
+	  trunk/wvstreams/hconf/wvhconfgen.cc,
+	  trunk/wvstreams/hconf/wvhconfkey.cc,
+	  trunk/wvstreams/ipstreams/wvaddr.cc,
+	  trunk/wvstreams/ipstreams/wvaddr.h,
+	  trunk/wvstreams/ipstreams/wvhttp.cc,
+	  trunk/wvstreams/ipstreams/wvhttp.h,
+	  trunk/wvstreams/ipstreams/wvinterface.cc,
+	  trunk/wvstreams/ipstreams/wvinterface.h,
+	  trunk/wvstreams/ipstreams/wviproute.cc,
+	  trunk/wvstreams/ipstreams/wviproute.h,
+	  trunk/wvstreams/ipstreams/wvresolver.cc,
+	  trunk/wvstreams/ipstreams/wvresolver.h,
+	  trunk/wvstreams/ipstreams/wvtcp.cc,
+	  trunk/wvstreams/ipstreams/wvtcp.h,
+	  trunk/wvstreams/streams/wvfile.cc,
+	  trunk/wvstreams/streams/wvfile.h,
+	  trunk/wvstreams/streams/wvlog.cc, trunk/wvstreams/streams/wvlog.h,
+	  trunk/wvstreams/streams/wvlogbuffer.cc,
+	  trunk/wvstreams/streams/wvlogbuffer.h,
+	  trunk/wvstreams/streams/wvstream.cc,
+	  trunk/wvstreams/streams/wvstream.h,
+	  trunk/wvstreams/streams/wvsyslog.cc,
+	  trunk/wvstreams/streams/wvsyslog.h,
+	  trunk/wvstreams/utils/stresshash.cc,
+	  trunk/wvstreams/utils/strutils.cc,
+	  trunk/wvstreams/utils/strutils.h,
+	  trunk/wvstreams/utils/testhash.cc,
+	  trunk/wvstreams/utils/teststr.cc,
+	  trunk/wvstreams/utils/wvbuffer.cc,
+	  trunk/wvstreams/utils/wvbuffer.h,
+	  trunk/wvstreams/utils/wvhashtable.cc,
+	  trunk/wvstreams/utils/wvhashtable.h,
+	  trunk/wvstreams/utils/wvstring.cc,
+	  trunk/wvstreams/utils/wvstring.h,
+	  trunk/wvstreams/utils/wvstringlist.cc,
+	  trunk/wvstreams/utils/wvstringlist.h,
+	  trunk/wvstreams/utils/wvstringtable.cc,
+	  trunk/wvstreams/utils/wvstringtable.h,
+	  trunk/wvstreams/utils/wvtask.cc, trunk/wvstreams/utils/wvtask.h:
+	  Changed WvString semi-incompatibly to supposedly eliminate any
+	  imaginable need for explicit unique(). Yes, that's right, the
+	  Single Most Horrible Thing about WvString has been eliminated. :)
+	  Expect crashes. DEATH TO ALL WHO STAND IN MY WAY! (I didn't
+	  actually take _out_ the unique() calls, though. Feel free to
+	  delete any you see - they're all unneeded now.)
+
+2002-04-24 20:44  andrew
+
+	* trunk/wvdial/pppmon.cc, trunk/wvstreams/streams/wvpipe.cc,
+	  trunk/wvstreams/utils/wvfork.cc,
+	  trunk/wvstreams/utils/wvsubproc.cc: Made wvfork() even safer. Also
+	  minor changes to WvPrintService.
+
+2002-04-20 02:29  apenwarr
+
+	* trunk/wvdial/wvdialconf.cc, trunk/wvdial/wvmodemscan.cc,
+	  trunk/wvdial/wvmodemscan.h, trunk/wvstreams/Makefile: I have
+	  returned to the main branch and am wreaking havoc: got rid of
+	  extra messages from dhparm in auto-scanner.sh. Supplied default
+	  values for [HTTPD]Admin Email and Admin Team in the httpd.conf
+	  template. Fixed the Makefile so it builds again under the
+	  autobuilder again (I hope). Downgraded the severity (annoyingness)
+	  of some netguide messages. Fixed a bunchload of electric-fence
+	  crash bugs and some memory leaks. Reformatted some, but certainly
+	  not all, ArbitrarySpacing. Made wvapache shut up when it's
+	  disabled. Defined [HTTPD]AliasImp when webmail is turned off, but
+	  I think I did that wrong. Made WvNIS not do things when disabled,
+	  and made it call 'domainname' at the right times. Made WvDialConf
+	  sane again (the SuSE people may be helpful, but they don't know
+	  C++ :)) Ha, so who's Random Bugfix Man now?
+
+2002-04-15 18:16  ppatters
+
+	* trunk/wvdial/wvdialer.cc, trunk/wvstreams/utils/strutils.cc:
+	  Update Retchmail Changelog and fix a couple of silly Debian
+	  pickinesses, Update to WvDial Changelog, fix in wvdialer.cc for
+	  unecessary cast in start_ppp WvPipe Call, updates to versions for
+	  new releases of WvDial, WvStreams, and Retchmail.
+
+2002-04-04 17:07  socrates
+
+	* trunk/wvdial/wvdialer.cc: Changed call for WvPipe to fit new
+	  WvPipe Signature
+
+2002-04-01 20:06  ppatters
+
+	* trunk/wvdial/wvdial.cc: All OSS projects now build into Debian
+	  packages... also incorporated command line fix for WvDial.
+
+2002-03-18 21:37  ppatters
+
+	* trunk/wvdial/Makefile: Makefile cleanup for WvDial
+
+2002-03-12 20:23  ppatters
+
+	* trunk/wvdial/wvdial.cc, trunk/wvdial/wvdialer.cc: WvDial Cleanups
+	  to (finally) get the command line option=value stuff working...
+
+2002-03-10 18:43  ppatters
+
+	* trunk/wvdial/wvdial.cc, trunk/wvdial/wvdialer.cc,
+	  trunk/wvdial/wvdialmon.cc: Well, at long last, I finally got a
+	  chance to try WvDial on a box that had a modem - and guess what?
+	  It was completely broken. This is now no longer the case. As far
+	  as I can tell(tested with 2 ISP's), WvDial now is back in working
+	  order.
+
+2002-03-07 21:53  ppatters
+
+	* trunk/wvdial/wvdialer.cc, trunk/wvdial/wvdialmon.cc: More WvDial
+	  cleanup following the SuSE patch - I think that's the last of the
+	  sprintf'd buffers, and goofy output routines...
+
+2002-03-05 23:37  ppatters
+
+	* trunk/wvdial/wvdial.cc, trunk/wvdial/wvdialconf.cc,
+	  trunk/wvdial/wvdialer.cc, trunk/wvdial/wvdialer.h,
+	  trunk/wvdial/wvdialmon.cc, trunk/wvdial/wvdialmon.h: Cleanups of
+	  WvDial code after yesterday's big merge - mainly formatting, and
+	  "WvStreamsifying" of wvdialmon. Also added a check so that WvDial
+	  gives some usefull information if you try and compile it without
+	  WvStreams present...
+
+2002-03-04 22:54  ppatters
+
+	* trunk/wvdial, trunk/wvdial/.cvsignore, trunk/wvdial/Makefile,
+	  trunk/wvdial/wvdialtext.cc: Documentation Cleanup from the SuSE
+	  patch... this should be the last of it... at this point, like
+	  apenwarr said, we might want to give some thought to calling this
+	  version 1.6
+
+2002-03-04 22:39  ppatters
+
+	* trunk/wvdial/Makefile, trunk/wvdial/pppmon.cc,
+	  trunk/wvdial/wvdial.cc, trunk/wvdial/wvdialbrain.cc,
+	  trunk/wvdial/wvdialbrain.h, trunk/wvdial/wvdialconf.cc,
+	  trunk/wvdial/wvdialer.cc, trunk/wvdial/wvdialer.h,
+	  trunk/wvdial/wvdialmon.cc, trunk/wvdial/wvdialmon.h,
+	  trunk/wvdial/wvmodemscan.cc, trunk/wvdial/wvmodemscan.h,
+	  trunk/wvstreams/configfile/cfgsection.cc,
+	  trunk/wvstreams/streams/wvpipe.h,
+	  trunk/wvstreams/utils/wvbuffer.h: Monster SuSE patch merge... this
+	  should break WvDial REAL good... (actually probably not too
+	  badly.. but we'll see). Adds a raft of new stuff - ability to have
+	  WvDial prompt for password on the command line, ISDN goodies, USB
+	  (??) Modem support, and all sorts of other coolness...
+
+2002-03-04 21:10  ppatters
+
+	* trunk/wvdial/wvdialer.cc, trunk/wvdial/wvdialer.h: Added more SuSE
+	  patches - this time to make sure inherited wvdial.conf sections
+	  are present, and also add in a REALLY ugly patch that adds multi
+	  phone number support.
+
+2002-03-04 20:21  ppatters
+
+	* trunk/wvdial/wvdialer.cc: Added support for "No Answer" from patch
+	  from "Andrew W. Nosenko" <awn@bcs.zp.ua>.
+
+2002-03-04 18:58  ppatters
+
+	* trunk/wvdial/wvdialer.cc, trunk/wvdial/wvdialer.h: Incorporate a
+	  patch from Dushyanth Harinath <dushy@symonds.net> that implements
+	  a "Dial Attempts" option in wvdial.
+
+2002-03-04 17:31  ppatters
+
+	* trunk/wvdial/Makefile, trunk/wvtftp/Makefile: Fix Makefiles for
+	  FF,WvTFTP and WvDial so that they don't link against libwvcrypto
+
+2002-03-04 17:27  ppatters
+
+	* trunk/wvdial/wvdialconf.cc: Have WvDial now try and use the remote
+	  ends suggested DNS Settings (should cut down on the number of "It
+	  looks like it works, but Netscape can't find anything" emails).
+	  Updated Debian Changelog, and made wvdialconf create wvdial.conf
+	  mode 660 (instead of 666, which some people consider a security
+	  hole).
+
+2002-03-02 04:33  apenwarr
+
+	* trunk/retchmail/retchmail.cc, trunk/wvdial/wvdialer.cc,
+	  trunk/wvdial/wvdialer.h, trunk/wvprint/wvprintd.cc,
+	  trunk/wvstreams/crypto/wvsslstream.cc,
+	  trunk/wvstreams/crypto/wvsslstream.h,
+	  trunk/wvstreams/ipstreams/httptest.cc,
+	  trunk/wvstreams/ipstreams/wvhttp.cc,
+	  trunk/wvstreams/ipstreams/wvhttp.h,
+	  trunk/wvstreams/ipstreams/wvresolver.cc,
+	  trunk/wvstreams/ipstreams/wvresolver.h,
+	  trunk/wvstreams/ipstreams/wvtcp.cc,
+	  trunk/wvstreams/ipstreams/wvtcp.h,
+	  trunk/wvstreams/ipstreams/wvudp.cc,
+	  trunk/wvstreams/ipstreams/wvunixsocket.cc,
+	  trunk/wvstreams/ipstreams/wvunixsocket.h,
+	  trunk/wvstreams/streams/wvdailyevent.cc,
+	  trunk/wvstreams/streams/wvdailyevent.h,
+	  trunk/wvstreams/streams/wvfile.cc,
+	  trunk/wvstreams/streams/wvfile.h,
+	  trunk/wvstreams/streams/wvmodem.cc,
+	  trunk/wvstreams/streams/wvpipe.cc,
+	  trunk/wvstreams/streams/wvsplitstream.cc,
+	  trunk/wvstreams/streams/wvsplitstream.h,
+	  trunk/wvstreams/streams/wvstream.cc,
+	  trunk/wvstreams/streams/wvstream.h,
+	  trunk/wvstreams/streams/wvstreamclone.cc,
+	  trunk/wvstreams/streams/wvstreamclone.h,
+	  trunk/wvstreams/streams/wvstreamlist.cc,
+	  trunk/wvstreams/streams/wvstreamlist.h,
+	  trunk/wvstreams/streams/wvtimestream.cc,
+	  trunk/wvstreams/streams/wvtimestream.h,
+	  trunk/wvstreams/streams/wvwatcher.cc,
+	  trunk/wvstreams/streams/wvwatcher.h: A bunch of highly
+	  incompatible wvstreams hacks: renamed select_setup/test_set to
+	  pre_select/post_select. Simplified force_select implementation and
+	  added undo_force_select. Added read_requires_writable and
+	  write_requires_readable pointers to WvStream, to make it _much_
+	  easier to copy from one stream to another without using the
+	  outbuf. Split getfd() into getrfd() and getwfd(), even in basic
+	  wvstream, to simply implementation of WvSplitStream. Made
+	  select-for-write do the right thing when outbuf is in use (I
+	  think!). Got rid of auto_select, replacing it instead with two
+	  different variants of select(), one of which does what the old
+	  auto_select() does. Changed WvStream callbacks to use WvCallback
+	  (finally!), which means stream callbacks don't have to be static
+	  anymore. All of this will surely introduce some bugs, but at first
+	  glance, Weaver and various streams test programs seem to still
+	  work.
+
+2002-02-19 21:14  apenwarr
+
+	* trunk/wvdial/wvdialer.h, trunk/wvstreams/ipstreams/wvinterface.cc,
+	  trunk/wvstreams/ipstreams/wvipfirewall.cc,
+	  trunk/wvstreams/ipstreams/wvipfirewall.h,
+	  trunk/wvstreams/ipstreams/wvtcp.cc,
+	  trunk/wvstreams/streams/wvlockfile.h,
+	  trunk/wvstreams/utils/strutils.cc,
+	  trunk/wvstreams/utils/strutils.h, trunk/wvtftp/wvtftpserver.cc:
+	  Merged recent r3_65 changes into the main branch. I guess we
+	  haven't done this for a while!
+
+2002-01-30 01:07  ppatters
+
+	* trunk/wvdial/TODO, trunk/wvdial/wvdialtext.cc,
+	  trunk/wvstreams/utils/wvcrash.cc: Updated WvDial version to 1.5,
+	  remove some legacy @worldvisions.ca references, and make wvcrash
+	  compile on non-Debian boxen
+
+2002-01-28 18:59  ppatters
+
+	* trunk/wvdial/wvdial.cc, trunk/wvdial/wvdialtext.cc,
+	  trunk/wvdial/wvmodemscan.cc: - Debianize FastForward (as
+	  WvFastForward) - Change the Date from sometime in 1997 to now in
+	  retchmail's changelog - Patch WvDial to recognise Lucent
+	  Winmodems, Handle Config files in places other than
+	  /etc/wvdial.conf, and accept configuration options on the command
+	  line
+
+2002-01-21 18:23  ppatters
+
+	* trunk/wvdial/Makefile: Changes for WvDial to make it build outside
+	  of Weaver tree - see previous entry for retchmail for details
+
+2002-01-18 16:10  ppatters
+
+	* trunk/retchmail/Makefile, trunk/wvdial/Makefile,
+	  trunk/wvstreams/crypto/Makefile, trunk/wvtftp/Makefile: Makefile
+	  changes to hopefully get things to package nicely for the
+	  opensource release - if you get Make errors, make sure that
+	  src/wvrules.mk exists and is a symlink to ./wvrules.mk
+
+2002-01-02 02:42  apenwarr
+
+	* trunk/wvdial/papchaptest.cc, trunk/wvdial/wvdial.cc,
+	  trunk/wvdial/wvdialbrain.cc, trunk/wvdial/wvdialbrain.h,
+	  trunk/wvdial/wvdialconf.cc, trunk/wvdial/wvdialer.cc,
+	  trunk/wvdial/wvdialer.h, trunk/wvdial/wvdialtext.cc,
+	  trunk/wvdial/wvmodemscan.cc, trunk/wvdial/wvmodemscan.h,
+	  trunk/wvdial/wvpapchap.cc, trunk/wvdial/wvpapchap.h,
+	  trunk/wvstreams/configfile/cfgentry.cc,
+	  trunk/wvstreams/configfile/cfgsection.cc,
+	  trunk/wvstreams/configfile/delsection.cc,
+	  trunk/wvstreams/configfile/initest.cc,
+	  trunk/wvstreams/configfile/wvconf.cc,
+	  trunk/wvstreams/configfile/wvconf.h,
+	  trunk/wvstreams/crypto/wvcrypto.cc,
+	  trunk/wvstreams/crypto/wvcrypto.h,
+	  trunk/wvstreams/ipstreams/aliastest.cc,
+	  trunk/wvstreams/ipstreams/conttest.cc,
+	  trunk/wvstreams/ipstreams/httptest.cc,
+	  trunk/wvstreams/ipstreams/listentest.cc,
+	  trunk/wvstreams/ipstreams/resolvertest.cc,
+	  trunk/wvstreams/ipstreams/routetest.cc,
+	  trunk/wvstreams/ipstreams/simpleconn.cc,
+	  trunk/wvstreams/ipstreams/tcptest.cc,
+	  trunk/wvstreams/ipstreams/udp2test.cc,
+	  trunk/wvstreams/ipstreams/udptest.cc,
+	  trunk/wvstreams/ipstreams/ulistentest.cc,
+	  trunk/wvstreams/ipstreams/unixtest.cc,
+	  trunk/wvstreams/ipstreams/wvaddr.cc,
+	  trunk/wvstreams/ipstreams/wvaddr.h,
+	  trunk/wvstreams/ipstreams/wvhttp.cc,
+	  trunk/wvstreams/ipstreams/wvhttp.h,
+	  trunk/wvstreams/ipstreams/wvinterface.cc,
+	  trunk/wvstreams/ipstreams/wvinterface.h,
+	  trunk/wvstreams/ipstreams/wvipaddrtable.h,
+	  trunk/wvstreams/ipstreams/wvipaliaser.cc,
+	  trunk/wvstreams/ipstreams/wvipaliaser.h,
+	  trunk/wvstreams/ipstreams/wvipfirewall.cc,
+	  trunk/wvstreams/ipstreams/wvipfirewall.h,
+	  trunk/wvstreams/ipstreams/wvipnetlist.h,
+	  trunk/wvstreams/ipstreams/wviproute.cc,
+	  trunk/wvstreams/ipstreams/wviproute.h,
+	  trunk/wvstreams/ipstreams/wvresolver.cc,
+	  trunk/wvstreams/ipstreams/wvresolver.h,
+	  trunk/wvstreams/ipstreams/wvtcp.cc,
+	  trunk/wvstreams/ipstreams/wvtcp.h,
+	  trunk/wvstreams/ipstreams/wvudp.cc,
+	  trunk/wvstreams/ipstreams/wvudp.h,
+	  trunk/wvstreams/ipstreams/wvunixsocket.cc,
+	  trunk/wvstreams/ipstreams/wvunixsocket.h,
+	  trunk/wvstreams/streams/clonetest.cc,
+	  trunk/wvstreams/streams/logbuftest.cc,
+	  trunk/wvstreams/streams/logtest.cc,
+	  trunk/wvstreams/streams/looptest.cc,
+	  trunk/wvstreams/streams/modemtest.cc,
+	  trunk/wvstreams/streams/pipetest.cc,
+	  trunk/wvstreams/streams/prototest.cc,
+	  trunk/wvstreams/streams/syslogtest.cc,
+	  trunk/wvstreams/streams/timetest.cc,
+	  trunk/wvstreams/streams/watchtest.cc,
+	  trunk/wvstreams/streams/wvdailyevent.cc,
+	  trunk/wvstreams/streams/wvdailyevent.h,
+	  trunk/wvstreams/streams/wvfile.cc,
+	  trunk/wvstreams/streams/wvfile.h,
+	  trunk/wvstreams/streams/wvlockfile.cc,
+	  trunk/wvstreams/streams/wvlockfile.h,
+	  trunk/wvstreams/streams/wvlog.cc, trunk/wvstreams/streams/wvlog.h,
+	  trunk/wvstreams/streams/wvlogbuffer.cc,
+	  trunk/wvstreams/streams/wvlogbuffer.h,
+	  trunk/wvstreams/streams/wvlogrcv.h,
+	  trunk/wvstreams/streams/wvloopback.cc,
+	  trunk/wvstreams/streams/wvloopback.h,
+	  trunk/wvstreams/streams/wvmodem.cc,
+	  trunk/wvstreams/streams/wvmodem.h,
+	  trunk/wvstreams/streams/wvpipe.cc,
+	  trunk/wvstreams/streams/wvpipe.h,
+	  trunk/wvstreams/streams/wvprotostream.cc,
+	  trunk/wvstreams/streams/wvprotostream.h,
+	  trunk/wvstreams/streams/wvsplitstream.cc,
+	  trunk/wvstreams/streams/wvsplitstream.h,
+	  trunk/wvstreams/streams/wvstream.cc,
+	  trunk/wvstreams/streams/wvstream.h,
+	  trunk/wvstreams/streams/wvstreamclone.cc,
+	  trunk/wvstreams/streams/wvstreamclone.h,
+	  trunk/wvstreams/streams/wvstreamlist.cc,
+	  trunk/wvstreams/streams/wvstreamlist.h,
+	  trunk/wvstreams/streams/wvsyslog.cc,
+	  trunk/wvstreams/streams/wvsyslog.h,
+	  trunk/wvstreams/streams/wvtimestream.cc,
+	  trunk/wvstreams/streams/wvtimestream.h,
+	  trunk/wvstreams/streams/wvwatcher.cc,
+	  trunk/wvstreams/streams/wvwatcher.h,
+	  trunk/wvstreams/utils/base64.cc, trunk/wvstreams/utils/base64.h,
+	  trunk/wvstreams/utils/stresshash.cc,
+	  trunk/wvstreams/utils/strutils.cc,
+	  trunk/wvstreams/utils/strutils.h,
+	  trunk/wvstreams/utils/testbase64.cc,
+	  trunk/wvstreams/utils/testbuffer.cc,
+	  trunk/wvstreams/utils/testdiriter.cc,
+	  trunk/wvstreams/utils/testfork.cc,
+	  trunk/wvstreams/utils/testhash.cc,
+	  trunk/wvstreams/utils/testlist.cc,
+	  trunk/wvstreams/utils/testsort.cc,
+	  trunk/wvstreams/utils/teststr.cc,
+	  trunk/wvstreams/utils/testtask.cc,
+	  trunk/wvstreams/utils/testver.cc,
+	  trunk/wvstreams/utils/verstring.cc,
+	  trunk/wvstreams/utils/verstring.h,
+	  trunk/wvstreams/utils/wvbuffer.cc,
+	  trunk/wvstreams/utils/wvbuffer.h,
+	  trunk/wvstreams/utils/wvcallback.h,
+	  trunk/wvstreams/utils/wvcrash.cc, trunk/wvstreams/utils/wvcrash.h,
+	  trunk/wvstreams/utils/wvdiriter.cc,
+	  trunk/wvstreams/utils/wvdiriter.h,
+	  trunk/wvstreams/utils/wvencoder.cc,
+	  trunk/wvstreams/utils/wvencoder.h,
+	  trunk/wvstreams/utils/wvfork.cc, trunk/wvstreams/utils/wvfork.h,
+	  trunk/wvstreams/utils/wvgzip.cc, trunk/wvstreams/utils/wvgzip.h,
+	  trunk/wvstreams/utils/wvhashtable.cc,
+	  trunk/wvstreams/utils/wvhashtable.h,
+	  trunk/wvstreams/utils/wvlink.h,
+	  trunk/wvstreams/utils/wvlinklist.cc,
+	  trunk/wvstreams/utils/wvlinklist.h,
+	  trunk/wvstreams/utils/wvsorter.cc,
+	  trunk/wvstreams/utils/wvsorter.h,
+	  trunk/wvstreams/utils/wvstring.cc,
+	  trunk/wvstreams/utils/wvstring.h,
+	  trunk/wvstreams/utils/wvstringlist.cc,
+	  trunk/wvstreams/utils/wvstringlist.h,
+	  trunk/wvstreams/utils/wvstringtable.cc,
+	  trunk/wvstreams/utils/wvstringtable.h,
+	  trunk/wvstreams/utils/wvsubproc.cc,
+	  trunk/wvstreams/utils/wvsubproc.h,
+	  trunk/wvstreams/utils/wvtask.cc, trunk/wvstreams/utils/wvtask.h,
+	  trunk/wvtftp/wvtftpbase.cc, trunk/wvtftp/wvtftpbase.h,
+	  trunk/wvtftp/wvtftpd.cc, trunk/wvtftp/wvtftpserver.cc,
+	  trunk/wvtftp/wvtftpserver.h: Updated copyrights to 2002.
+
+2002-01-01 06:39  apenwarr
+
+	* trunk/retchmail/Makefile, trunk/wvdial/Makefile,
+	  trunk/wvstreams/Makefile, trunk/wvstreams/ipstreams/Makefile,
+	  trunk/wvtftp/Makefile: A bunch of Makefile changes to make the
+	  whole source tree build again.
+
+2002-01-01 05:44  apenwarr
+
+	* trunk/retchmail/Makefile, trunk/wvdial/Makefile,
+	  trunk/wvstreams/Docs/Makefile,
+	  trunk/wvstreams/Docs/sgmlmanual/HTML.dsl,
+	  trunk/wvstreams/Docs/sgmlmanual/egfiles/Makefile,
+	  trunk/wvstreams/Docs/sgmlmanual/egfiles/wvfileex.cc,
+	  trunk/wvstreams/Makefile, trunk/wvtftp/Makefile: Changed other
+	  makefiles to handle rename of rules.mk to wvrules.mk.
+
+2001-12-14 10:10  apenwarr
+
+	* trunk/wvdial/wvdialer.cc,
+	  trunk/wvstreams/ipstreams/wvinterface.cc: Merged recent changes
+	  from r3_6 into the main branch. I guess it's been a while...
+
+2001-12-08 22:26  apenwarr
+
+	* trunk/wvdial/wvpapchap.h, trunk/wvstreams/utils/base64.h: Fixed
+	  some header files for portability. Always use comments rather than
+	  bare words after '#endif' if you're going to use anything at all.
+
+2001-11-28 22:12  apenwarr
+
+	* trunk/wvdial/wvdialer.cc, trunk/wvstreams/ipstreams/udp2test.cc,
+	  trunk/wvstreams/streams/wvdailyevent.cc,
+	  trunk/wvstreams/streams/wvprotostream.cc,
+	  trunk/wvstreams/streams/wvstream.cc,
+	  trunk/wvstreams/streams/wvstream.h,
+	  trunk/wvstreams/streams/wvstreamclone.cc,
+	  trunk/wvstreams/streams/wvstreamlist.cc,
+	  trunk/wvstreams/streams/wvtimestream.cc,
+	  trunk/wvtftp/wvtftpserver.cc: Decided to add an assertion to
+	  verify that WvStream::execute() ended up being called whenever
+	  callback() was called. An astonishing number of classes were
+	  forgetting to do that, which is technically okay... but might not
+	  always be. Anyway, fixed them all (I think). If you get my new
+	  wvstream_execute_called assertion, please fix the broken class :)
+
+2001-11-14 17:34  dcoombs
+
+	* trunk/wvdial/wvpapchap.cc: wvpapchap fix in main branch too
+
+2001-11-12 21:24  apenwarr
+
+	* trunk/wvdial/Makefile, trunk/wvstreams/configfile,
+	  trunk/wvstreams/configfile/.cvsignore,
+	  trunk/wvstreams/configfile/Makefile, trunk/wvstreams/ipstreams,
+	  trunk/wvstreams/ipstreams/.cvsignore,
+	  trunk/wvstreams/ipstreams/Makefile, trunk/wvstreams/streams,
+	  trunk/wvstreams/streams/.cvsignore,
+	  trunk/wvstreams/streams/Makefile, trunk/wvstreams/utils,
+	  trunk/wvstreams/utils/.cvsignore, trunk/wvstreams/utils/Makefile,
+	  trunk/wvtftp/Makefile: It was getting far to easy to build weaver.
+	  Rearranged the way .a files are generated, so now we have a
+	  central libwvstreams.a rather than linking configfile, ipstreams,
+	  etc separately. I haven't moved the directory structure around
+	  yet, but I will... Also added the beginnings of a WvDaemon class,
+	  but it's not used anywhere yet.
+
+2001-10-25 15:17  dcoombs
+
+	* trunk/wvdial/wvpapchap.cc, trunk/wvdial/wvpapchap.h,
+	  trunk/wvstreams/utils/strutils.cc,
+	  trunk/wvstreams/utils/strutils.h: wrote backslash_escape() in
+	  strutils.cc, which takes a string, puts a backslash in front of
+	  every !isalnum() character, and returns a new string. Using it
+	  when writing the chap-secrets and pap-secrets files. Also took
+	  this opportunity to make wvpapchap.cc slightly more modern. (I
+	  apparently didn't know about ThingList::zap() when I wrote it...)
+
+2001-10-22 13:25  apenwarr
+
+	* trunk/wvdial/wvdial.cc, trunk/wvdial/wvdialer.cc,
+	  trunk/wvdial/wvdialer.h: Added "abort on busy" and "abort on no
+	  dialtone" wvdial patch from Kenn Humborg <kenn@bluetree.ie>.
+
+2001-08-16 21:23  apenwarr
+
+	* trunk/wvdial/wvdialer.cc,
+	  trunk/wvstreams/ipstreams/wvinterface.cc: Merged recent changes
+	  from r3_5 into main branch.
+
+2001-06-29 10:46  apenwarr
+
+	* trunk/wvdial/wvdial.cc: Finished porting pppoe and wvdial to the
+	  new netguide stuff, and started testing. wvdial seems to work on
+	  insight, but it looks like the modem on my weaver is broken -- it
+	  uses the old pctel_daa and is sharing the modem IRQ with eth0. Any
+	  activity on eth0 confuses the modem and causes NO DIALTONE or NO
+	  CARRIER! Also, I found out that with pctel_amr, apparently having
+	  /dev/ttyS15 open at all (even if not dialing or online) causes
+	  thousands of interrupts per second, which probably slows the CPU
+	  down a lot. So we'll have to change wvdialguide to only create the
+	  wvdialer object when absolutely necessary... Not checking in the
+	  failover stuff right now, since there's _really_ no way to test if
+	  that works, and Ozzy might want a "stable" version while I'm on
+	  holidays, and there's an off chance that Dave can fix any bugs in
+	  the current stuff, whereas if I put in the failover/doublevision
+	  stuff it would be hopeless.
+
+2001-06-22 04:53  apenwarr
+
+	* trunk/wvdial/wvdialer.cc: Fixed a raft of netguide bugs. Split the
+	  "killall" section of weaver.sh into killstuff.sh, which makes
+	  killing daemons easier when you core dump a test version of the
+	  weaver binary. Changed various WvLog source names to make the log
+	  viewer look nicer. Made the log viewer highlight any line that
+	  _starts_ with the selected string, so now you can pick "tunnel
+	  vision" and all the specific tunnels also get highlighted, or
+	  "wvdial" and "wvdial modem" and "wvdial modem #2" get highlighted
+	  too.
+
+2001-06-05 06:14  apenwarr
+
+	* trunk/wvdial/papchaptest.cc, trunk/wvdial/wvdial.cc,
+	  trunk/wvdial/wvdialbrain.cc, trunk/wvdial/wvdialbrain.h,
+	  trunk/wvdial/wvdialconf.cc, trunk/wvdial/wvdialer.cc,
+	  trunk/wvdial/wvdialer.h, trunk/wvdial/wvdialtext.cc,
+	  trunk/wvdial/wvmodemscan.cc, trunk/wvdial/wvmodemscan.h,
+	  trunk/wvdial/wvpapchap.cc, trunk/wvdial/wvpapchap.h,
+	  trunk/wvstreams/configfile/cfgentry.cc,
+	  trunk/wvstreams/configfile/cfgsection.cc,
+	  trunk/wvstreams/configfile/initest.cc,
+	  trunk/wvstreams/configfile/wvconf.cc,
+	  trunk/wvstreams/configfile/wvconf.h,
+	  trunk/wvstreams/ipstreams/aliastest.cc,
+	  trunk/wvstreams/ipstreams/conttest.cc,
+	  trunk/wvstreams/ipstreams/httptest.cc,
+	  trunk/wvstreams/ipstreams/listentest.cc,
+	  trunk/wvstreams/ipstreams/resolvertest.cc,
+	  trunk/wvstreams/ipstreams/routetest.cc,
+	  trunk/wvstreams/ipstreams/simpleconn.cc,
+	  trunk/wvstreams/ipstreams/tcptest.cc,
+	  trunk/wvstreams/ipstreams/udp2test.cc,
+	  trunk/wvstreams/ipstreams/udptest.cc,
+	  trunk/wvstreams/ipstreams/wvaddr.cc,
+	  trunk/wvstreams/ipstreams/wvaddr.h,
+	  trunk/wvstreams/ipstreams/wvhttp.cc,
+	  trunk/wvstreams/ipstreams/wvhttp.h,
+	  trunk/wvstreams/ipstreams/wvinterface.cc,
+	  trunk/wvstreams/ipstreams/wvinterface.h,
+	  trunk/wvstreams/ipstreams/wvipaddrtable.h,
+	  trunk/wvstreams/ipstreams/wvipaliaser.cc,
+	  trunk/wvstreams/ipstreams/wvipaliaser.h,
+	  trunk/wvstreams/ipstreams/wvipfirewall.cc,
+	  trunk/wvstreams/ipstreams/wvipfirewall.h,
+	  trunk/wvstreams/ipstreams/wvipnetlist.h,
+	  trunk/wvstreams/ipstreams/wviproute.cc,
+	  trunk/wvstreams/ipstreams/wviproute.h,
+	  trunk/wvstreams/ipstreams/wvresolver.cc,
+	  trunk/wvstreams/ipstreams/wvresolver.h,
+	  trunk/wvstreams/ipstreams/wvtcp.cc,
+	  trunk/wvstreams/ipstreams/wvtcp.h,
+	  trunk/wvstreams/ipstreams/wvudp.cc,
+	  trunk/wvstreams/ipstreams/wvudp.h,
+	  trunk/wvstreams/streams/clonetest.cc,
+	  trunk/wvstreams/streams/logbuftest.cc,
+	  trunk/wvstreams/streams/logtest.cc,
+	  trunk/wvstreams/streams/looptest.cc,
+	  trunk/wvstreams/streams/modemtest.cc,
+	  trunk/wvstreams/streams/pipetest.cc,
+	  trunk/wvstreams/streams/prototest.cc,
+	  trunk/wvstreams/streams/syslogtest.cc,
+	  trunk/wvstreams/streams/timetest.cc,
+	  trunk/wvstreams/streams/watchtest.cc,
+	  trunk/wvstreams/streams/wvfile.cc,
+	  trunk/wvstreams/streams/wvfile.h,
+	  trunk/wvstreams/streams/wvlockfile.cc,
+	  trunk/wvstreams/streams/wvlockfile.h,
+	  trunk/wvstreams/streams/wvlog.cc, trunk/wvstreams/streams/wvlog.h,
+	  trunk/wvstreams/streams/wvlogbuffer.cc,
+	  trunk/wvstreams/streams/wvlogbuffer.h,
+	  trunk/wvstreams/streams/wvlogrcv.h,
+	  trunk/wvstreams/streams/wvloopback.cc,
+	  trunk/wvstreams/streams/wvloopback.h,
+	  trunk/wvstreams/streams/wvmodem.cc,
+	  trunk/wvstreams/streams/wvmodem.h,
+	  trunk/wvstreams/streams/wvpipe.cc,
+	  trunk/wvstreams/streams/wvpipe.h,
+	  trunk/wvstreams/streams/wvprotostream.cc,
+	  trunk/wvstreams/streams/wvprotostream.h,
+	  trunk/wvstreams/streams/wvsplitstream.cc,
+	  trunk/wvstreams/streams/wvsplitstream.h,
+	  trunk/wvstreams/streams/wvstream.cc,
+	  trunk/wvstreams/streams/wvstream.h,
+	  trunk/wvstreams/streams/wvstreamclone.cc,
+	  trunk/wvstreams/streams/wvstreamclone.h,
+	  trunk/wvstreams/streams/wvstreamlist.cc,
+	  trunk/wvstreams/streams/wvstreamlist.h,
+	  trunk/wvstreams/streams/wvsyslog.cc,
+	  trunk/wvstreams/streams/wvsyslog.h,
+	  trunk/wvstreams/streams/wvtimestream.cc,
+	  trunk/wvstreams/streams/wvtimestream.h,
+	  trunk/wvstreams/streams/wvwatcher.cc,
+	  trunk/wvstreams/streams/wvwatcher.h,
+	  trunk/wvstreams/utils/base64.cc, trunk/wvstreams/utils/base64.h,
+	  trunk/wvstreams/utils/stresshash.cc,
+	  trunk/wvstreams/utils/strutils.cc,
+	  trunk/wvstreams/utils/strutils.h,
+	  trunk/wvstreams/utils/testbase64.cc,
+	  trunk/wvstreams/utils/testbuffer.cc,
+	  trunk/wvstreams/utils/testhash.cc,
+	  trunk/wvstreams/utils/testlist.cc,
+	  trunk/wvstreams/utils/teststr.cc,
+	  trunk/wvstreams/utils/testtask.cc,
+	  trunk/wvstreams/utils/testver.cc,
+	  trunk/wvstreams/utils/verstring.cc,
+	  trunk/wvstreams/utils/verstring.h,
+	  trunk/wvstreams/utils/wvbuffer.cc,
+	  trunk/wvstreams/utils/wvbuffer.h,
+	  trunk/wvstreams/utils/wvhashtable.cc,
+	  trunk/wvstreams/utils/wvhashtable.h,
+	  trunk/wvstreams/utils/wvlinklist.cc,
+	  trunk/wvstreams/utils/wvlinklist.h,
+	  trunk/wvstreams/utils/wvstring.cc,
+	  trunk/wvstreams/utils/wvstring.h,
+	  trunk/wvstreams/utils/wvstringlist.cc,
+	  trunk/wvstreams/utils/wvstringlist.h,
+	  trunk/wvstreams/utils/wvstringtable.cc,
+	  trunk/wvstreams/utils/wvstringtable.h,
+	  trunk/wvstreams/utils/wvtask.cc, trunk/wvstreams/utils/wvtask.h:
+	  Updated copyright notices on C++ files. Gee, I put that one off
+	  for almost as long as I put off doing my taxes :)
+
+2001-05-11 19:57  apenwarr
+
+	* trunk/wvdial/wvdial.cc, trunk/wvdial/wvdialbrain.cc,
+	  trunk/wvdial/wvmodemscan.cc: Preparing to release wvdial 1.42.
+
+2001-02-11 23:10  apenwarr
+
+	* trunk/wvdial/wvdialer.cc: Fixed doublev randomness to make it more
+	  even. Changed apache settings to make Ozzy's benchmarks happier.
+	  Changed backup status emails to be a little more friendly.
+	  Accidentally left the 'weaver' binary statically linked. Changed
+	  status web page to support multi-modems again. Fixed idle
+	  detection for multi-modems, basically, but not quite. Made wvdial
+	  modem initialization try 3 times before giving up.
+
+2000-07-30 20:10  dcoombs
+
+	* trunk/wvdial/wvdialer.cc: Fixed the hits-enter-sometimes bug that
+	  was happening on the LCD panel. Stupid uninitialized variables.
+
+2000-06-25 05:10  apenwarr
+
+	* trunk/wvdial/wvdialer.cc: Fixed the Init1/Init bug that Dave
+	  introduced (I think). DHCP server gets enabled automatically, if
+	  the user doesn't choose. Improved the "nameserver ping probe" to
+	  use hardping() instead of softping(), removing the need to fiddle
+	  with the routing table and/or use ARP. weaverlogin.c's init
+	  process unloads the cloop module now, which allows us to properly
+	  umount /. Starting/stopping samba doesn't start/stop appletalk,
+	  and vice versa. Domain name setting on "create first user" screen
+	  has a default value now, rather than blank.
+
+2000-06-24 20:19  dcoombs
+
+	* trunk/wvdial/wvdialbrain.cc: Fixed small bug in WvDial, where it
+	  thought a blank line was a prompt if it had a guess. Now it thinks
+	  a blank line is a prompt if it has a guess and the most recent
+	  non-blank line really WAS a prompt.
+
+2000-06-24 20:11  dcoombs
+
+	* trunk/wvdial/wvdialer.cc: Made [Dialer]Init1 vs Init consistent
+	  with itself. Always sets Init1, but WvDial accepts both now
+	  anyway.
+
+2000-06-23 23:03  apenwarr
+
+	* trunk/wvdial/Makefile, trunk/wvdial/wvdialbrain.cc,
+	  trunk/wvdial/wvdialer.cc: Weaver turns on most services
+	  automatically ("Trusted hosts only") after a zap. Dhcpd refuses to
+	  create entries for 0.0.0.0 interfaces. Fix for wvdial bug relating
+	  to garbage characters and 0x80->0x00.
+
+2000-06-21 07:50  apenwarr
+
+	* trunk/wvdial/wvmodemscan.cc: Took out some baud rate weirdness in
+	  WvModemScan. Since the speed-detection bug was fixed, there's no
+	  need to be "safe" by stepping down one, and therefore there's no
+	  need to force ISDN to 115200, which fixes 9600 baud modems that
+	  identify themselves as "960" (the same as a known ISDN modem).
+
+2000-04-02 11:31  apenwarr
+
+	* trunk/wvdial/wvdialer.cc: Modem dialer control stuff is back. I'm
+	  not quite sure I like the way it looks, though...
+
+2000-04-02 09:22  apenwarr
+
+	* trunk/wvdial/wvdialer.cc: WvDial now uses continue_select()
+	  instead of sleep() or usleep(). No crashes... yet :) Also, it
+	  seems wvdial's code for reading its config file entries into a set
+	  of wvstrings was messed up. It needed to call unique() on each
+	  string... if the dialer config entries changed after creating the
+	  WvDialer object, wacky things would happen.
+
+2000-04-02 08:12  apenwarr
+
+	* trunk/wvdial/wvdial.cc: "Advanced" localnet page seems to do
+	  interfaces and routing properly now. _That_ was certainly a lot of
+	  work.
+
+2000-03-15 20:44  apenwarr
+
+	* trunk/wvdial/papchaptest.cc, trunk/wvdial/wvdial.cc,
+	  trunk/wvdial/wvdialbrain.cc, trunk/wvdial/wvdialbrain.h,
+	  trunk/wvdial/wvdialconf.cc, trunk/wvdial/wvdialer.cc,
+	  trunk/wvdial/wvdialer.h, trunk/wvdial/wvdialtext.cc,
+	  trunk/wvdial/wvmodemscan.cc, trunk/wvdial/wvmodemscan.h,
+	  trunk/wvdial/wvpapchap.cc, trunk/wvdial/wvpapchap.h,
+	  trunk/wvstreams/configfile/cfgentry.cc,
+	  trunk/wvstreams/configfile/cfgsection.cc,
+	  trunk/wvstreams/configfile/initest.cc,
+	  trunk/wvstreams/configfile/wvconf.cc,
+	  trunk/wvstreams/configfile/wvconf.h,
+	  trunk/wvstreams/ipstreams/aliastest.cc,
+	  trunk/wvstreams/ipstreams/listentest.cc,
+	  trunk/wvstreams/ipstreams/resolvertest.cc,
+	  trunk/wvstreams/ipstreams/routetest.cc,
+	  trunk/wvstreams/ipstreams/simpleconn.cc,
+	  trunk/wvstreams/ipstreams/tcptest.cc,
+	  trunk/wvstreams/ipstreams/udp2test.cc,
+	  trunk/wvstreams/ipstreams/udptest.cc,
+	  trunk/wvstreams/ipstreams/wvaddr.cc,
+	  trunk/wvstreams/ipstreams/wvaddr.h,
+	  trunk/wvstreams/ipstreams/wvhttp.cc,
+	  trunk/wvstreams/ipstreams/wvhttp.h,
+	  trunk/wvstreams/ipstreams/wvinterface.cc,
+	  trunk/wvstreams/ipstreams/wvinterface.h,
+	  trunk/wvstreams/ipstreams/wvipaliaser.cc,
+	  trunk/wvstreams/ipstreams/wvipaliaser.h,
+	  trunk/wvstreams/ipstreams/wvipfirewall.cc,
+	  trunk/wvstreams/ipstreams/wvipfirewall.h,
+	  trunk/wvstreams/ipstreams/wvipnetlist.h,
+	  trunk/wvstreams/ipstreams/wviproute.cc,
+	  trunk/wvstreams/ipstreams/wviproute.h,
+	  trunk/wvstreams/ipstreams/wvresolver.cc,
+	  trunk/wvstreams/ipstreams/wvresolver.h,
+	  trunk/wvstreams/ipstreams/wvtcp.cc,
+	  trunk/wvstreams/ipstreams/wvtcp.h,
+	  trunk/wvstreams/ipstreams/wvudp.cc,
+	  trunk/wvstreams/ipstreams/wvudp.h,
+	  trunk/wvstreams/streams/clonetest.cc,
+	  trunk/wvstreams/streams/logbuftest.cc,
+	  trunk/wvstreams/streams/logtest.cc,
+	  trunk/wvstreams/streams/looptest.cc,
+	  trunk/wvstreams/streams/modemtest.cc,
+	  trunk/wvstreams/streams/pipetest.cc,
+	  trunk/wvstreams/streams/prototest.cc,
+	  trunk/wvstreams/streams/syslogtest.cc,
+	  trunk/wvstreams/streams/timetest.cc,
+	  trunk/wvstreams/streams/watchtest.cc,
+	  trunk/wvstreams/streams/wvfile.cc,
+	  trunk/wvstreams/streams/wvfile.h,
+	  trunk/wvstreams/streams/wvlockfile.cc,
+	  trunk/wvstreams/streams/wvlockfile.h,
+	  trunk/wvstreams/streams/wvlog.cc, trunk/wvstreams/streams/wvlog.h,
+	  trunk/wvstreams/streams/wvlogbuffer.cc,
+	  trunk/wvstreams/streams/wvlogbuffer.h,
+	  trunk/wvstreams/streams/wvlogrcv.h,
+	  trunk/wvstreams/streams/wvloopback.cc,
+	  trunk/wvstreams/streams/wvloopback.h,
+	  trunk/wvstreams/streams/wvmodem.cc,
+	  trunk/wvstreams/streams/wvmodem.h,
+	  trunk/wvstreams/streams/wvpipe.cc,
+	  trunk/wvstreams/streams/wvpipe.h,
+	  trunk/wvstreams/streams/wvprotostream.cc,
+	  trunk/wvstreams/streams/wvprotostream.h,
+	  trunk/wvstreams/streams/wvsplitstream.cc,
+	  trunk/wvstreams/streams/wvsplitstream.h,
+	  trunk/wvstreams/streams/wvstream.cc,
+	  trunk/wvstreams/streams/wvstream.h,
+	  trunk/wvstreams/streams/wvstreamclone.cc,
+	  trunk/wvstreams/streams/wvstreamclone.h,
+	  trunk/wvstreams/streams/wvstreamlist.cc,
+	  trunk/wvstreams/streams/wvstreamlist.h,
+	  trunk/wvstreams/streams/wvsyslog.cc,
+	  trunk/wvstreams/streams/wvsyslog.h,
+	  trunk/wvstreams/streams/wvtimestream.cc,
+	  trunk/wvstreams/streams/wvtimestream.h,
+	  trunk/wvstreams/streams/wvwatcher.cc,
+	  trunk/wvstreams/streams/wvwatcher.h,
+	  trunk/wvstreams/utils/base64.cc, trunk/wvstreams/utils/base64.h,
+	  trunk/wvstreams/utils/stresshash.cc,
+	  trunk/wvstreams/utils/strutils.cc,
+	  trunk/wvstreams/utils/strutils.h,
+	  trunk/wvstreams/utils/testbase64.cc,
+	  trunk/wvstreams/utils/testbuffer.cc,
+	  trunk/wvstreams/utils/testhash.cc,
+	  trunk/wvstreams/utils/testlist.cc,
+	  trunk/wvstreams/utils/teststr.cc,
+	  trunk/wvstreams/utils/testtask.cc,
+	  trunk/wvstreams/utils/testver.cc,
+	  trunk/wvstreams/utils/verstring.cc,
+	  trunk/wvstreams/utils/verstring.h,
+	  trunk/wvstreams/utils/wvbuffer.cc,
+	  trunk/wvstreams/utils/wvbuffer.h,
+	  trunk/wvstreams/utils/wvhashtable.cc,
+	  trunk/wvstreams/utils/wvhashtable.h,
+	  trunk/wvstreams/utils/wvlinklist.cc,
+	  trunk/wvstreams/utils/wvlinklist.h,
+	  trunk/wvstreams/utils/wvstring.cc,
+	  trunk/wvstreams/utils/wvstring.h,
+	  trunk/wvstreams/utils/wvstringtable.h,
+	  trunk/wvstreams/utils/wvtask.cc, trunk/wvstreams/utils/wvtask.h:
+	  Updated copyright notices to "1997-2000" and "Net Integration
+	  Technologies, Inc." It still says "Worldvisions Weaver software",
+	  though, because that's really what it is.
+
+2000-03-15 20:41  apenwarr
+
+	* trunk/wvdial/wvdialconf.cc, trunk/wvdial/wvpapchap.cc,
+	  trunk/wvstreams/configfile/wvconf.cc,
+	  trunk/wvstreams/ipstreams/wvinterface.cc,
+	  trunk/wvstreams/ipstreams/wviproute.cc,
+	  trunk/wvstreams/ipstreams/wvtcp.cc,
+	  trunk/wvstreams/ipstreams/wvudp.cc,
+	  trunk/wvstreams/streams/Makefile,
+	  trunk/wvstreams/streams/logbuftest.cc,
+	  trunk/wvstreams/streams/logtest.cc,
+	  trunk/wvstreams/streams/looptest.cc,
+	  trunk/wvstreams/streams/syslogtest.cc,
+	  trunk/wvstreams/streams/timetest.cc,
+	  trunk/wvstreams/streams/wvfile.cc,
+	  trunk/wvstreams/streams/wvfile.h,
+	  trunk/wvstreams/streams/wvlockfile.cc,
+	  trunk/wvstreams/streams/wvloopback.cc,
+	  trunk/wvstreams/streams/wvmodem.h,
+	  trunk/wvstreams/streams/wvpipe.cc,
+	  trunk/wvstreams/streams/wvstream.cc,
+	  trunk/wvstreams/streams/wvstream.h,
+	  trunk/wvstreams/streams/wvwatcher.h: Split WvFile out of
+	  wvstream.h into its own file, with dramatically more widespread
+	  consequences than I was expecting. I think I fixed all the missing
+	  headers now though.
+
+2000-02-27 22:14  apenwarr
+
+	* trunk/wvdial/Makefile, trunk/wvstreams/configfile/Makefile,
+	  trunk/wvstreams/ipstreams/Makefile,
+	  trunk/wvstreams/streams/Makefile, trunk/wvstreams/utils/Makefile:
+	  WebConfig produces output based on aml... not well integrated yet
+	  (at ALL!)
+
+1999-11-28 19:39  apenwarr
+
+	* trunk/wvdial/wvdial.cc, trunk/wvstreams/configfile/wvconf.cc,
+	  trunk/wvstreams/configfile/wvconf.h: wvdial now reads .wvdialrc
+	  when it starts, in addition to /etc/wvdial.conf. The user config
+	  file overrides the system-wide one.
+
+1999-11-25 21:48  apenwarr
+
+	* trunk/wvdial/MENUS: Weaver 2.20c changes, from a while ago.
+
+1999-11-19 05:14  apenwarr
+
+	* trunk/wvdial/wvdialer.cc: A better fix to the previous wvdial
+	  problem.
+
+1999-11-19 05:00  apenwarr
+
+	* trunk/wvdial/wvdialer.cc: Wvdial patch to work with
+	  "CONNECT...PPP" lines, thanks to a report by Renaud Guerin.
+
+1999-10-15 01:09  apenwarr
+
+	* trunk/wvdial/FAQ: Updated version number to 2.20.
+
+1999-09-19 03:07  apenwarr
+
+	* trunk/wvdial/wvdialer.cc: Another wvdial tweak from mkj.
+
+1999-09-13 21:48  apenwarr
+
+	* trunk/wvdial/wvdialconf.cc, trunk/wvdial/wvdialer.cc,
+	  trunk/wvstreams/configfile/wvconf.cc,
+	  trunk/wvstreams/configfile/wvconf.h: cfg.get() split into
+	  cfg.get(string) and cfg.getint(int) for portability (especially to
+	  glibc2.1). Same with set().
+
+1999-09-13 20:07  dcoombs
+
+	* trunk/wvdial/wvmodemscan.cc: Support for the USR ISDN TA... (id
+	  346800)
+
+1999-08-12 04:51  apenwarr
+
+	* trunk/wvdial/TODO, trunk/wvdial/wvdial.cc: WvDialconf creates
+	  wvdial.ini 0600.
+
+1999-08-07 17:06  apenwarr
+
+	* trunk/wvdial/wvdialbrain.cc, trunk/wvdial/wvdialer.cc,
+	  trunk/wvdial/wvdialer.h: Area Code support from Michael K.
+	  Johnson.
+
+1999-08-02 18:30  apenwarr
+
+	* trunk/wvdial/wvdial.cc, trunk/wvstreams/streams/wvsyslog.cc,
+	  trunk/wvstreams/streams/wvsyslog.h: WvSyslog allows you to
+	  override which WvLog debug levels are LOG_DEBUG; now the wvdial
+	  application uses this feature.
+
+1999-08-02 18:20  apenwarr
+
+	* trunk/wvdial/TODO, trunk/wvdial/wvdial.cc,
+	  trunk/wvdial/wvdialconf.cc, trunk/wvdial/wvdialer.cc,
+	  trunk/wvdial/wvdialer.h: wvdial (main application) prints a
+	  helpful message if pppd dies too quickly. A "connect" line in
+	  /etc/ppp/options also elicits a warning from wvdialconf.
+
+1999-08-02 18:01  apenwarr
+
+	* trunk/wvdial/wvdialconf.cc, trunk/wvdial/wvdialer.cc,
+	  trunk/wvdial/wvmodemscan.cc, trunk/wvstreams/streams/Makefile,
+	  trunk/wvstreams/streams/wvlockfile.cc,
+	  trunk/wvstreams/streams/wvlockfile.h,
+	  trunk/wvstreams/streams/wvmodem.cc,
+	  trunk/wvstreams/streams/wvmodem.h, trunk/wvstreams/utils/Makefile:
+	  Updated wvdial version to 1.40. Added optional support for the
+	  liblockdev library to WvLockFile, and made rules.mk able to merge
+	  .a files together (for now, so that liblockdev.a could be linked
+	  automatically, but later, so we can easily build a libwvstreams.a
+	  from all the various libraries). More virtual function fixes in
+	  WvModem. wvdialconf now checks /etc/ppp/options for common errors,
+	  and sends people to the FAQ, then to wvdial-list@worldvisions.ca
+	  rather than asking people to personally report problems to
+	  wvdial@worldvisions.ca
+
+1999-08-02 15:47  apenwarr
+
+	* trunk/wvdial/MENUS, trunk/wvstreams/streams/wvmodem.cc,
+	  trunk/wvstreams/streams/wvmodem.h: Moved some wvmodembase virtual
+	  functions from a .h file into a .cc file.
+
+1999-08-01 16:00  apenwarr
+
+	* trunk/wvdial/wvdial.cc, trunk/wvdial/wvdialer.cc,
+	  trunk/wvdial/wvdialer.h, trunk/wvdial/wvdialtext.cc,
+	  trunk/wvstreams/streams/wvmodem.cc,
+	  trunk/wvstreams/streams/wvmodem.h: Patch from Michael K. Johnson
+	  to add the "--chat" option to wvdial.
+
+1999-07-29 00:20  apenwarr
+
+	* trunk/wvdial/MENUS: *** empty log message ***
+
+1999-07-21 01:26  apenwarr
+
+	* trunk/wvdial/wvmodemscan.cc: Correction to Michael's previous
+	  patch.
+
+1999-07-21 01:20  apenwarr
+
+	* trunk/wvdial/wvmodemscan.cc, trunk/wvstreams/streams/wvmodem.cc,
+	  trunk/wvstreams/streams/wvmodem.h: Patch from Michale K. Johnson
+	  <johnsonm@redhat.com> to fix a bug with baud rate detection in
+	  wvdialconf; we also now detect modems on /dev/modem.
+
+1999-06-21 04:15  apenwarr
+
+	* trunk/wvdial/TODO, trunk/wvdial/wvdialbrain.cc: WvDial should now
+	  revert to default_reply after using its "intelligent" guess once.
+
+1999-06-20 17:18  apenwarr
+
+	* trunk/wvdial/MENUS: *** empty log message ***
+
+1999-06-06 17:08  apenwarr
+
+	* trunk/wvdial/wvpapchap.cc: Tweaked version numbers and SNMP
+	  webconfig display. WvDial's pap-secrets writer now uses \\ for \,
+	  so that pppd accepts it properly.
+
+1999-04-10 05:16  apenwarr
+
+	* trunk/wvdial, trunk/wvdial/.cvsignore, trunk/wvstreams/configfile,
+	  trunk/wvstreams/configfile/.cvsignore, trunk/wvstreams/ipstreams,
+	  trunk/wvstreams/ipstreams/.cvsignore, trunk/wvstreams/streams,
+	  trunk/wvstreams/streams/.cvsignore, trunk/wvstreams/utils,
+	  trunk/wvstreams/utils/.cvsignore: Oops. Fixed a bug that I just
+	  introduced in rules.mk.
+
+1999-03-25 19:52  apenwarr
+
+	* trunk/wvdial/wstrong-problem: Kernel 2.2.4.
+
+1999-03-24 05:30  apenwarr
+
+	* trunk/wvdial/wvdialer.cc: DEATH TO BUGS! Lots of bugs! I think!
+
+1999-03-24 03:41  apenwarr
+
+	* trunk/wvdial/papchaptest.cc, trunk/wvdial/wvdial.cc,
+	  trunk/wvdial/wvdialbrain.cc, trunk/wvdial/wvdialbrain.h,
+	  trunk/wvdial/wvdialconf.cc, trunk/wvdial/wvdialer.cc,
+	  trunk/wvdial/wvdialer.h, trunk/wvdial/wvdialtext.cc,
+	  trunk/wvdial/wvmodemscan.cc, trunk/wvdial/wvmodemscan.h,
+	  trunk/wvdial/wvpapchap.cc, trunk/wvdial/wvpapchap.h,
+	  trunk/wvstreams/configfile/cfgentry.cc,
+	  trunk/wvstreams/configfile/cfgsection.cc,
+	  trunk/wvstreams/configfile/initest.cc,
+	  trunk/wvstreams/configfile/wvconf.cc,
+	  trunk/wvstreams/configfile/wvconf.h,
+	  trunk/wvstreams/ipstreams/listentest.cc,
+	  trunk/wvstreams/ipstreams/resolvertest.cc,
+	  trunk/wvstreams/ipstreams/simpleconn.cc,
+	  trunk/wvstreams/ipstreams/tcptest.cc,
+	  trunk/wvstreams/ipstreams/udp2test.cc,
+	  trunk/wvstreams/ipstreams/udptest.cc,
+	  trunk/wvstreams/ipstreams/wvaddr.cc,
+	  trunk/wvstreams/ipstreams/wvaddr.h,
+	  trunk/wvstreams/ipstreams/wvhttp.cc,
+	  trunk/wvstreams/ipstreams/wvhttp.h,
+	  trunk/wvstreams/ipstreams/wvinterface.cc,
+	  trunk/wvstreams/ipstreams/wvinterface.h,
+	  trunk/wvstreams/ipstreams/wvipaliaser.cc,
+	  trunk/wvstreams/ipstreams/wvipaliaser.h,
+	  trunk/wvstreams/ipstreams/wvipfirewall.cc,
+	  trunk/wvstreams/ipstreams/wvipfirewall.h,
+	  trunk/wvstreams/ipstreams/wviproute.cc,
+	  trunk/wvstreams/ipstreams/wviproute.h,
+	  trunk/wvstreams/ipstreams/wvresolver.cc,
+	  trunk/wvstreams/ipstreams/wvresolver.h,
+	  trunk/wvstreams/ipstreams/wvtcp.cc,
+	  trunk/wvstreams/ipstreams/wvtcp.h,
+	  trunk/wvstreams/ipstreams/wvudp.cc,
+	  trunk/wvstreams/ipstreams/wvudp.h,
+	  trunk/wvstreams/streams/logtest.cc,
+	  trunk/wvstreams/streams/looptest.cc,
+	  trunk/wvstreams/streams/modemtest.cc,
+	  trunk/wvstreams/streams/pipetest.cc,
+	  trunk/wvstreams/streams/syslogtest.cc,
+	  trunk/wvstreams/streams/timetest.cc,
+	  trunk/wvstreams/streams/watchtest.cc,
+	  trunk/wvstreams/streams/wvlog.cc, trunk/wvstreams/streams/wvlog.h,
+	  trunk/wvstreams/streams/wvlogbuffer.cc,
+	  trunk/wvstreams/streams/wvlogbuffer.h,
+	  trunk/wvstreams/streams/wvlogrcv.h,
+	  trunk/wvstreams/streams/wvloopback.cc,
+	  trunk/wvstreams/streams/wvloopback.h,
+	  trunk/wvstreams/streams/wvmodem.cc,
+	  trunk/wvstreams/streams/wvmodem.h,
+	  trunk/wvstreams/streams/wvpipe.cc,
+	  trunk/wvstreams/streams/wvpipe.h,
+	  trunk/wvstreams/streams/wvprotostream.cc,
+	  trunk/wvstreams/streams/wvprotostream.h,
+	  trunk/wvstreams/streams/wvsplitstream.cc,
+	  trunk/wvstreams/streams/wvsplitstream.h,
+	  trunk/wvstreams/streams/wvstream.cc,
+	  trunk/wvstreams/streams/wvstream.h,
+	  trunk/wvstreams/streams/wvstreamclone.cc,
+	  trunk/wvstreams/streams/wvstreamclone.h,
+	  trunk/wvstreams/streams/wvstreamlist.cc,
+	  trunk/wvstreams/streams/wvstreamlist.h,
+	  trunk/wvstreams/streams/wvsyslog.cc,
+	  trunk/wvstreams/streams/wvsyslog.h,
+	  trunk/wvstreams/streams/wvtimestream.cc,
+	  trunk/wvstreams/streams/wvtimestream.h,
+	  trunk/wvstreams/streams/wvwatcher.cc,
+	  trunk/wvstreams/streams/wvwatcher.h,
+	  trunk/wvstreams/utils/base64.cc, trunk/wvstreams/utils/base64.h,
+	  trunk/wvstreams/utils/strutils.cc,
+	  trunk/wvstreams/utils/strutils.h,
+	  trunk/wvstreams/utils/testbase64.cc,
+	  trunk/wvstreams/utils/testver.cc,
+	  trunk/wvstreams/utils/verstring.cc,
+	  trunk/wvstreams/utils/verstring.h,
+	  trunk/wvstreams/utils/wvbuffer.cc,
+	  trunk/wvstreams/utils/wvbuffer.h,
+	  trunk/wvstreams/utils/wvhashtable.cc,
+	  trunk/wvstreams/utils/wvhashtable.h,
+	  trunk/wvstreams/utils/wvlinklist.cc,
+	  trunk/wvstreams/utils/wvlinklist.h,
+	  trunk/wvstreams/utils/wvstring.cc,
+	  trunk/wvstreams/utils/wvstring.h: Updated all the copyright
+	  notices to include 1999.
+
+1999-03-21 21:36  apenwarr
+
+	* trunk/wvdial/wvdial.cc, trunk/wvdial/wvdialer.cc,
+	  trunk/wvdial/wvdialer.h: Fixed various netguide bugs. Dialer
+	  should now not disconnect every time a dialerconfig option is
+	  changed in webconfig.
+
+1999-02-23 15:49  dcoombs
+
+	* trunk/wvdial/MENUS: Added a broken menu to WvDial's MENUS file.
+
+1999-02-13 21:01  apenwarr
+
+	* trunk/wvdial/wvpapchap.cc, trunk/wvstreams/configfile/wvconf.cc,
+	  trunk/wvstreams/streams/watchtest.cc: Added /sbin/hwclock. Added
+	  O_TRUNC on most file create calls (oops... that should have been
+	  done LONG ago!)
+
+1999-01-25 22:44  apenwarr
+
+	* trunk/wvdial/MENUS: hdparm spins down the hard drive after 5
+	  minutes... we'll see if that's useful.
+
+1999-01-23 18:54  apenwarr
+
+	* trunk/wvdial/wvdialbrain.cc,
+	  trunk/wvstreams/ipstreams/wvinterface.cc: *** empty log message
+	  ***
+
+1998-12-11 12:07  apenwarr
+
+	* trunk/wvdial/wvdialer.cc: Initial attempt at Double Vision.
+	  LD_PRELOAD the libdoublev.so.0 library and it will cause outgoing
+	  TCP connections to alternate between the list of addresses in
+	  /tmp/doublev.conf. Set the DV_DEBUG environment variable to get
+	  debug output. Also fixed some ugly demand dialer bugs and fiddled
+	  with the firewall settings.
+
+1998-12-11 10:02  apenwarr
+
+	* trunk/wvdial/wvdialer.cc,
+	  trunk/wvstreams/ipstreams/wvinterface.cc: Double Vision network
+	  setup is in place... now we just need to make sure things bind to
+	  the right addresses.
+
+1998-12-11 05:51  apenwarr
+
+	* trunk/wvdial/wvdialer.cc,
+	  trunk/wvstreams/ipstreams/wvinterface.cc: General cleanup of the
+	  demand dialer stuff. Added a bunch of short functions to the
+	  WvWeaver class to make it more manageable. (net_online(),
+	  net_dynamic(), dialer_configured(), etc).
+
+1998-12-10 20:15  dcoombs
+
+	* trunk/wvdial/wvdialer.cc, trunk/wvstreams/streams/wvmodem.cc,
+	  trunk/wvstreams/streams/wvmodem.h: The beginnins of transparent
+	  proxy support in Fast Forward...
+
+1998-12-04 10:05  apenwarr
+
+	* trunk/wvdial/wvdialer.h, trunk/wvstreams/ipstreams/wvaddr.cc:
+	  Demand dialing "works". Well, it could use some fixing, but it
+	  does dial :) webconfig/lcdconfig/rcmd still horribly broken. Idle
+	  timer is shot.
+
+1998-12-04 08:36  apenwarr
+
+	* trunk/wvdial/wvmodemscan.cc, trunk/wvdial/wvmodemscan.h,
+	  trunk/wvstreams/ipstreams/Makefile,
+	  trunk/wvstreams/ipstreams/wvaddr.cc,
+	  trunk/wvstreams/ipstreams/wvaddr.h,
+	  trunk/wvstreams/ipstreams/wviproute.cc: Well, it's not getting any
+	  prettier... Commented out huge portions of
+	  webconfig/lcdconfig/rcmd code because it no longer works with the
+	  way I'm doing demand dialing. Of course, demand dialing doesn't
+	  work either, but that's next :) All the pieces are in place, I
+	  think.
+
+1998-11-30 15:54  apenwarr
+
+	* trunk/wvdial/MENUS: De-accelerifated the delay loops in the LCD
+	  stuff by reading from an I/O port instead of just using NOP.
+
+1998-11-21 07:24  apenwarr
+
+	* trunk/wvdial/MENUS: Updated TODO and wvdial/MENUS.
+
+1998-11-18 19:43  dcoombs
+
+	* trunk/wvdial/wvpapchap.cc: fixed a bug in papchap. WvString
+	  related...
+
+1998-11-17 02:19  apenwarr
+
+	* trunk/wvdial/wvmodemscan.cc,
+	  trunk/wvstreams/configfile/cfgentry.cc,
+	  trunk/wvstreams/configfile/cfgsection.cc,
+	  trunk/wvstreams/configfile/initest.cc,
+	  trunk/wvstreams/configfile/wvconf.cc,
+	  trunk/wvstreams/configfile/wvconf.h,
+	  trunk/wvstreams/ipstreams/wvaddr.cc,
+	  trunk/wvstreams/ipstreams/wvhttp.cc,
+	  trunk/wvstreams/ipstreams/wvinterface.cc,
+	  trunk/wvstreams/ipstreams/wviproute.cc,
+	  trunk/wvstreams/ipstreams/wviproute.h,
+	  trunk/wvstreams/ipstreams/wvresolver.cc,
+	  trunk/wvstreams/ipstreams/wvtcp.cc,
+	  trunk/wvstreams/streams/wvlog.cc,
+	  trunk/wvstreams/streams/wvlogbuffer.cc,
+	  trunk/wvstreams/utils/teststr.cc,
+	  trunk/wvstreams/utils/wvstring.cc,
+	  trunk/wvstreams/utils/wvstring.h: Made (I think) my last major
+	  change to WvString and fixed lots of code to go with it. Also
+	  found some bugs related to previous changes, and fixed those.
+
+1998-11-15 03:36  apenwarr
+
+	* trunk/wvdial/wvdialer.cc, trunk/wvdial/wvdialer.h,
+	  trunk/wvdial/wvpapchap.cc, trunk/wvdial/wvpapchap.h,
+	  trunk/wvstreams/ipstreams/wvhttp.cc,
+	  trunk/wvstreams/ipstreams/wvhttp.h,
+	  trunk/wvstreams/ipstreams/wvresolver.cc,
+	  trunk/wvstreams/ipstreams/wvresolver.h,
+	  trunk/wvstreams/ipstreams/wvtcp.cc,
+	  trunk/wvstreams/ipstreams/wvtcp.h,
+	  trunk/wvstreams/streams/pipetest.cc,
+	  trunk/wvstreams/streams/wvsplitstream.cc,
+	  trunk/wvstreams/streams/wvsplitstream.h,
+	  trunk/wvstreams/streams/wvstream.cc,
+	  trunk/wvstreams/streams/wvstream.h,
+	  trunk/wvstreams/streams/wvstreamclone.cc,
+	  trunk/wvstreams/streams/wvstreamclone.h,
+	  trunk/wvstreams/streams/wvstreamlist.cc,
+	  trunk/wvstreams/streams/wvstreamlist.h,
+	  trunk/wvstreams/streams/wvtimestream.cc,
+	  trunk/wvstreams/streams/wvtimestream.h,
+	  trunk/wvstreams/streams/wvwatcher.cc,
+	  trunk/wvstreams/streams/wvwatcher.h: Changed
+	  WvStream::select_setup() and test_set() calls to use a new
+	  SelectInfo struct, instead of the few parameters we were passing
+	  them before. This should make things easier (and reduces the
+	  source code size still further :))
+
+1998-11-15 02:48  dcoombs
+
+	* trunk/wvdial/wvdialbrain.cc: Percent '%' is now a prompt
+	  character.
+
+1998-11-14 22:55  apenwarr
+
+	* trunk/wvdial/wvdialbrain.cc, trunk/wvdial/wvdialbrain.h,
+	  trunk/wvdial/wvdialconf.cc, trunk/wvdial/wvdialer.cc,
+	  trunk/wvdial/wvmodemscan.cc, trunk/wvdial/wvmodemscan.h,
+	  trunk/wvstreams/configfile/cfgsection.cc,
+	  trunk/wvstreams/configfile/wvconf.cc,
+	  trunk/wvstreams/ipstreams/wvaddr.cc,
+	  trunk/wvstreams/ipstreams/wvhttp.cc,
+	  trunk/wvstreams/streams/wvpipe.cc,
+	  trunk/wvstreams/streams/wvpipe.h,
+	  trunk/wvstreams/streams/wvprotostream.cc,
+	  trunk/wvstreams/utils/strutils.cc,
+	  trunk/wvstreams/utils/testhash.cc,
+	  trunk/wvstreams/utils/testlist.cc,
+	  trunk/wvstreams/utils/teststr.cc,
+	  trunk/wvstreams/utils/wvhashtable.cc,
+	  trunk/wvstreams/utils/wvstring.cc,
+	  trunk/wvstreams/utils/wvstring.h: Stage 3: operator(char*)() in
+	  WvString now returns a const char * instead. To get an editable
+	  string, use WvString::edit(). This means we can finally
+	  reimplement the way WvString works, without breaking anything (I
+	  hope).
+
+1998-11-14 22:14  apenwarr
+
+	* trunk/wvdial/wvdialconf.cc, trunk/wvdial/wvdialer.cc,
+	  trunk/wvdial/wvmodemscan.cc, trunk/wvdial/wvpapchap.cc,
+	  trunk/wvstreams/configfile/cfgsection.cc,
+	  trunk/wvstreams/configfile/wvconf.cc,
+	  trunk/wvstreams/ipstreams/listentest.cc,
+	  trunk/wvstreams/ipstreams/routetest.cc,
+	  trunk/wvstreams/ipstreams/udp2test.cc,
+	  trunk/wvstreams/ipstreams/wvinterface.cc,
+	  trunk/wvstreams/ipstreams/wvipaliaser.cc,
+	  trunk/wvstreams/ipstreams/wvipfirewall.cc,
+	  trunk/wvstreams/ipstreams/wviproute.cc,
+	  trunk/wvstreams/streams/wvlog.cc,
+	  trunk/wvstreams/streams/wvlogbuffer.cc,
+	  trunk/wvstreams/streams/wvprotostream.cc,
+	  trunk/wvstreams/streams/wvstreamlist.cc,
+	  trunk/wvstreams/utils/stresshash.cc,
+	  trunk/wvstreams/utils/testhash.cc,
+	  trunk/wvstreams/utils/testlist.cc,
+	  trunk/wvstreams/utils/wvbuffer.cc,
+	  trunk/wvstreams/utils/wvhashtable.h,
+	  trunk/wvstreams/utils/wvlinklist.h: Phase 2: changed
+	  WvLinkList::Iter and WvHashTable::Iter to give references to their
+	  objects, not pointers, and to provide operator(_type&) and
+	  operator() functions.
+
+1998-11-14 21:13  apenwarr
+
+	* trunk/wvdial/wvdialbrain.cc, trunk/wvdial/wvdialconf.cc,
+	  trunk/wvdial/wvdialer.cc, trunk/wvdial/wvmodemscan.cc,
+	  trunk/wvdial/wvpapchap.cc,
+	  trunk/wvstreams/configfile/cfgsection.cc,
+	  trunk/wvstreams/configfile/wvconf.cc,
+	  trunk/wvstreams/ipstreams/wvaddr.cc,
+	  trunk/wvstreams/ipstreams/wvhttp.cc,
+	  trunk/wvstreams/ipstreams/wvinterface.cc,
+	  trunk/wvstreams/ipstreams/wvipfirewall.cc,
+	  trunk/wvstreams/ipstreams/wvresolver.cc,
+	  trunk/wvstreams/ipstreams/wvtcp.cc,
+	  trunk/wvstreams/streams/watchtest.cc,
+	  trunk/wvstreams/streams/wvlog.cc,
+	  trunk/wvstreams/streams/wvprotostream.cc,
+	  trunk/wvstreams/streams/wvstream.cc,
+	  trunk/wvstreams/streams/wvstream.h,
+	  trunk/wvstreams/streams/wvsyslog.cc,
+	  trunk/wvstreams/streams/wvwatcher.cc,
+	  trunk/wvstreams/utils/strutils.cc,
+	  trunk/wvstreams/utils/testhash.cc,
+	  trunk/wvstreams/utils/testlist.cc,
+	  trunk/wvstreams/utils/teststr.cc,
+	  trunk/wvstreams/utils/wvhashtable.cc,
+	  trunk/wvstreams/utils/wvstring.cc,
+	  trunk/wvstreams/utils/wvstring.h: Phase 1 of the Massive WvString
+	  Changes: the .str member has been renamed and should no longer be
+	  referred to directly. Typecast (often automatically) to (char *)
+	  instead. Also, the auto-typecast to int has been removed -- it was
+	  used in exactly one place :)
+
+1998-11-13 17:38  apenwarr
+
+	* trunk/wvdial/MENUS: Renamed tmp_html.cc to html.tmp.cc, because
+	  I'm pedantic :)
+
+1998-11-11 20:10  apenwarr
+
+	* trunk/wvdial/wvdialer.cc, trunk/wvstreams/configfile/cfgentry.cc,
+	  trunk/wvstreams/configfile/cfgsection.cc,
+	  trunk/wvstreams/configfile/initest.cc,
+	  trunk/wvstreams/configfile/testfile.ini,
+	  trunk/wvstreams/configfile/wvconf.cc,
+	  trunk/wvstreams/configfile/wvconf.h,
+	  trunk/wvstreams/ipstreams/wvinterface.cc,
+	  trunk/wvstreams/utils/wvstring.h: Rewrote configfile stuff
+	  yesterday, with associated massive changes. It seems to work, but
+	  there may still be some bugs lurking...
+
+1998-11-06 17:33  dcoombs
+
+	* trunk/wvdial/MENUS: WvDial handles almost everything in MENUS.
+
+1998-11-06 17:12  dcoombs
+
+	* trunk/wvdial/wvdialbrain.cc: WvDial handles Golden Triangle
+	  properly.
+
+1998-11-06 16:10  dcoombs
+
+	* trunk/wvdial/MENUS: added Golden Triangle's menu to WvDial's MENUS
+	  file.
+
+1998-11-06 15:59  dcoombs
+
+	* trunk/wvdial/wvdialbrain.cc, trunk/wvdial/wvdialer.cc: Teeny fix
+	  to wvdialbrain... guess_menu always returned NULL.
+
+1998-11-06 12:10  apenwarr
+
+	* trunk/wvdial/MENUS, trunk/wvdial/wvdialbrain.cc,
+	  trunk/wvdial/wvdialer.cc, trunk/wvdial/wvdialer.h: Slight fix to
+	  WvDialBrain so that it won't do stupid things (like clear the
+	  buffer) when the entire menu, including prompt, arrives in one
+	  giant chunk. Also, blank lines count as prompts _if_ a menu has
+	  been parsed.
+
+1998-11-05 15:57  apenwarr
+
+	* trunk/wvdial/TODO, trunk/wvstreams/ipstreams/udp2test.cc: Checked
+	  in some of my incomplete udp2test.cc changes. Need to work on some
+	  other stuff before I finish that...
+
+1998-10-28 20:02  apenwarr
+
+	* trunk/wvdial/wvmodemscan.cc: Fixed a crash bug with wvmodemscan,
+	  if the identifier string was unavailable.
+
+1998-10-26 00:27  apenwarr
+
+	* trunk/wvdial/wvmodemscan.cc: Changed WvModemScan.cc to avoid egcs
+	  warnings.
+
+1998-10-25 22:25  dcoombs
+
+	* trunk/wvdial/wvmodemscan.cc: bitsurfr returns 960 for ati0, not
+	  940.
+
+1998-10-25 22:12  dcoombs
+
+	* trunk/wvdial/wvdialer.cc, trunk/wvdial/wvdialer.h,
+	  trunk/wvdial/wvmodemscan.cc, trunk/wvdial/wvmodemscan.h: Weaver
+	  now writes the ISDN identifier to the config file. This will help
+	  with supporting the BitSurfr...
+
+1998-10-23 00:19  apenwarr
+
+	* trunk/wvdial/wvdialer.cc: Started looking at the WvNetMap code. I
+	  just realized that the IPtoHWDict is useless, and HWtoIPDict is
+	  needlessly complicated.
+
+1998-10-20 19:14  apenwarr
+
+	* trunk/wvdial/TODO: Added to wvdial/TODO.
+
+1998-10-16 17:16  apenwarr
+
+	* trunk/wvdial/wvdialer.cc: Changed WvDial's auto reconnect delays.
+	  30 seconds is too long for the first retry...
+
+1998-10-05 14:22  dcoombs
+
+	* trunk/wvdial/wvdialer.cc: Turned Auto Reconnect on by default in
+	  WvDial.
+
+1998-10-03 06:55  apenwarr
+
+	* trunk/wvdial/wvdialer.cc, trunk/wvdial/wvdialer.h,
+	  trunk/wvstreams/ipstreams/listentest.cc,
+	  trunk/wvstreams/ipstreams/wvtcp.cc,
+	  trunk/wvstreams/streams/wvstream.cc,
+	  trunk/wvstreams/streams/wvstream.h,
+	  trunk/wvstreams/streams/wvstreamclone.cc,
+	  trunk/wvstreams/streams/wvstreamclone.h,
+	  trunk/wvstreams/streams/wvstreamlist.cc: WvStream::Callback
+	  functions now all return void -- no one ever used the return
+	  values anyway. A new virtual function, WvStream::execute(), is
+	  used if no callback is defined. That way, derived classes can
+	  simply override execute() instead of fiddling with static member
+	  functions and other uglies.
+
+1998-10-03 02:04  apenwarr
+
+	* trunk/wvdial, trunk/wvdial/.cvsignore, trunk/wvdial/Makefile,
+	  trunk/wvdial/TODO, trunk/wvdial/papchaptest.cc,
+	  trunk/wvdial/wvdial.cc, trunk/wvdial/wvdialbrain.cc,
+	  trunk/wvdial/wvdialbrain.h, trunk/wvdial/wvdialconf.cc,
+	  trunk/wvdial/wvdialer.cc, trunk/wvdial/wvdialer.h,
+	  trunk/wvdial/wvdialtext.cc, trunk/wvdial/wvmodemscan.cc,
+	  trunk/wvdial/wvmodemscan.h, trunk/wvdial/wvpapchap.cc,
+	  trunk/wvdial/wvpapchap.h, trunk/wvstreams,
+	  trunk/wvstreams/configfile, trunk/wvstreams/configfile/.cvsignore,
+	  trunk/wvstreams/configfile/Makefile,
+	  trunk/wvstreams/configfile/cfgentry.cc,
+	  trunk/wvstreams/configfile/cfgsection.cc,
+	  trunk/wvstreams/configfile/initest.cc,
+	  trunk/wvstreams/configfile/testfile.ini,
+	  trunk/wvstreams/configfile/wvconf.cc,
+	  trunk/wvstreams/configfile/wvconf.h, trunk/wvstreams/ipstreams,
+	  trunk/wvstreams/ipstreams/.cvsignore,
+	  trunk/wvstreams/ipstreams/Makefile,
+	  trunk/wvstreams/ipstreams/aliastest.cc,
+	  trunk/wvstreams/ipstreams/listentest.cc,
+	  trunk/wvstreams/ipstreams/resolvertest.cc,
+	  trunk/wvstreams/ipstreams/routetest.cc,
+	  trunk/wvstreams/ipstreams/tcptest.cc,
+	  trunk/wvstreams/ipstreams/udptest.cc,
+	  trunk/wvstreams/ipstreams/wvaddr.cc,
+	  trunk/wvstreams/ipstreams/wvaddr.h,
+	  trunk/wvstreams/ipstreams/wvhttp.cc,
+	  trunk/wvstreams/ipstreams/wvhttp.h,
+	  trunk/wvstreams/ipstreams/wvinterface.cc,
+	  trunk/wvstreams/ipstreams/wvinterface.h,
+	  trunk/wvstreams/ipstreams/wvipaliaser.cc,
+	  trunk/wvstreams/ipstreams/wvipaliaser.h,
+	  trunk/wvstreams/ipstreams/wvipfirewall.cc,
+	  trunk/wvstreams/ipstreams/wvipfirewall.h,
+	  trunk/wvstreams/ipstreams/wviproute.cc,
+	  trunk/wvstreams/ipstreams/wviproute.h,
+	  trunk/wvstreams/ipstreams/wvresolver.cc,
+	  trunk/wvstreams/ipstreams/wvresolver.h,
+	  trunk/wvstreams/ipstreams/wvtcp.cc,
+	  trunk/wvstreams/ipstreams/wvtcp.h,
+	  trunk/wvstreams/ipstreams/wvudp.cc,
+	  trunk/wvstreams/ipstreams/wvudp.h, trunk/wvstreams/streams,
+	  trunk/wvstreams/streams/.cvsignore,
+	  trunk/wvstreams/streams/Makefile,
+	  trunk/wvstreams/streams/clonetest.cc,
+	  trunk/wvstreams/streams/logbuftest.cc,
+	  trunk/wvstreams/streams/logtest.cc,
+	  trunk/wvstreams/streams/looptest.cc,
+	  trunk/wvstreams/streams/modemtest.cc,
+	  trunk/wvstreams/streams/pipetest.cc,
+	  trunk/wvstreams/streams/timetest.cc,
+	  trunk/wvstreams/streams/watchtest.cc,
+	  trunk/wvstreams/streams/wvlog.cc, trunk/wvstreams/streams/wvlog.h,
+	  trunk/wvstreams/streams/wvlogbuffer.cc,
+	  trunk/wvstreams/streams/wvlogbuffer.h,
+	  trunk/wvstreams/streams/wvlogrcv.h,
+	  trunk/wvstreams/streams/wvloopback.cc,
+	  trunk/wvstreams/streams/wvloopback.h,
+	  trunk/wvstreams/streams/wvmodem.cc,
+	  trunk/wvstreams/streams/wvmodem.h,
+	  trunk/wvstreams/streams/wvpipe.cc,
+	  trunk/wvstreams/streams/wvpipe.h,
+	  trunk/wvstreams/streams/wvsplitstream.cc,
+	  trunk/wvstreams/streams/wvsplitstream.h,
+	  trunk/wvstreams/streams/wvstream.cc,
+	  trunk/wvstreams/streams/wvstream.h,
+	  trunk/wvstreams/streams/wvstreamclone.cc,
+	  trunk/wvstreams/streams/wvstreamclone.h,
+	  trunk/wvstreams/streams/wvtimestream.cc,
+	  trunk/wvstreams/streams/wvtimestream.h,
+	  trunk/wvstreams/streams/wvwatcher.cc,
+	  trunk/wvstreams/streams/wvwatcher.h, trunk/wvstreams/utils,
+	  trunk/wvstreams/utils/.cvsignore, trunk/wvstreams/utils/Makefile,
+	  trunk/wvstreams/utils/base64.cc, trunk/wvstreams/utils/base64.h,
+	  trunk/wvstreams/utils/stresshash.cc,
+	  trunk/wvstreams/utils/strutils.cc,
+	  trunk/wvstreams/utils/strutils.h,
+	  trunk/wvstreams/utils/testbase64.cc,
+	  trunk/wvstreams/utils/testbuffer.cc,
+	  trunk/wvstreams/utils/testhash.cc,
+	  trunk/wvstreams/utils/testlist.cc,
+	  trunk/wvstreams/utils/testver.cc,
+	  trunk/wvstreams/utils/verstring.cc,
+	  trunk/wvstreams/utils/verstring.h,
+	  trunk/wvstreams/utils/wvbuffer.cc,
+	  trunk/wvstreams/utils/wvbuffer.h,
+	  trunk/wvstreams/utils/wvhashtable.cc,
+	  trunk/wvstreams/utils/wvhashtable.h,
+	  trunk/wvstreams/utils/wvlinklist.cc,
+	  trunk/wvstreams/utils/wvlinklist.h,
+	  trunk/wvstreams/utils/wvstring.cc,
+	  trunk/wvstreams/utils/wvstring.h: Initial revision
+
