@@ -1,7 +1,7 @@
 Summary: A heuristic autodialer for PPP connections
 Name: wvdial
 Version: 1.61
-Release: 7%{?dist}
+Release: 9%{?dist}
 License: LGPLv2+
 URL: http://alumnit.ca/wiki/?WvDial
 Group: System Environment/Daemons
@@ -71,6 +71,12 @@ rm -rf $RPM_BUILD_ROOT
 %verify(not md5 size mtime) %config(noreplace) %{_sysconfdir}/wvdial.conf
 
 %changelog
+* Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 1.61-9
+- Mass rebuild 2014-01-24
+
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 1.61-8
+- Mass rebuild 2013-12-27
+
 * Fri Feb 15 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.61-7
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
 
